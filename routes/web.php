@@ -21,3 +21,7 @@ Route::get('/services', 'ServicesController@index');
 //Route::get('/about', 'AboutController@index');
 //Route::get('/about', 'AboutController@index');
 //Route::get('/about', 'AboutController@index');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

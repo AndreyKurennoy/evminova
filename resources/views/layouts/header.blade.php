@@ -2,14 +2,17 @@
     <div class="header-top-bar-container clearfix">
         <div class="header-top-bar">
             <ul class="contact-details clearfix">
-                <li class="template-phone">
-                    <a href="tel:+149752322235">+149 75 23 222 35</a>
-                </li>
-                <li class="template-mail">
-                    <a href="mailto:renovate@mail.com">renovate@mail.com</a>
+                <li class="template-location">
+                    Одесса, ул. Богдана Хмельницкого, 24
                 </li>
                 <li class="template-clock">
-                    Mon - Fri: 08.00 - 17.00
+                    пн-сб: 10.00 - 18.00
+                </li>
+                <li class="template-mail">
+                    <a href="mailto:evminov.com.ua@ukr.net">evminov.com.ua@ukr.net</a>
+                </li>
+                <li>
+                    Черноморский вертебрально-оздоровительный центр Евминова
                 </li>
             </ul>
         </div>
@@ -28,6 +31,7 @@
                     <span class="line"></span>
                 </a>
                 <div class="menu-container clearfix vertical-align-cell">
+                    <div class="container">
                     <nav>
                         <ul class="sf-menu">
                             <li class="selected">
@@ -65,8 +69,21 @@
                                     КОНТАКТЫ
                                 </a>
                             </li>
+                            <li>
+                                <a href="#">
+                                    <span class="call_me">
+                                        ПЕРЕЗВОНИТЕ МНЕ
+                                    </span>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
+                    <span class="phones-header">
+                        <div>096 383-83-83</div>
+                        <div>096 383-83-83</div>
+                        <div>096 383-83-83</div>
+                    </span>
+                    </div>
                     <div class="mobile-menu-container">
                         <div class="mobile-menu-divider"></div>
                         <nav>

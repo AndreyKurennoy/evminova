@@ -1,7 +1,11 @@
 <!doctype html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title> Одесский центр Евминова. Лечение искривления позвоночника. Доска (профилактор) Евминова</title>
+    <meta name="description" content="Центр Евминова Одесса – лечение заболеваний позвоночника по методики Евминова. Успех лечение обеспечивается комплексным подходом. Искривление позвоночника или остеохондроз мы справимся с любым заболеванием.">
+    <meta name="keywords" content="центр Евминова, лечение позвоночника, искривление, Евминов, Одесса">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,23 +13,40 @@
 
     {{--<link rel="stylesheet" href="/css/header/style.css" />--}}{{-- ХЗ почему путь не видит--}}
 
-    <link href='//fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/public/css/header/styles.css" />
-    <link rel="stylesheet" type="text/css" href="/css/layout/reset.css">
-    <link rel="stylesheet" type="text/css" href="/css/layout/superfish.css">
-    <link rel="stylesheet" type="text/css" href="/css/layout/jquery.qtip.css">
-    <link rel="stylesheet" type="text/css" href="/css/layout/prettyPhoto.css">
-    <link rel="stylesheet" type="text/css" href="/css/layout/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/layout/animations.css">
-    <link rel="stylesheet" type="text/css" href="/css/layout/responsive.css">
-    <link rel="stylesheet" type="text/css" href="/css/layout/odometer-theme-default.css">
+<!--slider revolution-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/rs-plugin/css/settings.css')}}" media="screen" />
+    <!--style-->
+    {{--<link href='//fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700,900' rel='stylesheet' type='text/css'>--}}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/css/header/reset.css" />
+    <link rel="stylesheet" href="/css/header/superfish.css" />
+    <link rel="stylesheet" href="/css/header/prettyPhoto.css" />
+    <link rel="stylesheet" href="/css/header/jquery.qtip.css" />
+    <link rel="stylesheet" href="/css/header/style.css" />
+    <link rel="stylesheet" href="/css/header/animations.css" />
+    <link rel="stylesheet" href="/css/header/responsive.css" />
+    <link rel="stylesheet" href="/css/header/odometer-theme-default.css" />
 
     <!--fonts-->
-    <link rel="stylesheet" type="text/css" href="/css/fonts/streamline-small/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/fonts/streamline-large/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/fonts/template/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/fonts/social/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/header/fonts/streamline-small/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/header/fonts/streamline-large/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/header/fonts/template/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/header/fonts/social/styles.css">
+    <link rel="stylesheet" type="text/css" href="/plugins/lightbox/css/lightbox.css">
+    <link rel="stylesheet" type="text/css" href="/css/colorbox.css">
     <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!--js-->
+    <script type="text/javascript" src="js/slider/jquery-1.11.3.min.js"></script>
+        {{--<script type="text/javascript" src=" {{ asset('/plugins/rs-plugin/js/extensions/revolution.extension.video.min.js')}}"></script>--}}
+        {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>--}}
 
     @yield('head')
 </head>
