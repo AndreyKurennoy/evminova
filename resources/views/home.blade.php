@@ -5,14 +5,14 @@
 @endsection
 
 @section('content')
-    <div class="row blue full-width padding-top-30 padding-bottom-66">
+    <div class="row blue full-width padding-top-30 padding-bottom-17">
         <div class="row margin-bottom-20">
             <h3 class="header" style="text-align: center; color: #FFFFFF;">Центр Евминова - вернет здоровье вашему позвоночнику!</h3>
         </div>
-        <div class="row  full-width" style="display: flex">
+        <div id="top-block" class="row padding-top-7 full-width" style="display: flex">
             <div class="column">
                 <ul class="features-list gold">
-                    <li class="sl-small-wrench">
+                    <li class="sl-small-years">
                         <h5>Работаем с 2002 года</h5>
                         <p>За 15 лет работы мы помогли 4000 пациентам</p>
                     </li>
@@ -20,7 +20,7 @@
             </div>
             <div class="column">
                 <ul class="features-list gold">
-                    <li class="sl-small-measure">
+                    <li class="sl-small-complex">
                         <h5>Комплексное лечение</h5>
                         <p>Используем безоперационные методы и минимум лекарств</p>
                     </li>
@@ -28,7 +28,7 @@
             </div>
             <div class="column">
                 <ul class="features-list gold">
-                    <li class="sl-small-bucket">
+                    <li class="sl-small-methodic">
                         <h5>Методика Евминова</h5>
                         <p>В лечении используем запатентованную методику Евминова</p>
                     </li>
@@ -36,7 +36,7 @@
             </div>
             <div class="column">
                 <ul class="features-list gold">
-                    <li class="sl-small-bucket">
+                    <li class="sl-small-doctors">
                         <h5>Квалифицированные врачи</h5>
                         <p>Опытные врачи с 20-летним стажем лечебной практики</p>
                     </li>
@@ -97,44 +97,44 @@
         <ul class="services-list clearfix padding-top-30">
             <li>
                 <a href="#" title="Interior Renovation">
-                    <img src="images/samples/390x260/image_01.jpg" alt="" style="display: block;">
+                    <img src="images/home/procedures/correction.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="service_interior_renovation.html" title="Interior Renovation">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="#" title="Interior Renovation">Лечебный массаж</a></h4>
                 {{--<p>We can help you bring new life to existing rooms and develop unused spaces.</p>--}}
             </li>
             <li>
                 <a href="#" title="Design and Build">
-                    <img src="images/samples/390x260/image_02.jpg" alt="" style="display: block;">
+                    <img src="images/home/procedures/fiziotherapy.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="service_design_build.html" title="Design and Build">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="#" title="Design and Build">Лечебный массаж</a></h4>
                 {{--<p>From initial design and project specification to archieving a high end finish.</p>--}}
             </li>
             <li>
                 <a href="#" title="Tiling and Painting">
-                    <img src="images/samples/390x260/image_03.jpg" alt="" style="display: block;">
+                    <img src="images/home/procedures/lfk.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="service_tiling_painting.html" title="Tiling and Painting">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="#" title="Tiling and Painting">Лечебный массаж</a></h4>
                 {{--<p>We offer quality tiling and painting solutions for interior and exterior.</p>--}}
             </li>
             <li>
                 <a href="#" title="Paver Walkways">
-                    <img src="images/samples/390x260/image_04.jpg" alt="" style="display: block;">
+                    <img src="images/home/procedures/kinezoterapia.jpg" alt="" style="display: block;">
                 </a>
                 <h4 class="box-header"><a href="service_interior_renovation.html" title="PAVER WALKWAYS">Лечебный массаж</a></h4>
                 {{--<p>Brick pavers define beauty, elegance and durability for driveways, patios and walkways.</p>--}}
             </li>
             <li>
                 <a href="#" title="Household Repairs">
-                    <img src="images/samples/390x260/image_05.jpg" alt="" style="display: block;">
+                    <img src="images/home/procedures/manual-therapy.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="service_design_build.html" title="Household Repairs">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="#" title="Household Repairs">Лечебный массаж</a></h4>
                 {{--<p>We offer affordable and reliable repairs and improvements to the home.</p>--}}
             </li>
             <li>
                 <a href="#" title="Solar Systems">
-                    <img src="images/samples/390x260/image_06.jpg" alt="" style="display: block;">
+                    <img src="images/home/procedures/massage.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="service_tiling_painting.html" title="Solar Systems">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="#" title="Solar Systems">Лечебный массаж</a></h4>
                 {{--<p>Generate cheap, green electricity from sunlight using photovoltaic cells.</p>--}}
             </li>
         </ul>

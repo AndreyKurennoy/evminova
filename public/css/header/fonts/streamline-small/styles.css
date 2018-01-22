@@ -422,3 +422,23 @@
   /*height: 48px;*/
   line-height: 48px;
 }
+.sl-small-years:before {
+  content: url("/images/home/years.png");
+  /*height: 48px;*/
+  line-height: 48px;
+}
+.sl-small-complex:before {
+  content: url("/images/home/complex.png");
+  /*height: 48px;*/
+  line-height: 48px;
+}
+.sl-small-methodic:before {
+  content: url("/images/home/methodics.png");
+  /*height: 48px;*/
+  line-height: 48px;
+}
+.sl-small-doctors:before {
+  content: url("/images/home/doctors.png");
+  /*height: 48px;*/
+  line-height: 48px;
+}

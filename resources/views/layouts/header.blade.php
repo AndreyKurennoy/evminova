@@ -23,7 +23,7 @@
         <div class="vertical-align-table column-1-1">
             <div class="header clearfix">
                 <div class="logo vertical-align-cell">
-                    <h1><a href="index.html" title="Renovate"><img src="/images/logo.png" alt=""></a></h1>
+                    <h1><a href="/" title="Renovate"><img src="/images/logo.png" alt=""></a></h1>
                 </div>
                 <a href="#" class="mobile-menu-switch vertical-align-cell">
                     <span class="line"></span>
@@ -35,7 +35,7 @@
                     <nav>
                         <ul class="sf-menu">
                             <li>
-                                <a href="index.html" title="О ЦЕНТРЕ">
+                                <a href="#" title="О ЦЕНТРЕ">
                                     О ЦЕНТРЕ
                                 </a>
                             </li>
@@ -45,27 +45,27 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="projects.html" title="ЦЕНЫ">
+                                <a href="#" title="ЦЕНЫ">
                                     ЦЕНЫ
                                 </a>
                             </li>
                             <li>
-                                <a href="team.html" title="ЧТО ЛЕЧИМ">
+                                <a href="#" title="ЧТО ЛЕЧИМ">
                                     ЧТО ЛЕЧИМ
                                 </a>
                             </li>
                             <li>
-                                <a href="about.html" title="ПРОФИЛАКТОР">
+                                <a href="#" title="ПРОФИЛАКТОР">
                                     ПРОФИЛАКТОР
                                 </a>
                             </li>
                             <li>
-                                <a href="blog.html" title="СТАТЬИ">
+                                <a href="#" title="СТАТЬИ">
                                     СТАТЬИ
                                 </a>
                             </li>
                             <li>
-                                <a href="cost_calculator.html" title="КОНТАКТЫ">
+                                <a href="#" title="КОНТАКТЫ">
                                     КОНТАКТЫ
                                 </a>
                             </li>
@@ -89,193 +89,38 @@
                         <nav>
                             <ul class="mobile-menu collapsible-mobile-submenus">
                                 <li class="selected">
-                                    <a href="index.html" title="Home">
+                                    <a href="#" title="Home">
                                         HOME
                                     </a>
                                     <a href="#" class="template-arrow-menu"></a>
                                     <ul>
                                         <li class="selected">
-                                            <a href="index.html" title="Home Style 1">
+                                            <a href="#" title="Home Style 1">
                                                 Home Style 1
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="home2.html" title="Home Style 2">
+                                            <a href="#" title="Home Style 2">
                                                 Home Style 2
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="services.html" title="Services">
+                                    <a href="#" title="Services">
                                         SERVICES
                                     </a>
                                     <a href="#" class="template-arrow-menu"></a>
-                                    <ul>
-                                        <li>
-                                            <a href="service_interior_renovation.html" title="Interior Renovation">
-                                                Interior Renovation
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="service_design_build.html" title="Design and Build">
-                                                Design and Build
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="service_tiling_painting.html" title="Design and Build">
-                                                Tiling and Painting
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="service_paver_walkways.html" title="Paver Walkways">
-                                                Paver Walkways
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="service_household_repairs.html" title="Household Repairs">
-                                                Household Repairs
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="service_solar_systems.html" title="Solar Systems">
-                                                Solar Systems
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="projects.html" title="Projects">
+                                    <a href="#" title="Projects">
                                         PROJECTS
                                     </a>
                                     <a href="#" class="template-arrow-menu"></a>
-                                    <ul>
-                                        <li>
-                                            <a href="project_interior_renovation.html" title="Interior Renovation">
-                                                Interior Renovation
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="project_garden_renovation.html" title="Garden Renovation">
-                                                Garden Renovation
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="project_painting.html" title="Painting">
-                                                Painting
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="project_design_build.html" title="Design and Build">
-                                                Design and Build
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="project_solar_systems.html" title="Solar Systems">
-                                                Solar Systems
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="team.html" title="Our Team">
+                                    <a href="#" title="Our Team">
                                         OUR TEAM
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="about.html" title="Pages">
-                                        PAGES
-                                    </a>
-                                    <a href="#" class="template-arrow-menu"></a>
-                                    <ul>
-                                        <li>
-                                            <a href="about.html" title="About">
-                                                About
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="404.html" title="404 Not Found">
-                                                404 Not Found
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="services.html" title="Services Style 1">
-                                                Services Style 1
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="services2.html" title="Services Style 2">
-                                                Services Style 2
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="service_interior_renovation.html" title="Single Service">
-                                                Single Service
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="projects.html" title="Projects">
-                                                Projects
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="project_interior_renovation.html" title="Single Project">
-                                                Single Project
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="team.html" title="Team">
-                                                Team
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="team_mark_whilberg.html" title="Single Team">
-                                                Single Team
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="blog.html" title="Blog">
-                                        BLOG
-                                    </a>
-                                    <a href="#" class="template-arrow-menu"></a>
-                                    <ul>
-                                        <li>
-                                            <a href="blog.html" title="Blog">
-                                                Blog
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog_left_sidebar.html" title="Blog">
-                                                Blog Left Sidebar
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog_2_columns.html" title="Blog 2 Columns">
-                                                Blog 2 Columns
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog_3_columns.html" title="Blog 3 Columns">
-                                                Blog 3 Columns
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="post.html" title="Single Post">
-                                                Single Post
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="search.html?s=ipsum" title="Search Template">
-                                                Search Template
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="cost_calculator.html" title="Authors">
-                                        COST CALCULATOR
                                     </a>
                                 </li>
                                 <li class="left-flyout">
