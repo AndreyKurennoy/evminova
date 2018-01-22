@@ -11,16 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/', function () {
+        return view('home');
+    });
 
-Route::get('/about', 'AboutController@index');
+    Route::get('/about', 'AboutController@index');
 //Route::get('/services', 'ServicesController@index');
 //Route::get('/prices', 'AboutController@index');
 //Route::get('/about', 'AboutController@index');
 //Route::get('/about', 'AboutController@index');
-Route::get('/catalog', 'CatalogController@index');
+    Route::get('/catalog', 'CatalogController@index');
+
+
+});
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -37,3 +42,7 @@ Route::group(['prefix' => 'admin'], function () {
         'as' => 'voyager'
     ]);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
