@@ -54,14 +54,7 @@ class AdminPagesCustomController extends Controller
      */
     public function create(Request $request)
     {
-        $dataType = Voyager::model('DataType')->where('slug', '=', 'pages')->first();
-        $relationships = $this->getRelationships($dataType);
-        $dataTypeContent = (strlen($dataType->model_name) != 0)
-            ? new $dataType->model_name()
-            : false;
-        $isModelTranslatable = is_bread_translatable($dataTypeContent);
-
-        return view('vendor.voyager.pages.edit-add', compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        return view('vendor.voyager.postsa.read');
     }
 
     /**

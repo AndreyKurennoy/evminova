@@ -18,6 +18,7 @@ class Sheets extends Model
         'body',
         'meta_description',
         'meta_keywords',
-        'status'
+        'status',
+        'slug'
     ];
 }
