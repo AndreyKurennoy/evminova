@@ -34,13 +34,13 @@
                     <div class="container">
                     <nav>
                         <ul class="sf-menu">
-                            <li class="selected">
+                            <li>
                                 <a href="index.html" title="О ЦЕНТРЕ">
                                     О ЦЕНТРЕ
                                 </a>
                             </li>
                             <li>
-                                <a href="services.html" title="УСЛУГИ">
+                                <a href="/catalog" title="УСЛУГИ">
                                     УСЛУГИ
                                 </a>
                             </li>
