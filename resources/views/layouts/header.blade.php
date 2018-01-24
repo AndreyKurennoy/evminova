@@ -22,9 +22,7 @@
         <!--<div class="header-container sticky">-->
         <div class="vertical-align-table column-1-1">
             <div class="header clearfix">
-                <div class="logo vertical-align-cell">
-                    <h1><a href="/" title="Renovate"><img src="/images/logo.png" alt=""></a></h1>
-                </div>
+
                 <a href="#" class="mobile-menu-switch vertical-align-cell">
                     <span class="line"></span>
                     <span class="line"></span>
@@ -32,6 +30,9 @@
                 </a>
                 <div class="menu-container clearfix vertical-align-cell">
                     <div class="container">
+                        <div class="logo vertical-align-cell" style="margin-top: -9px;display: -webkit-inline-box;">
+                            <h1><a href="/" title="Renovate"><img src="/images/logo.png" alt=""></a></h1>
+                        </div>
                     <nav>
                         <ul class="sf-menu">
                             <li>
