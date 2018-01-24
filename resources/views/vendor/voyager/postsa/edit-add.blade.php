@@ -153,8 +153,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary pull-right">
-                Обновить            </button>
+            <button type="submit" class="btn btn-primary pull-right">Обновить</button>
         </form>
     </div>
 @stop

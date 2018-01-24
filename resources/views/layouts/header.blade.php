@@ -33,7 +33,7 @@
                         <div class="logo vertical-align-cell" style="margin-top: -9px;display: -webkit-inline-box;">
                             <h1><a href="/" title="Renovate"><img src="/images/logo.png" alt=""></a></h1>
                         </div>
-                    <nav>
+                    <nav style="width: -webkit-fill-available;">
                         <ul class="sf-menu">
                             <li>
                                 <a href="#" title="О ЦЕНТРЕ">
