@@ -69,15 +69,16 @@
                                     КОНТАКТЫ
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="call_me">
-                                        ПЕРЕЗВОНИТЕ МНЕ
-                                    </span>
-                                </a>
-                            </li>
+
                         </ul>
                     </nav>
+                    <span>
+                    <a href="#">
+                            <span class="call_me">
+                                ПЕРЕЗВОНИТЕ МНЕ
+                            </span>
+                    </a>
+                    </span>
                     <span class="phones-header">
                         <div>096 383-83-83</div>
                         <div>096 383-83-83</div>

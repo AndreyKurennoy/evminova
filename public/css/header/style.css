@@ -2753,13 +2753,14 @@ li.template-bullet:before
 /* --- contact details --- */
 .header-top-bar .contact-details
 {
+	width: inherit;
 	float: left;
 }
 .contact-details li
 {
 	float: left;
 	/*border-right: 1px solid #E2E6E7;*/
-	font-family: 'Raleway';
+	font-family: 'Open Sans';
 	font-weight: 500;
 	font-size: 13px;
 	color: #999999;
@@ -2778,7 +2779,7 @@ li.template-bullet:before
 {
 	color: #AAA;
 	font-size: 14px;
-	margin-right: 10px;
+	margin-right: 3px;
 }
 /* --- social icons --- */
 .social-icons li
@@ -3553,10 +3554,11 @@ body.lock-position
 
 /*MY STYLES*/
 .call_me {
-    background-color: #fefd9a;
-    padding: 10px;
-    border-radius: 15px;
-    border: solid 1px;
+    /*background-color: #fefd9a;*/
+    /*padding: 10px;*/
+    /*border-radius: 15px;*/
+    /*border: solid 1px;*/
+	content: url("/images/home/button.png");
 }
 
 .menu-container .container {
