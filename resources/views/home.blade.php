@@ -85,7 +85,9 @@
     </div>
     <div class="row margin-top-26">
         <h3 class="box-header margin-bottom-30">Популярные процедуры</h3>
-        {!!$options->where('option_name', 'text_1')->pluck('value')->first()!!}
+        <div class="catalog-article description align-justify">
+            {!!$options->where('option_name', 'text_1')->pluck('value')->first()!!}
+        </div>
         <ul class="services-list clearfix padding-top-30">
             <li>
                 <a href="#" title="Interior Renovation">
@@ -134,7 +136,9 @@
 
     <div class="row  padding-top-bottom-30">
         <h3 class="box-header margin-bottom-30">Центр Евминова в Одессе - Ваш верный помощник в борьбе с недугами!</h3>
-        {!!$options->where('option_name', 'text_2')->pluck('value')->first()!!}
+        <div class="catalog-article description align-justify">
+            {!!$options->where('option_name', 'text_2')->pluck('value')->first()!!}
+        </div>
     </div>
 
     <div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-1">

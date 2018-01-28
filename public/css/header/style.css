@@ -3596,3 +3596,17 @@ body.lock-position
 .contact-details-list .sl-small-phone p {
 	padding: 0;
 }
+
+.catalog-article ul {
+	list-style: disc;
+	padding-left: 30px;
+	line-height: 27px;
+}
+
+.catalog-article li:before {
+	/*content: "i";*/
+	color: #F4BC16;
+	padding-right: 15px;
+	margin-left: 30px;
+	vertical-align: text-top;
+}
