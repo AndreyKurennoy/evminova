@@ -61,8 +61,14 @@ class CatalogController extends Controller
     {
         $sheets = $this->sheetsService->getAllData();
         $currentSheet = $this->sheetsService->getByKeyword($keyword);
-//        dd($id);
-        return view("catalog", compact('currentSheet', 'sheets'));
+
+        $meta = [
+            'title' => $currentSheet->seo_title,
+            'description' => $currentSheet->meta_description,
+            'keywords' => $currentSheet->meta_keywords
+        ];
+
+        return view("catalog", compact('currentSheet', 'sheets', 'meta'));
     }
 
     /**

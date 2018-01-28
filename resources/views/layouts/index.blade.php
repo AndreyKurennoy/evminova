@@ -3,17 +3,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title> Одесский центр Евминова. Лечение искривления позвоночника. Доска (профилактор) Евминова</title>
-    <meta name="description" content="Центр Евминова Одесса – лечение заболеваний позвоночника по методики Евминова. Успех лечение обеспечивается комплексным подходом. Искривление позвоночника или остеохондроз мы справимся с любым заболеванием.">
-    <meta name="keywords" content="центр Евминова, лечение позвоночника, искривление, Евминов, Одесса">
+    <title>@if(isset($meta['title'])){{$meta['title']}}@endif</title>
+    <meta name="description" content="@if(isset($meta['description'])){{$meta['description']}}@endif">
+    <meta name="keywords" content="@if(isset($meta['meta_keywords'])){{$meta['meta_keywords']}}@endif">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
 
-    {{--<link rel="stylesheet" href="/css/header/style.css" />--}}{{-- ХЗ почему путь не видит--}}
-
-<!--slider revolution-->
+    <!--slider revolution-->
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/rs-plugin/css/settings.css')}}" media="screen" />
     <!--style-->
     {{--<link href='//fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700,900' rel='stylesheet' type='text/css'>--}}
