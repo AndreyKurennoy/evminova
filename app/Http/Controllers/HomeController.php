@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\Admin\MainOptionsService;
 
 class HomeController extends Controller
 {
+
+    public $mainOptionsService;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(MainOptionsService $mainOptionsService)
     {
         $this->middleware('auth');
+        $this->mainOptionsService = $mainOptionsService;
     }
 
     /**
@@ -23,6 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $options = $this->mainOptionsService->getPageOptions('home');
+//        dd($options);
+        return view('home', compact('options'));
     }
 }

@@ -1,23 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Admin\MainOptions;
+use App\Services\Admin\MainOptionsService;
 use Illuminate\Http\Request;
-use App\Services\Admin\SheetsService;
 
-class CatalogController extends Controller
+class AdminHomeController extends Controller
 {
 
-    public $pagesService;
-    public $sheetsService;
+    public $mainOptionsService;
 
 
     public function __construct(
-        SheetsService $sheetsService
+        MainOptionsService $mainOptionsService
     )
     {
-        $this->sheetsService = $sheetsService;
+        $this->mainOptionsService = $mainOptionsService;
     }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -25,9 +27,12 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        $sheets = $this->sheetsService->getAllData();
-//        dd($sheets);
-        return view('catalog', compact('sheets'));
+        $url = url()->current();
+        $url_split = preg_split("/(\/)/", $url);
+        $options = $this->mainOptionsService->getPageOptions($url_split[4]);
+//        dd($options->where('option_name', 'text_1')->pluck('value'));
+//        dd($options);
+        return view('vendor.voyager.home.' . $url_split[4], compact('options'));
     }
 
     /**
@@ -48,7 +53,9 @@ class CatalogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request);
+        $options = $this->mainOptionsService->update($request->request);
+        dd($options);
     }
 
     /**
@@ -57,12 +64,9 @@ class CatalogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($keyword)
+    public function show($id)
     {
-        $sheets = $this->sheetsService->getAllData();
-        $currentSheet = $this->sheetsService->getByKeyword($keyword);
-//        dd($id);
-        return view("catalog", compact('currentSheet', 'sheets'));
+        //
     }
 
     /**
@@ -85,7 +89,7 @@ class CatalogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($id);
     }
 
     /**

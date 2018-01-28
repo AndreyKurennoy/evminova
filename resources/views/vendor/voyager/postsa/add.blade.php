@@ -1,6 +1,6 @@
 @extends('voyager::master')
 
-@section('page_title', __('voyager.generic.'.(isset($edit) ? 'edit' : 'show')).' Записи')
+@section('page_title', __('voyager.generic.add').' страницу')
 
 @section('css')
     <style>
@@ -53,20 +53,25 @@
 @section('page_header')
     <h1 class="page-title">
         <i class="voyager-news"></i>
-        {{ __('voyager.generic.'.(isset($edit) ? 'edit' : 'show')).' ' }}
+        {{ __('voyager.generic.add').' страницу ' }}
     </h1>
 @stop
 
 @section('content')
     <div class="page-content container-fluid">
-        <form class="form-edit-add" role="form" action="@if(isset($sheets->id)){{ route('voyager.test.update', $sheets->id) }}@else{{ route('voyager.test.store') }}@endif" method="POST" enctype="multipart/form-data">
-
-            <!-- PUT Method if we are editing -->
-            @if(isset($edit))
-                {{ method_field("PUT") }}
-            @endif
+        <form class="form-edit-add" role="form" action="{{ route('voyager.test.store') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
-
+            <div class="row">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <div class="row">
                 <div class="col-md-8">
                     <!-- ### TITLE ### -->
@@ -81,7 +86,7 @@
                             </div>
                         </div>
                         <div class="panel-body" style="">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Название" value="{{$sheets->title}}">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Название" value="{{Request::old('title')}}">
                         </div>
                     </div>
                     <!-- ### CONTENT ### -->
@@ -92,8 +97,8 @@
                                 <a class="panel-action voyager-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
                             </div>
                         </div>
-                        <textarea class="form-control richTextBox" id="richtextbody" name="body" style="border: 0px;">{{$sheets->body}}</textarea>
-                       </div>
+                        <textarea class="form-control richTextBox" id="richtextbody" name="body" style="border: 0px;">{{Request::old('body')}}</textarea>
+                    </div>
 
                 </div>
                 <div class="col-md-4">
@@ -108,21 +113,21 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Ссылка</label>
-                                <input type="text" class="form-control" id="slug" name="slug" placeholder="slug"  data-slug-origin="title" data-slug-forceupdate="true" value="">
+                                <input type="text" class="form-control" id="slug" name="slug" placeholder="slug"  data-slug-origin="title" data-slug-forceupdate="true" value="{{Request::old('slug')}}">
                             </div>
                             <div class="form-group">
                                 <label for="name">Статус публикации</label>
                                 <select class="form-control" name="status">
-                                    <option value="PUBLISHED" selected="selected">Опубликовано</option>
-                                    <option value="DRAFT">Черновик</option>
+                                    <option value="1" @if(old('status') == 1) selected @endif>Опубликовано</option>
+                                    <option value="0" @if(old('status') == 0) selected @endif>Черновик</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="name">Категория статьи</label>
-                                <select class="form-control" name="category_id">
-                                    <option value="1" selected="selected">Новости</option>
-                                    <option value="2">Услуга</option>
-                                    <option value="3">Заболевания</option>
+                                <select class="form-control" name="category">
+                                    <option value="1" @if(old('category') == 1) selected @endif>Новости</option>
+                                    <option value="2" @if(old('category') == 2) selected @endif>Услуга</option>
+                                    <option value="3" @if(old('category') == 3) selected @endif>Заболевания</option>
                                 </select>
                             </div>
                         </div>
@@ -139,15 +144,15 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Описание (meta)</label>
-                                <textarea class="form-control" name="meta_description">{{$sheets->meta_description}}</textarea>
+                                <textarea class="form-control" name="meta_description">{{Request::old('meta_description')}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="name">Ключевые слова (meta)</label>
-                                <textarea class="form-control" name="meta_keywords">{{$sheets->meta_keywords}}</textarea>
+                                <textarea class="form-control" name="meta_keywords">{{Request::old('meta_keywords')}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="name">SEO название</label>
-                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="{{$sheets->seo_title}}">
+                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="{{Request::old('seo_title')}}">
                             </div>
                         </div>
                     </div>

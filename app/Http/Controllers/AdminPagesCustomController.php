@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SheetsRequest;
 use Illuminate\Http\Request;
-use App\Models\Admin\Pages;
 use App\Services\Admin\PagesService;
-use App\Models\Admin\Sheets;
 use App\Services\Admin\SheetsService;
 
 //Voyager staff
@@ -54,7 +53,7 @@ class AdminPagesCustomController extends Controller
      */
     public function create(Request $request)
     {
-        return view('vendor.voyager.postsa.read');
+        return view('vendor.voyager.postsa.add');
     }
 
     /**
@@ -63,9 +62,11 @@ class AdminPagesCustomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SheetsRequest $request)
     {
-        //
+//        dd($request->request->all());
+        $this->sheetsService->store($request->request->all());
+        return redirect(route("voyager.test.index"));
     }
 
     /**
@@ -106,20 +107,21 @@ class AdminPagesCustomController extends Controller
 
         $sheets = $this->sheetsService->getById($id);
         $edit = true;
-//        dd(route()->current());
-        return view('vendor.voyager.postsa.edit-add', compact('sheets', 'edit'));
+//        dd($sheets);
+        return view('vendor.voyager.postsa.edit', compact('sheets', 'edit'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SheetsRequest $request, $id)
     {
-        //
+        $this->sheetsService->update($id,$request->request->all());
+        return redirect(route("voyager.test.index"));
     }
 
     /**

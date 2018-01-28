@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!--js-->
-    <script type="text/javascript" src="js/slider/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/slider/jquery-1.11.3.min.js"></script>
         {{--<script type="text/javascript" src=" {{ asset('/plugins/rs-plugin/js/extensions/revolution.extension.video.min.js')}}"></script>--}}
         {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>--}}
         {{--<script type="text/javascript" src="/plugins/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>--}}

@@ -12,16 +12,17 @@
 */
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/', function () {
-        return view('home');
-    });
+//    Route::get('/', function () {
+//        return view('home');
+//    });
+    Route::get('/', 'HomeController@index');
 
     Route::get('/about', 'AboutController@index');
 //Route::get('/services', 'ServicesController@index');
 //Route::get('/prices', 'AboutController@index');
 //Route::get('/about', 'AboutController@index');
 //Route::get('/about', 'AboutController@index');
-    Route::get('/catalog', 'CatalogController@index');
+    Route::resource('catalog', 'CatalogController');
 
 
 });
@@ -39,6 +40,10 @@ Route::group(['prefix' => 'admin'], function () {
 //    Route::get('pages/{page}/edit', ['uses' => 'AdminPagesCustomController@edit', 'as' => 'voyager.pages.edit']);
 //    Route::get('pages/create', ['uses' => 'AdminPagesCustomController@create', 'as' => 'voyager.pages.create']);
     Route::resource('test', 'AdminPagesCustomController', [
+        'as' => 'voyager'
+    ]);
+
+    Route::resource('home', 'AdminHomeController', [
         'as' => 'voyager'
     ]);
 });

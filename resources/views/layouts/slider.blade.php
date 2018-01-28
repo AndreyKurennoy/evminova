@@ -1,3 +1,7 @@
+@section('head')
+
+@stop
+
 <!-- Slider Revolution -->
 <div class="revolution-slider-container">
     <div class="revolution-slider">
@@ -69,3 +73,11 @@
     </div>
 </div>
 <!--/-->
+
+@section('scripts')
+    <!--slider revolution-->
+    <script type="text/javascript" src="{{ asset('/plugins/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/slider/main.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/slider/odometer.min.js')}}"></script>
+@stop

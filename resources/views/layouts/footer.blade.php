@@ -77,7 +77,7 @@
             <ul class="blog small margin-top-30">
                 <li>
                     <a href="post.html" title="What a Difference a Few Months Make" class="post-image">
-                        <img src="images/samples/90x90/image_10.jpg" alt="">
+                        <img src="/images/samples/90x90/image_10.jpg" alt="">
                     </a>
                     <div class="post-content">
                         <a href="post.html" title="What a Difference a Few Months Make">What a Difference a Few Months Make</a>
@@ -88,7 +88,7 @@
                 </li>
                 <li>
                     <a href="post.html" title="Kitchen and Living Room Renovation" class="post-image">
-                        <img src="images/samples/90x90/image_07.jpg" alt="">
+                        <img src="/images/samples/90x90/image_07.jpg" alt="">
                     </a>
                     <div class="post-content">
                         <a href="post.html" title="Kitchen and Living Room Renovation">Kitchen and Living Room Renovation</a>
@@ -108,9 +108,7 @@
 
 <!--js-->
 <script type="text/javascript" src="{{ asset('js/slider/jquery-migrate-1.2.1.min.js')}}"></script>
-<!--slider revolution-->
-<script type="text/javascript" src="{{ asset('/plugins/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+@yield('scripts')
 <script type="text/javascript" src="{{ asset('js/slider/jquery.ba-bbq.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery-ui-1.11.4.custom.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery.ui.touch-punch.min.js')}}"></script>
@@ -126,8 +124,7 @@
 <script type="text/javascript" src="{{ asset('js/slider/jquery.qtip.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery.blockUI.min.js')}}"></script>
 {{--<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>--}}
-<script type="text/javascript" src="{{ asset('js/slider/main.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/slider/odometer.min.js')}}"></script>
+
 <script type="text/javascript" src="{{ asset('plugins/lightbox/js/lightbox.js')}}"></script>
 <script src="{{asset('/plugins/jquery.bxslider/jquery.bxslider.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox.js"></script>

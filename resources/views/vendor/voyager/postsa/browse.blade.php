@@ -48,8 +48,8 @@
                                     <tr id="{{$sheet->id}}">
                                         <td>{{$sheet->id}}</td>
                                         <td><div class="readmore" style="max-height: none;">{{$sheet->title}}</div></td>
-                                        <td>{{$sheet->category}}</td>
-                                        <td>{{$sheet->status}}</td>
+                                        <td>@if($sheet->category == 1)Новости @elseif($sheet->category == 2) Услуги @else Заболевания @endif</td>
+                                        <td>@if($sheet->status == 1)Опубликовано @else Черновик @endif</td>
                                         <td>{{$sheet->created_at}}</td>
                                         <td class="no-sort no-click" id="bread-actions">
                                             <a href="#" title="Удалить" class="btn btn-sm btn-danger pull-right delete" data-id="{{$sheet->id}}" id="delete{{$sheet->id}}">
