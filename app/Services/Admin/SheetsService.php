@@ -9,6 +9,14 @@ class SheetsService
         return Sheets::all();
     }
 
+    public function getAllPublishedCatalog(){
+        return Sheets::where(['category' => 2, 'status' => 1])->get();
+    }
+
+    public function getCatalogByKeywordPublished($keyword, $category){
+        return Sheets::where(['slug'=> $keyword, 'category' => $category, 'status' => 1])->first();
+    }
+
     public function getById($id){
         return Sheets::where('id', $id)->first();
     }

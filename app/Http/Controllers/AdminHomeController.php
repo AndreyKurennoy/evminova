@@ -53,9 +53,10 @@ class AdminHomeController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request);
-        $options = $this->mainOptionsService->update($request->request);
-        dd($options);
+
+        $options = $this->mainOptionsService->update($request->request->all(), 'home');
+
+        return redirect(route("voyager.home.index"));
     }
 
     /**

@@ -105,15 +105,15 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Описание (meta)</label>
-                                <textarea class="form-control" name="meta_description"></textarea>
+                                <textarea class="form-control" name="meta_description">@if($option = $options->where('option_name', 'meta_description')->pluck('value')->first()) {{$option}}@endif</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="name">Ключевые слова (meta)</label>
-                                <textarea class="form-control" name="meta_keywords"></textarea>
+                                <textarea class="form-control" name="meta_keywords">@if($option = $options->where('option_name', 'meta_keywords')->pluck('value')->first()) {{$option}}@endif</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="name">SEO название</label>
-                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="">
+                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="@if($option = $options->where('option_name', 'seo_title')->pluck('value')->first()) {{$option}}@endif">
                             </div>
                         </div>
                     </div>

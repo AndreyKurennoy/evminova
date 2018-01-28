@@ -25,7 +25,7 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        $sheets = $this->sheetsService->getAllData();
+        $sheets = $this->sheetsService->getAllPublishedCatalog();
 //        dd($sheets);
         return view('catalog', compact('sheets'));
     }
@@ -59,8 +59,8 @@ class CatalogController extends Controller
      */
     public function show($keyword)
     {
-        $sheets = $this->sheetsService->getAllData();
-        $currentSheet = $this->sheetsService->getByKeyword($keyword);
+        $sheets = $this->sheetsService->getAllPublishedCatalog();
+        $currentSheet = $this->sheetsService->getCatalogByKeywordPublished($keyword, 2);
 
         $meta = [
             'title' => $currentSheet->seo_title,
