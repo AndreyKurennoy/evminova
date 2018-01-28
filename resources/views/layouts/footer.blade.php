@@ -3,16 +3,19 @@
         <div class="column column-1-3">
             <ul class="contact-details-list">
                 <li class="sl-small-phone">
-                    <p>Phone:<br>
-                        +149 75 23 222 35</p>
+                        <p>048 700-83-03</p>
+                        <p>048 700-83-03</p>
+                        <p>048 700-83-03</p>
+                        <p>048 700-83-03</p>
+
                 </li>
             </ul>
         </div>
         <div class="column column-1-3">
             <ul class="contact-details-list">
                 <li class="sl-small-location">
-                    <p>272 Linden Avenue<br>
-                        Winter Park, FL 32789</p>
+                    <p>ул. Богдана Хмельницкого, 24<br>
+                        МЦ "Оптикор" </p>
                 </li>
             </ul>
         </div>
@@ -20,7 +23,7 @@
             <ul class="contact-details-list">
                 <li class="sl-small-mail">
                     <p>E-mail:<br>
-                        <a href="mailto:kevin.smith@connect.com">renovate@mail.com</a></p>
+                        <a href="mailto:kevin.smith@connect.com">evminov.com.ua@ukr.net</a></p>
                 </li>
             </ul>
         </div>

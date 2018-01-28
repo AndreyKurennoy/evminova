@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title>@if(isset($meta['title'])){{$meta['title']}}@endif</title>
     <meta name="description" content="@if(isset($meta['description'])){{$meta['description']}}@endif">
     <meta name="keywords" content="@if(isset($meta['meta_keywords'])){{$meta['meta_keywords']}}@endif">

@@ -57,11 +57,11 @@
                     </li>
                     <li class="sl-small-1">
                         <h4>Восстановление эластичности дисков</h4>
-                        <p>We have the experience, personel and resources to make the project run smoothly. We can ensure a job is done on time.</p>
+                        <p>Занятия по методике Евминова улучшают питание тканей межпозвоночных дисков, восстанавливая их эластичность. Занятия способствуют уменьшению грыж в размере, рубцеванию и заживлению поврежденных дисков.</p>
                     </li>
                     <li class="sl-small-2">
-                        <h4>PROFESSIONAL STANDARDS</h4>
-                        <p>Work with us involve a carefully planned series of steps, centered around a schedule we stick to and daily communication.</p>
+                        <h4>Возвращаем радость движения</h4>
+                        <p>Методика Евминова регулирует взаимодействие нервной системы и мышц, улучшая баланс и координацию движений.</p>
                     </li>
                 </ul>
             </div>
@@ -69,15 +69,15 @@
                 <ul class="features-list">
                     <li class="sl-small-3 margin-top-40">
                         <h4>Укрепление мышечного карсета</h4>
-                        <p>We combine quality workmanship, superior knowledge and low prices to provide you with service unmatched by our competitors.</p>
+                        <p>Занятия на профилакторе Евминова эффективно и безопасно укрепляют глубокие мышцы спины, что невозможно сделать на обычных фитнес-тренажерах.</p>
                     </li>
                     <li class="sl-small-4">
-                        <h4>BEST MATERIALS</h4>
-                        <p>We have the experience, personel and resources to make the project run smoothly. We can ensure a job is done on time.</p>
+                        <h4>Восстановление эластичности дисков</h4>
+                        <p>Занятия на доске Евминова дают возможность в одних и тех же упражнениях для позвоночника давать разную нагрузку для разных сторон тела и групп мышц, восстанавливая баланс.</p>
                     </li>
                     <li class="sl-small-5">
-                        <h4>PROFESSIONAL STANDARDS</h4>
-                        <p>Work with us involve a carefully planned series of steps, centered around a schedule we stick to and daily communication.</p>
+                        <h4>Восстановление глубоких мышц спины</h4>
+                        <p>Благодаря специализированным тренажерам для спины проблемные зоны изолируются и получают ровно столько нагрузки, сколько нужно для постепенного восстановления и укрепления глубоких мышц.</p>
                     </li>
                 </ul>
             </div>

@@ -1689,6 +1689,7 @@ body .type-small .testimonials-list .ornament.empty-circle::before
 .contact-details-list li:before
 {
 	display: block;
+	margin-top: 6px;
 	float: left;
 	width: 48px;
 	height: 48px;
@@ -3590,4 +3591,8 @@ body.lock-position
 
 #top-block .features-list li:before {
 	margin-top: -10px;
+}
+
+.contact-details-list .sl-small-phone p {
+	padding: 0;
 }
