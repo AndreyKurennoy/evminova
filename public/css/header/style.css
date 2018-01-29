@@ -3250,10 +3250,10 @@ li.template-bullet:before
 .more[type="submit"]
 {	
 	color: #FFF; 
-	font-family: 'Raleway';
+	font-family: 'Open Sans';
 	font-size: 12px;
 	font-weight: 700;
-	background: #F4BC16;
+	background: #1991df;
 	padding: 16px 23px 15px;
 	text-align: center;
 	cursor: pointer;
@@ -3265,7 +3265,7 @@ li.template-bullet:before
 	transition: all 0.3s ease 0s;
 	-webkit-transition: all 0.3s ease 0s;
 	-moz-transition: all 0.3s ease 0s;
-	border: 2px solid #F4BC16;
+	border: 2px solid #1991df;
 }
 .more:hover
 {
@@ -3613,4 +3613,20 @@ body.lock-position
 
 .catalog-article div {
 	line-height: 150%
+}
+
+.write-med {
+	margin: auto;
+	width: fit-content;
+}
+
+.write-med input {
+	border-radius: 25px;
+	border: 1px solid #7ea6da;
+	margin-right: 15px;
+}
+
+.write-med span.more {
+	font-size: 16px;
+	padding: 12px 55px 15px;
 }

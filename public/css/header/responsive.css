@@ -53,7 +53,7 @@
 	.row,
 	.announcement
 	{
-		width: 750px;
+		width: 900px;
 	}
 	.header-container
 	{
@@ -82,14 +82,21 @@
 		float: left;
 		clear: both;
 		margin-top: 20px;
+		width: 100%;
 	}
 	.menu-container nav
 	{
 		float: left;
+		width: max-content;
 	}
 	.sf-menu li a, .sf-menu li a:visited
 	{
 		padding: 12px 0 12px 16px;
+
+
+	}
+	.phones-header{
+		display: none;
 	}
 	.header-container.sticky.move .menu-container
 	{
@@ -373,6 +380,7 @@
 	.page-margin-right{
 		margin-right: 0;
 	}
+
 }
 @media screen and (max-width:767px)
 {

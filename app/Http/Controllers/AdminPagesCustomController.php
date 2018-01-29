@@ -65,7 +65,7 @@ class AdminPagesCustomController extends Controller
     public function store(SheetsRequest $request)
     {
 //        dd($request->request->all());
-        $this->sheetsService->store($request->request->all());
+        $this->sheetsService->storeData($request->request->all());
         return redirect(route("voyager.test.index"));
     }
 

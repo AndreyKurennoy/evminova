@@ -29,6 +29,16 @@
                 </div>
                 {{--</div>--}}
             </div>
+            <div class="row margin-top-20" style="background: #f0f7ff;border: 1px solid #bddef6">
+                <h3 class="margin-top-20 margin-bottom-20" style="text-align: center;color: #1892df;">Записаться на прием</h3>
+                <div class="row margin-bottom-30">
+                    <form action="#" class="write-med" >
+                        <input type="text" placeholder="Имя*" class="text">
+                        <input type="text" placeholder="Телефон*" class="text">
+                        <span class="more">Заказать</span>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

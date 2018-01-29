@@ -81,9 +81,9 @@
                     </a>
                     </span>
                     <span class="phones-header">
-                        <div>096 383-83-83</div>
-                        <div>096 383-83-83</div>
-                        <div>096 383-83-83</div>
+                        <div>048 700-83-03</div>
+                        <div>094 953-13-03</div>
+                        <div>094 064-72-02</div>
                     </span>
                     </div>
                     <div class="mobile-menu-container">

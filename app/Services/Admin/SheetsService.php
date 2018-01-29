@@ -35,7 +35,7 @@ class SheetsService
         $sheets->save();
     }
 
-    public function store($data){
+    public function storeData($data){
         Sheets::create($data);
     }
 }
