@@ -162,3 +162,11 @@
         </form>
     </div>
 @stop
+
+@section('javascript')
+    <script>
+        $(document).ready(function(){
+            $(".form-edit-add").unbind('submit');
+        });
+    </script>
+@stop
