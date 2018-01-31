@@ -3630,3 +3630,18 @@ body.lock-position
 	font-size: 16px;
 	padding: 12px 55px 15px;
 }
+
+.flex-container{
+	display: flex;
+	justify-content: space-around;
+	align-items: stretch;
+
+}
+
+.flex-item img {
+	max-width: 270px;
+}
+
+.flex-item .description, .flex-item div {
+	text-align: center;
+}
