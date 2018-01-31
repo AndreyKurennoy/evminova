@@ -5,13 +5,12 @@ namespace App\Models\Admin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Sheets extends Model
+class Sheet extends Model
 {
     use SoftDeletes;
     protected $table = 'sheets';
 
     protected $fillable = [
-        'id',
         'category',
         'title',
         'seo_title',
@@ -19,6 +18,11 @@ class Sheets extends Model
         'meta_description',
         'meta_keywords',
         'status',
-        'slug'
+        'slug',
+//        'doctor_id'
     ];
+
+    public function doctors(){
+        return $this->belongsToMany('App\Models\Admin\Doctor', 'doctor_sheet');
+    }
 }

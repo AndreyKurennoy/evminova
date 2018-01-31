@@ -64,7 +64,6 @@ class AdminPagesCustomController extends Controller
      */
     public function store(SheetsRequest $request)
     {
-//        dd($request->request->all());
         $this->sheetsService->storeData($request->request->all());
         return redirect(route("voyager.test.index"));
     }
@@ -79,7 +78,6 @@ class AdminPagesCustomController extends Controller
     {
         $sheets = $this->sheetsService->getById($id);
         $show = true;
-//        dd(route()->current());
         return view('vendor.voyager.postsa.read', compact('sheets', 'show'));
     }
 
@@ -91,23 +89,8 @@ class AdminPagesCustomController extends Controller
      */
     public function edit(Request $request, $id)
     {
-//        $dataType = Voyager::model('DataType')->where('slug', '=', 'pages')->first();
-//        $relationships = $this->getRelationships($dataType);
-//
-//        //Getting content of the row
-//        $dataTypeContent =  DB::table($dataType->name)->where('id', $id)->first(); // If Model doest exist, get data from table name
-////        $this->authorize()
-//
-//
-//        $page_data = $this->pagesService->getPageData($id);
-////        $page_data->created_at;
-////        dd($page_data[0]->id);
-////        dd(route('voyager.pages.edit'));
-//        return view('vendor.voyager.pages.edit-add', ['page' => $page_data[0]]);
-
         $sheets = $this->sheetsService->getById($id);
         $edit = true;
-//        dd($sheets);
         return view('vendor.voyager.postsa.edit', compact('sheets', 'edit'));
     }
 

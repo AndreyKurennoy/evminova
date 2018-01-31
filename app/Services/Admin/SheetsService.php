@@ -1,41 +1,46 @@
 <?php
 namespace App\Services\Admin;
 
-use App\Models\Admin\Sheets;
+use App\Models\Admin\Doctor;
+use App\Models\Admin\Sheet;
 use Illuminate\Database\Eloquent\Model;
 class SheetsService
 {
     public function getAllData(){
-        return Sheets::all();
+        return Sheet::all();
     }
 
     public function getAllPublishedCatalog(){
-        return Sheets::where(['category' => 2, 'status' => 1])->get();
+        return Sheet::where(['category' => 2, 'status' => 1])->get();
     }
 
     public function getCatalogByKeywordPublished($keyword, $category){
-        return Sheets::where(['slug'=> $keyword, 'category' => $category, 'status' => 1])->first();
+        return Sheet::where(['slug'=> $keyword, 'category' => $category, 'status' => 1])->first();
     }
 
     public function getById($id){
-        return Sheets::where('id', $id)->first();
+        return Sheet::where('id', $id)->first();
     }
 
     public function getByKeyword($keyword){
-        return Sheets::where('slug', $keyword)->first();
+        return Sheet::where('slug', $keyword)->first();
     }
 
     public function softDelete($id){
-         Sheets::deleted($id);
+         Sheet::deleted($id);
     }
 
     public function update($id, $data){
-        $sheets = Sheets::findOrFail($id);
+        $sheets = Sheet::findOrFail($id);
         $sheets->fill($data);
         $sheets->save();
     }
 
     public function storeData($data){
-        Sheets::create($data);
+        Sheet::create($data);
+    }
+
+    public function doctors(){
+        return $this->belongsToMany('App\Models\Admin\Doctor');
     }
 }

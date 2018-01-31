@@ -58,9 +58,9 @@
                                             <a href="{{ route('voyager.test.edit', $sheet->id) }}" title="Изменить" class="btn btn-sm btn-primary pull-right edit">
                                                 <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Изменить</span>
                                             </a>
-                                            <a href="{{ route('voyager.test.show', $sheet->id) }}" title="Просмотр" class="btn btn-sm btn-warning pull-right">
-                                                <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Просмотр</span>
-                                            </a>
+                                            {{--<a href="{{ route('voyager.test.show', $sheet->id) }}" title="Просмотр" class="btn btn-sm btn-warning pull-right">--}}
+                                                {{--<i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Просмотр</span>--}}
+                                            {{--</a>--}}
                                         </td>
                                     </tr>
                                 @endforeach
