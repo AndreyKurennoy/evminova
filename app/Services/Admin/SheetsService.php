@@ -33,14 +33,34 @@ class SheetsService
     public function update($id, $data){
         $sheets = Sheet::findOrFail($id);
         $sheets->fill($data);
-        $sheets->save();
+        $sheets->doctors()->detach();
+        $doctor = [];
+
+        foreach($data['doctor'] as $doctor_row)
+        {
+            $doctor[] = Doctor::findOrFail($doctor_row);
+        }
+
+        $sheets->doctors()->saveMany($doctor);
     }
 
     public function storeData($data){
-        Sheet::create($data);
+//        $sheet = Sheet::create($data);
+        $sheet = new Sheet;
+        $sheet->fill($data);
+        $sheet->save();
+        $doctor = [];
+
+        foreach($data['doctor'] as $doctor_row)
+        {
+            $doctor[] = Doctor::findOrFail($doctor_row);
+        }
+        $sheet->doctors()->saveMany($doctor);
     }
 
     public function doctors(){
         return $this->belongsToMany('App\Models\Admin\Doctor');
     }
+
+
 }

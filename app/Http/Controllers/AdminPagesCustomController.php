@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SheetsRequest;
+use App\Models\Admin\Doctor;
 use Illuminate\Http\Request;
-use App\Services\Admin\PagesService;
+use App\Services\Admin\DoctorService;
 use App\Services\Admin\SheetsService;
 
 //Voyager staff
@@ -22,16 +23,16 @@ class AdminPagesCustomController extends Controller
 {
 
     use BreadRelationshipParser;
-    public $pagesService;
+    public $doctorService;
     public $sheetsService;
 
 
     public function __construct(
-        PagesService $pagesService,
+        DoctorService $doctorService,
         SheetsService $sheetsService
     )
     {
-        $this->pagesService = $pagesService;
+        $this->doctorService = $doctorService;
         $this->sheetsService = $sheetsService;
     }
 
@@ -53,7 +54,9 @@ class AdminPagesCustomController extends Controller
      */
     public function create(Request $request)
     {
-        return view('vendor.voyager.postsa.add');
+
+        $doctors = $this->doctorService->getAll();
+        return view('vendor.voyager.postsa.add', compact('doctors'));
     }
 
     /**
@@ -90,8 +93,10 @@ class AdminPagesCustomController extends Controller
     public function edit(Request $request, $id)
     {
         $sheets = $this->sheetsService->getById($id);
-        $edit = true;
-        return view('vendor.voyager.postsa.edit', compact('sheets', 'edit'));
+        $doctors = $this->doctorService->getAll();
+        $exist_doctors = $sheets->doctors->all();
+//        dd($exist_doctors[0]->id);
+        return view('vendor.voyager.postsa.edit', compact('sheets',  'doctors', 'exist_doctors'));
     }
 
     /**
@@ -103,6 +108,7 @@ class AdminPagesCustomController extends Controller
      */
     public function update(SheetsRequest $request, $id)
     {
+//        dd($request->request->all());
         $this->sheetsService->update($id,$request->request->all());
         return redirect(route("voyager.test.index"));
     }

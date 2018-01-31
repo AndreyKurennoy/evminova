@@ -62,9 +62,9 @@
         <form class="form-edit-add" role="form" action="@if(isset($sheets->id)){{ route('voyager.test.update', $sheets->id) }}@else{{ route('voyager.test.store') }}@endif" method="POST" enctype="multipart/form-data">
 
             <!-- PUT Method if we are editing -->
-            @if(isset($edit))
+            {{--@if(isset($edit))--}}
                 {{ method_field("PUT") }}
-            @endif
+            {{--@endif--}}
             {{ csrf_field() }}
             <div class="row">
                 @if (count($errors) > 0)
@@ -161,9 +161,44 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="panel panel panel-bordered panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="icon wb-clipboard"></i> Врачи</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="name">Первый</label>
+                                <select class="form-control" name="doctor[]">
+                                    @foreach($doctors as $doctor)
+                                        <option value="{{$doctor->id}}" @if($exist_doctors[0]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Второй</label>
+                                <select class="form-control" name="doctor[]">
+                                    @foreach($doctors as $doctor)
+                                        <option value="{{$doctor->id}}" @if($exist_doctors[1]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Третий</label>
+                                <select class="form-control" name="doctor[]">
+                                    @foreach($doctors as $doctor)
+                                        <option value="{{$doctor->id}}" @if($exist_doctors[2]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary pull-right">Обновить</button>
+            <button type="submit" id="update" class="btn btn-primary pull-right">Обновить</button>
         </form>
     </div>
 @stop

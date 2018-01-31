@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DoctorRequest;
 use Illuminate\Http\Request;
 use App\Services\Admin\SheetsService;
 use App\Services\Admin\DoctorService;
@@ -38,7 +39,7 @@ class AdminDoctorsController extends Controller
      */
     public function create()
     {
-
+        return view('vendor.voyager.doctors.add');
     }
 
     /**
@@ -47,9 +48,10 @@ class AdminDoctorsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DoctorRequest $request)
     {
-        //
+        $this->doctorService->storeData($request->request->all());
+        return redirect(route("voyager.doctor.index"));
     }
 
     /**

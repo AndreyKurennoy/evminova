@@ -156,6 +156,40 @@
                             </div>
                         </div>
                     </div>
+                    <div class="panel panel-bordered panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="icon wb-clipboard"></i> Свойства</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                        <div class="form-group">
+                            <label for="name">Первый</label>
+                            <select class="form-control" name="doctor[]">
+                                @foreach($doctors as $doctor)
+                                    <option value="{{$doctor->id}}" @if(old('doctor.0') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Второй</label>
+                            <select class="form-control" name="doctor[]">
+                                @foreach($doctors as $doctor)
+                                    <option value="{{$doctor->id}}" @if(old('doctor.1') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Третий</label>
+                            <select class="form-control" name="doctor[]">
+                                @foreach($doctors as $doctor)
+                                    <option value="{{$doctor->id}}" @if(old('doctor.2') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary pull-right">Обновить</button>
