@@ -174,7 +174,7 @@
                                 <label for="name">Первый</label>
                                 <select class="form-control" name="doctor[]">
                                     @foreach($doctors as $doctor)
-                                        <option value="{{$doctor->id}}" @if($exist_doctors[0]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                        <option value="{{$doctor->id}}" @if(isset($exist_doctors[0]) && $exist_doctors[0]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -182,7 +182,7 @@
                                 <label for="name">Второй</label>
                                 <select class="form-control" name="doctor[]">
                                     @foreach($doctors as $doctor)
-                                        <option value="{{$doctor->id}}" @if($exist_doctors[1]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                        <option value="{{$doctor->id}}" @if(isset($exist_doctors[0]) && $exist_doctors[1]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -190,7 +190,7 @@
                                 <label for="name">Третий</label>
                                 <select class="form-control" name="doctor[]">
                                     @foreach($doctors as $doctor)
-                                        <option value="{{$doctor->id}}" @if($exist_doctors[2]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                        <option value="{{$doctor->id}}" @if(isset($exist_doctors[0]) && $exist_doctors[2]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                     @endforeach
                                 </select>
                             </div>
