@@ -90,45 +90,45 @@
         </div>
         <ul class="services-list clearfix padding-top-30">
             <li>
-                <a href="#" title="Interior Renovation">
-                    <img src="images/home/procedures/correction.jpg" alt="" style="display: block;">
+                <a href="/catalog/lechebni-massage" title="Лечебный массаж">
+                    <img src="images/home/procedures/massage.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="#" title="Interior Renovation">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="/catalog/lechebni-massage" title="Лечебный массаж">Лечебный массаж</a></h4>
                 {{--<p>We can help you bring new life to existing rooms and develop unused spaces.</p>--}}
             </li>
             <li>
-                <a href="#" title="Design and Build">
-                    <img src="images/home/procedures/fiziotherapy.jpg" alt="" style="display: block;">
+                <a href="/catalog/manual-terapi" title="Мануальная терапия">
+                    <img src="images/home/procedures/manual-therapy.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="#" title="Design and Build">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="/catalog/manual-terapi" title="Мануальная терапия">Мануальная терапия</a></h4>
                 {{--<p>From initial design and project specification to archieving a high end finish.</p>--}}
             </li>
             <li>
-                <a href="#" title="Tiling and Painting">
-                    <img src="images/home/procedures/lfk.jpg" alt="" style="display: block;">
+                <a href="/catalog/korrekciya-i-lechenie-pozvonochnika-v-odesse" title="Коррекция позвоночника">
+                    <img src="images/home/procedures/correction.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="#" title="Tiling and Painting">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="/catalog/korrekciya-i-lechenie-pozvonochnika-v-odesse" title="Коррекция позвоночника">Коррекция позвоночника</a></h4>
                 {{--<p>We offer quality tiling and painting solutions for interior and exterior.</p>--}}
             </li>
             <li>
-                <a href="#" title="Paver Walkways">
-                    <img src="images/home/procedures/kinezoterapia.jpg" alt="" style="display: block;">
+                <a href="/catalog/lefk" title="ЛФК">
+                    <img src="images/home/procedures/lfk.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="service_interior_renovation.html" title="PAVER WALKWAYS">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="/catalog/lefk" title="ЛФК">ЛФК</a></h4>
                 {{--<p>Brick pavers define beauty, elegance and durability for driveways, patios and walkways.</p>--}}
             </li>
             <li>
-                <a href="#" title="Household Repairs">
-                    <img src="images/home/procedures/manual-therapy.jpg" alt="" style="display: block;">
+                <a href="/catalog/fizioterapi" title="Физиотерапия">
+                    <img src="images/home/procedures/fiziotherapy.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="#" title="Household Repairs">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="/catalog/fizioterapi" title="Физиотерапия">Физиотерапия</a></h4>
                 {{--<p>We offer affordable and reliable repairs and improvements to the home.</p>--}}
             </li>
             <li>
-                <a href="#" title="Solar Systems">
-                    <img src="images/home/procedures/massage.jpg" alt="" style="display: block;">
+                <a href="/catalog/kinezioterapia" title="Кинезитерапия">
+                    <img src="images/home/procedures/kinezoterapia.jpg" alt="" style="display: block;">
                 </a>
-                <h4 class="box-header"><a href="#" title="Solar Systems">Лечебный массаж</a></h4>
+                <h4 class="box-header"><a href="/catalog/kinezioterapia" title="Кинезитерапия">Кинезитерапия</a></h4>
                 {{--<p>Generate cheap, green electricity from sunlight using photovoltaic cells.</p>--}}
             </li>
         </ul>
@@ -147,30 +147,56 @@
             <ul class="testimonials-list">
                 <li class="sl-small-conversation">
                     <div class="ornament"></div>
-                    <p>"We would like to thank Renovate Company for an outstanding effort on this
-                        recently completed project located in the Moscow. The project involved a very
-                        aggressive schedule and it was completed on time. We would certainly like to
-                        use their professional services again."</p>
-                    <div class="author">MITCHEL SMITH</div>
-                    <div class="author-details">CEO OF NEW PORT COMPANY</div>
+                    <p>"Несколько лет работал на плохой работе, вечно в наклоненном положении,
+                        ну и конечно заработал проблемы со спиной, даже немного горб был.
+                        Обратился к врачам данного центра, все очень понравилось, хорошие врачи,
+                        массажисты, назначили курс лечения, за полтора месяца убрали горб и небольшие недостатки,
+                        сейчас вот по специально написаному курсу долечиваюсь дома. Вообщем всем советую!
+                        Не бойтесь идти к врачам, врачи плохого не сделают."</p>
+                    <div class="author">Руслан</div>
+                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
                 </li>
                 <li class="sl-small-conversation">
                     <div class="ornament"></div>
-                    <p>"We would like to thank Renovate Company for an outstanding effort on this
-                        recently completed project located in the Moscow. The project involved a very
-                        aggressive schedule and it was completed on time. We would certainly like to
-                        use their professional services again."</p>
-                    <div class="author">MITCHEL SMITH</div>
-                    <div class="author-details">CEO OF NEW PORT COMPANY</div>
+                    <p>"С возрастом проблемы со спиной все чаще стали беспокоить, подруга порекомендовала эту клинику,
+                        чему я ей намного благодарна редко встретишь врачей,
+                        уважительно и понимающие относящихся к твоему возрасту, состоянию и болезням"</p>
+                    <div class="author">Валерия Васильевна</div>
+                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
                 </li>
                 <li class="sl-small-conversation">
                     <div class="ornament"></div>
-                    <p>"We would like to thank Renovate Company for an outstanding effort on this
-                        recently completed project located in the Moscow. The project involved a very
-                        aggressive schedule and it was completed on time. We would certainly like to
-                        use their professional services again."</p>
-                    <div class="author">MITCHEL SMITH</div>
-                    <div class="author-details">CEO OF NEW PORT COMPANY</div>
+                    <p>"Здравствуйте хочу оставить свой отзыв о работе Вашего центра-
+                        мне лечение помогло и все очень понравилось: и квалификация персонала,
+                        и тренировки, и отношение к пациентам. Попал сюда совершенно случайно -
+                        был в еврейской больнице, ожидая доктора, в очереди мне посоветовали хорошего мануальщика,
+                        Франко Эдуарда, который принимает прямо через дорогу.
+                        В тот же день пошел к нему и уже через день пришел на занятие.
+                        Мне вставляли позвонки, делали массаж, а еще я занимался на доске Евминова.
+                        И благодаря этому комплексному лечению, спустя 2 недели, у меня прошли так мучащие меня
+                        в течении полугода боли в спине.... уже прошло 4 месяца после занятий, но слава богу,
+                        боли не возвращались. И если они вернутся (не дай бог) , я обязательно обращусь к Вам!"</p>
+                    <div class="author">Александр Викторович</div>
+                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
+                </li>
+                <li class="sl-small-conversation">
+                    <div class="ornament"></div>
+                    <p>"Спасибо сотрудникам центра за эффективные занятия.
+                        Четыре месяца назад постоянно тревожили боли в спине, не могла сидеть на одном месте -
+                        ломило спину ужасно! пошла на занятия йогой и массаж - как же это релаксирует и как же это приятно!
+                        Очень все понравилось! неприятные ощущения до сих пор не возвращались!"</p>
+                    <div class="author">Лера</div>
+                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
+                </li>
+                <li class="sl-small-conversation">
+                    <div class="ornament"></div>
+                    <p>"Благодарю доктора и весь персонал центра.
+                        В жизни не подумала, что от такой сильной боли в спине,
+                        которая пол года беспокоила можно избавиться в такой короткий срок!
+                        Прошла 4 занятия по коррекции позвоночника+курс ЛФК, в общей сложности чуть больше недели,
+                        и Вы не поверите, но боли прошли, и я вспоминаю то время, как страшный сон! СПАСИБО!"</p>
+                    <div class="author">Екатерина Ивановна</div>
+                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
                 </li>
             </ul>
             <a href="#" class="slider-control right template-arrow-left-1"></a>

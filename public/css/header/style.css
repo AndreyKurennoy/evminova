@@ -412,6 +412,7 @@ h3.box-header
 {
 	text-align: center;
 	color: #1892df;
+	letter-spacing:0;
 }
 .box-header:after
 {
@@ -1529,7 +1530,7 @@ div.team-box
 {
 	display: block;
 	content: "";
-	background: #F4BC16;
+	background: #1892df;
 	width: 40px;
 	height: 2px;
 	margin-top: 30px;
@@ -1758,7 +1759,7 @@ body .type-small .testimonials-list .ornament.empty-circle::before
 /* --- parallax --- */
 .parallax-1
 {
-	background-image: url('/images/samples/1920x1200/image_01.jpg');
+	background-image: url('/images/home/otziv1.jpg');
 }
 .parallax-2
 {
