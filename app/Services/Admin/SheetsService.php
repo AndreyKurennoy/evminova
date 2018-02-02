@@ -40,7 +40,7 @@ class SheetsService
         {
             $doctor[] = Doctor::findOrFail($doctor_row);
         }
-
+        $sheets->save();
         $sheets->doctors()->saveMany($doctor);
     }
 

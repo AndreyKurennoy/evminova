@@ -95,7 +95,6 @@ class AdminPagesCustomController extends Controller
         $sheets = $this->sheetsService->getById($id);
         $doctors = $this->doctorService->getAll();
         $exist_doctors = $sheets->doctors->all();
-//        dd($exist_doctors[0]->id);
         return view('vendor.voyager.postsa.edit', compact('sheets',  'doctors', 'exist_doctors'));
     }
 
@@ -108,7 +107,6 @@ class AdminPagesCustomController extends Controller
      */
     public function update(SheetsRequest $request, $id)
     {
-//        dd($request->request->all());
         $this->sheetsService->update($id,$request->request->all());
         return redirect(route("voyager.test.index"));
     }

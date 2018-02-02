@@ -3636,9 +3636,11 @@ body.lock-position
 	display: flex;
 	justify-content: space-around;
 	align-items: stretch;
-
+	flex-wrap: wrap;
 }
-
+.flex-item{
+	width: min-content;
+}
 .flex-item img {
 	max-width: 270px;
 }

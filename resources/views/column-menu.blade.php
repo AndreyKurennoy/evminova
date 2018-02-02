@@ -29,26 +29,20 @@
                 </div>
                 {{--</div>--}}
             </div>
+            @if(isset($doctors))
             <div class="row margin-top-20">
                 <h3 class="margin-top-20 margin-bottom-20" style="text-align: left;color: #1892df;">Лечение проводят:</h3>
                 <div class="flex-container">
+                    @foreach($doctors as $doctor)
                     <div class="flex-item">
                         <img src="/storage/tCeOAxPFqXHq0mdlRWwhEXJ0LJnafUSlqxgwQD4P.jpeg" alt="">
-                        <div class="name">Ivan Petrov</div>
-                        <div class="description"><p>Врач с 30 летним опытом.</p></div>
+                        <div class="name">{{$doctor->firstName}} {{$doctor->lastName}}</div>
+                        <div class="description"><p>{{$doctor->description}}</p></div>
                     </div>
-                    <div class="flex-item">
-                        <img src="/storage/tCeOAxPFqXHq0mdlRWwhEXJ0LJnafUSlqxgwQD4P.jpeg" alt="">
-                        <div class="name">Ivan Petrov</div>
-                        <div class="description"><p>Врач с 30 летним опытом.</p></div>
-                    </div>
-                    <div class="flex-item">
-                        <img src="/storage/tCeOAxPFqXHq0mdlRWwhEXJ0LJnafUSlqxgwQD4P.jpeg" alt="">
-                        <div class="name">Ivan Petrov</div>
-                        <div class="description"><p>Врач с 30 летним опытом.</p></div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
+            @endif
             <div class="row margin-top-20" style="background: #f0f7ff;border: 1px solid #bddef6">
                 <h3 class="margin-top-20 margin-bottom-20" style="text-align: center;color: #1892df;">Записаться на прием</h3>
                 <div class="row margin-bottom-30">

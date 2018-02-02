@@ -60,15 +60,17 @@ class CatalogController extends Controller
     public function show($keyword)
     {
         $sheets = $this->sheetsService->getAllPublishedCatalog();
-        $currentSheet = $this->sheetsService->getCatalogByKeywordPublished($keyword, 2);
 
+        $currentSheet = $this->sheetsService->getCatalogByKeywordPublished($keyword, 2);
+        $doctors = $currentSheet->doctors->all();
+//        dd($doctors);
         $meta = [
             'title' => $currentSheet->seo_title,
             'description' => $currentSheet->meta_description,
             'keywords' => $currentSheet->meta_keywords
         ];
 
-        return view("catalog", compact('currentSheet', 'sheets', 'meta'));
+        return view("catalog", compact('currentSheet', 'sheets', 'meta', 'doctors'));
     }
 
     /**
