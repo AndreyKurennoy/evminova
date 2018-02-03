@@ -58,9 +58,9 @@ class SheetsService
         $sheet->doctors()->saveMany($doctor);
     }
 
-    public function doctors(){
-        return $this->belongsToMany('App\Models\Admin\Doctor');
-    }
+//    public function doctors(){
+//        return $this->belongsToMany('App\Models\Admin\Doctor');
+//    }
 
 
 }

@@ -25,4 +25,8 @@ class Sheet extends Model
     public function doctors(){
         return $this->belongsToMany('App\Models\Admin\Doctor', 'doctor_sheet');
     }
+
+    public function ratings(){
+        return $this->hasMany('App\Models\Admin\Rating');
+    }
 }

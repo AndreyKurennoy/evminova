@@ -400,6 +400,12 @@ h6
 	font-weight: 500;
 	letter-spacing: normal;
 }
+h1.box-header
+{
+	text-align: center;
+	color: #1892df;
+	letter-spacing:0;
+}
 h2.box-header
 {
 	text-align: center;
@@ -423,7 +429,7 @@ h3.box-header
 	height: 2px;
 	margin-top: 13px;
 }
-h2.box-header:after, h3.box-header:after
+h1.box-header:after ,h2.box-header:after, h3.box-header:after
 {
 	width: 80px;
 	margin-left: auto;

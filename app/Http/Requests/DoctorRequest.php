@@ -27,7 +27,7 @@ class DoctorRequest extends FormRequest
             'firstName' => "required",
             'lastName' => "required",
             'description' => "required",
-            'photo' => "required"
+            'photo' => "required",
         ];
     }
 
