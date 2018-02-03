@@ -1,0 +1,20 @@
+.header-review{
+    margin-left: 50px;
+}
+.message-review{
+    margin-left: 10px;
+    margin-top: 5px;
+    line-height: 19px;
+    padding: 7px;
+    background: #f0f0f0;
+}
+.name-review{
+    color: #1892df;
+    font-size: 16px;
+}
+.category-review{
+    font-size: 16px;
+    color: black;
+    padding-top: 4px;
+    font-weight: bold;
+}

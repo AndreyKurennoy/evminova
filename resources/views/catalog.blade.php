@@ -3,6 +3,7 @@
 @section('head')
     <link rel="stylesheet" href="{{asset('/css/catalog.css')}}" />
     <link rel="stylesheet" href="{{asset('/css/rating.css')}}" />
+    <link rel="stylesheet" href="{{asset('/css/reviews.css')}}" />
 @stop
 
 @section('content')
