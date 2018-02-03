@@ -13,7 +13,7 @@
 
 @section('scripts')
     @if(isset($currentSheet) && !empty($currentSheet))
-    <script> var entityCategory = 2; var url = "{{route('catalog.store')}}"; var token = "{{ csrf_token() }}"; var id = "{{$currentSheet->id}}" </script>
-    <script type="text/javascript" src="{{ asset('/js/rating.js')}}"></script>
+        <script> var entityCategory = 2; var url = "{{route('catalog.store')}}"; var token = "{{ csrf_token() }}"; var id = "{{$currentSheet->id}}" </script>
+        <script type="text/javascript" src="{{ asset('/js/rating.js')}}"></script>
     @endif
 @stop

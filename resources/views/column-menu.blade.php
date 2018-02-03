@@ -59,6 +59,8 @@
             </div>
             @endif
 
+            @include('questions')
+
             @if(isset($doctors) && $doctors !== null && !empty($doctors))
             <div class="row margin-top-20">
                 <h3 class="margin-top-20 margin-bottom-20" style="text-align: left;color: #1892df;">Лечение проводят:</h3>
