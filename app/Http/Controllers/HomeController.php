@@ -17,7 +17,6 @@ class HomeController extends Controller
      */
     public function __construct(MainOptionsService $mainOptionsService)
     {
-        $this->middleware('auth');
         $this->mainOptionsService = $mainOptionsService;
     }
 

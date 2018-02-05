@@ -37,11 +37,17 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('home', 'AdminHomeController', [
         'as' => 'voyager'
-    ]);
+    ], ['only' => ['index', 'store']]);
+
+    Route::resource('services', 'AdminMainServicesController', [
+        'as' => 'voyager'
+    ], ['only' => ['index', 'store']]);
 
     Route::resource('doctor', 'AdminDoctorsController', [
         'as' => 'voyager'
     ]);
+
+
 });
 
 Auth::routes();

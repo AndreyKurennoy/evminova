@@ -3654,3 +3654,6 @@ body.lock-position
 .flex-item .description, .flex-item div {
 	text-align: center;
 }
+.profilactor-container{
+    margin-top: 10px;
+}

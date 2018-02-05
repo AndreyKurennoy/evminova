@@ -36,4 +36,8 @@ class MainOptionsService
 
         return $options;
     }
+
+    public function profPhoto(){
+        return MainOptions::where(['page' => 'services', 'option_name' => 'photo'])->first();
+    }
 }

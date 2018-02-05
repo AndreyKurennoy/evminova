@@ -1,6 +1,6 @@
 @extends('voyager::master')
 
-@section('page_title', __('voyager.generic.edit').' Врач')
+@section('page_title', 'Редактирование Главной страницы')
 
 @section('css')
     <style>
@@ -50,75 +50,62 @@
     </style>
 @stop
 
+@section('page_header')
+    <h1 class="page-title">
+        <i class="voyager-news"></i>
+        {{ __('voyager.generic.edit').' Главную страницу ' }}
+    </h1>
+@stop
+
 @section('content')
     <div class="page-content container-fluid">
-        <form class="form-edit-add" role="form" action="{{ route('voyager.doctor.update', $doctor->id) }}" method="POST" enctype="multipart/form-data">
-            {{ method_field("PUT") }}
+        <form class="form-edit-add" role="form" action="{{ route('voyager.services.store') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="row">
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-            </div>
-            <div class="row">
                 <div class="col-md-8">
-                    <!-- ### TITLE ### -->
                     <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <i class="voyager-character"></i> Имя
-                                {{--<span class="panel-desc">Имя Фамилия</span>--}}
+                                <i class="voyager-character"></i> Контент
                             </h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-up" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action panel-collapsed voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
-                        <div class="panel-body" style="">
-                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Название" value="{{$doctor->firstName}}">
+                        <div class="panel-body" style="display: none;">
+                            <textarea class="form-control richTextBox" id="richtextbody" name="text_1" style="border: 0px;">@if($text_1 = $options->where('option_name', 'text_1')->pluck('value')->first()) {{$text_1}}@endif</textarea>
                         </div>
                     </div>
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                <i class="voyager-character"></i>Фамилия
-                                {{--<span class="panel-desc">Имя Фамилия</span>--}}
-                            </h3>
-                            <div class="panel-actions">
-                                <a class="panel-action voyager-angle-up" data-toggle="panel-collapse" aria-hidden="true"></a>
-                            </div>
-                        </div>
-                        <div class="panel-body" style="">
-                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Название" value="{{$doctor->lastName}}">
-                        </div>
-                    </div>
+                    <button type="button" onclick="BrowseServer('id_of_the_target_input');">Выберите изображение профилактора</button>
+                    <input type="hidden" name="photo" id="id_of_the_target_input" value="@if($text_1 = $options->where('option_name', 'photo')->pluck('value')->first()) {{$text_1}}@endif"/>
 
                 </div>
                 <div class="col-md-4">
                     <!-- ### SEO CONTENT ### -->
                     <div class="panel panel-bordered panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-search"></i>Краткое описание</h3>
+                            <h3 class="panel-title"><i class="icon wb-search"></i>SEO информация</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
                             <div class="form-group">
-                                <label for="name">Описание</label>
-                                <textarea class="form-control" name="description">{{$doctor->description}}</textarea>
+                                <label for="name">Описание (meta)</label>
+                                <textarea class="form-control" name="meta_description">@if($option = $options->where('option_name', 'meta_description')->pluck('value')->first()) {{$option}}@endif</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Ключевые слова (meta)</label>
+                                <textarea class="form-control" name="meta_keywords">@if($option = $options->where('option_name', 'meta_keywords')->pluck('value')->first()) {{$option}}@endif</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">SEO название</label>
+                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="@if($option = $options->where('option_name', 'seo_title')->pluck('value')->first()) {{$option}}@endif">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button type="button" onclick="BrowseServer('id_of_the_target_input');">Выберите изображение</button>
-            <input type="hidden" name="photo" id="id_of_the_target_input" value="@if($text_1 = $options->where('option_name', 'photo')->pluck('value')->first()) {{$text_1}}@endif"/>
             <button type="submit" class="btn btn-primary pull-right">Обновить</button>
         </form>
     </div>
@@ -155,6 +142,10 @@
         {
             document.getElementById(urlobj).value = url ;
             oWindow = null;
+
         }
+        $(document).ready(function(){
+            $(".form-edit-add").unbind('submit');
+        });
     </script>
 @stop

@@ -5,21 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\Admin\SheetsService;
 use App\Services\Admin\RatingService;
+use App\Services\Admin\MainOptionsService;
 
 class CatalogController extends Controller
 {
 
     public $ratingService;
     public $sheetsService;
-
+    public $mainOptionsService;
 
     public function __construct(
         RatingService $ratingService,
-        SheetsService $sheetsService
+        SheetsService $sheetsService,
+        MainOptionsService $mainOptionsService
     )
     {
         $this->sheetsService = $sheetsService;
         $this->ratingService = $ratingService;
+        $this->mainOptionsService = $mainOptionsService;
     }
     /**
      * Display a listing of the resource.
@@ -29,8 +32,15 @@ class CatalogController extends Controller
     public function index()
     {
         $sheets = $this->sheetsService->getAllPublishedCatalog();
-//        dd($sheets);
-        return view('catalog', compact('sheets'));
+        $options = $this->mainOptionsService->getPageOptions('services');
+        $meta = [
+            'title' => $options->where('option_name', 'seo_title')->pluck('value')->first(),
+            'description' => $options->where('option_name', 'meta_description')->pluck('value')->first(),
+            'keywords' => $options->where('option_name', 'meta_keywords')->pluck('value')->first(),
+        ];
+        $profPhoto = $this->mainOptionsService->profPhoto();
+
+        return view('catalog', compact('sheets', 'meta', 'options', 'profPhoto'));
     }
 
     /**
@@ -58,7 +68,6 @@ class CatalogController extends Controller
         }else{
             $output = array('error' => 'false');
         }
-//        dd($request->request->all());
         return response()->json($output);
     }
 
@@ -82,13 +91,14 @@ class CatalogController extends Controller
             'value' => ($ratingRows !== 0) ? ($ratingPoints / $ratingRows) : 5,
         ];
         //End of rating
+        $profPhoto = $this->mainOptionsService->profPhoto();
 
         $meta = [
             'title' => $currentSheet->seo_title,
             'description' => $currentSheet->meta_description,
             'keywords' => $currentSheet->meta_keywords
         ];
-        return view("catalog", compact('currentSheet', 'sheets', 'meta', 'doctors', 'rating'));
+        return view("catalog", compact('currentSheet', 'sheets', 'meta', 'doctors', 'rating', 'profPhoto'));
     }
 
     /**

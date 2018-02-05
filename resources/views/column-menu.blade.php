@@ -12,6 +12,13 @@
                     </li>
                 @endforeach
             </ul>
+            @if(isset($profPhoto))
+                <div class="profilactor-container">
+                    <a href="#">
+                        <img src="{{$profPhoto->value}}" >
+                    </a>
+                </div>
+            @endif
         </div>
         <div class="column column-3-4">
             <div class="row">
@@ -19,12 +26,7 @@
                 <h1 class="box-header margin-bottom-30">@if(isset($currentSheet->title)) {{$currentSheet->title}} @else Центр Евминова в Одессе - Ваш верный помощник в борьбе с недугами! @endif</h1>
                 <div class="catalog-article description align-justify">
                     @if(isset($currentSheet->body)) {!!html_entity_decode($currentSheet->body)!!} @else
-                    <p>На мировом рынке битумная черепица BP на сегодняшний день –
-                    один из лучших материалов для кровли. Канадская мягкая кровля BP отлично выполняет свои функции
-                    в любом климате, на каждом доме независимо от типа крыши. Битумная канадская черепица ВР – это
-                    высокое качество, оригинальный дизайн, широкая цветовая гамма и надежность. Для архитекторов и
-                    дизайнеров это находка, а для конечного потребителя –защита на многие десятилетия, солидность и
-                    красота!</p>
+                        {!!$options->where('option_name', 'text_1')->pluck('value')->first()!!}
                     @endif
                 </div>
                 {{--</div>--}}
