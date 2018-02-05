@@ -23,7 +23,7 @@
         <div class="column column-3-4">
             <div class="row">
                 {{--<div class="padding-top-bottom-30">--}}
-                <h1 class="box-header margin-bottom-30">@if(isset($currentSheet->title)) {{$currentSheet->title}} @else Центр Евминова в Одессе - Ваш верный помощник в борьбе с недугами! @endif</h1>
+                <h1 class="box-header margin-bottom-30">@if(isset($currentSheet->title)) {{$currentSheet->title}} @else Услуги и цены @endif</h1>
                 <div class="catalog-article description align-justify">
                     @if(isset($currentSheet->body)) {!!html_entity_decode($currentSheet->body)!!} @else
                         {!!$options->where('option_name', 'text_1')->pluck('value')->first()!!}
