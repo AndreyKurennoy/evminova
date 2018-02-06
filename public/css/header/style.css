@@ -3360,7 +3360,7 @@ div.pp_default .pp_close:hover
 .revolution-slider-container
 {
 	width: 100%;
-	height: 500px;
+	/*height: 500px;*/
 	position: relative;
 	padding: 0;
 	overflow: hidden !important;

@@ -10,6 +10,7 @@
             <h3 class="header" style="text-align: center; color: #FFFFFF;">Центр Евминова - вернет здоровье вашему позвоночнику!</h3>
         </div>
         <div id="top-block" class="row padding-top-7 full-width" style="display: flex">
+            <div class="flex-column" style="display: flex;">
             <div class="column">
                 <ul class="features-list gold">
                     <li class="sl-small-years">
@@ -26,6 +27,8 @@
                     </li>
                 </ul>
             </div>
+            </div>
+            <div class="flex-column" style="display: flex;">
             <div class="column">
                 <ul class="features-list gold">
                     <li class="sl-small-methodic">
@@ -41,6 +44,7 @@
                         <p>Опытные врачи с 20-летним стажем лечебной практики</p>
                     </li>
                 </ul>
+            </div>
             </div>
         </div>
     </div>
