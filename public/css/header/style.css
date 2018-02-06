@@ -3719,3 +3719,21 @@ body.lock-position
 	margin-top: 5px;
 }
 /*END of Services block FLEX styles*/
+.health-feature{
+	display: flex;
+	flex-direction: row;
+	max-width: 25%;
+}
+.health-feature h5 {
+	color: #F4BC16;
+	margin:0;
+	line-height: 20px;
+}
+.health-feature p {
+	color: #FFFFFF;
+	padding-top: 0;
+}
+.health-feature img {
+	padding: 0 10px
+}
+/* Health Features block FLEX styles*/

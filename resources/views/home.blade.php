@@ -5,46 +5,85 @@
 @endsection
 
 @section('content')
-    <div class="row blue full-width padding-top-30 padding-bottom-17">
+    <div class="row blue full-width padding-top-30 padding-bottom-17" id="health-features">
         <div class="row margin-bottom-20">
             <h3 class="header" style="text-align: center; color: #FFFFFF;">Центр Евминова - вернет здоровье вашему позвоночнику!</h3>
         </div>
-        <div id="top-block" class="row padding-top-7 full-width" style="display: flex">
-            <div class="flex-column" style="display: flex;">
-            <div class="column">
-                <ul class="features-list gold">
-                    <li class="sl-small-years">
-                        <h5>Работаем с 2002 года</h5>
-                        <p>За 15 лет работы мы помогли 4000 пациентам</p>
-                    </li>
-                </ul>
+        {{--<div id="top-block" class="row padding-top-7 full-width" style="display: flex">--}}
+            {{--<div class="flex-column" style="display: flex;">--}}
+            {{--<div class="column">--}}
+                {{--<ul class="features-list gold">--}}
+                    {{--<li class="sl-small-years">--}}
+                        {{--<h5>Работаем с 2002 года</h5>--}}
+                        {{--<p>За 15 лет работы мы помогли 4000 пациентам</p>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--<div class="column">--}}
+                {{--<ul class="features-list gold">--}}
+                    {{--<li class="sl-small-complex">--}}
+                        {{--<h5>Комплексное лечение</h5>--}}
+                        {{--<p>Используем безоперационные методы и минимум лекарств</p>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="flex-column" style="display: flex;">--}}
+            {{--<div class="column">--}}
+                {{--<ul class="features-list gold">--}}
+                    {{--<li class="sl-small-methodic">--}}
+                        {{--<h5>Методика Евминова</h5>--}}
+                        {{--<p>В лечении используем запатентованную методику Евминова</p>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--<div class="column">--}}
+                {{--<ul class="features-list gold">--}}
+                    {{--<li class="sl-small-doctors">--}}
+                        {{--<h5>Квалифицированные врачи</h5>--}}
+                        {{--<p>Опытные врачи с 20-летним стажем лечебной практики</p>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
+        <div class="flex-features-container">
+            <div class="health-feature">
+                <div class="img">
+                    <img src="/images/home/years.png" alt="">
+                </div>
+                <div class="health-feature-content">
+                    <h5>Работаем с 2002 года</h5>
+                    <p>За 15 лет работы мы помогли 4000 пациентам</p>
+                </div>
             </div>
-            <div class="column">
-                <ul class="features-list gold">
-                    <li class="sl-small-complex">
-                        <h5>Комплексное лечение</h5>
-                        <p>Используем безоперационные методы и минимум лекарств</p>
-                    </li>
-                </ul>
+            <div class="health-feature">
+                <div class="img">
+                    <img src="/images/home/years.png" alt="">
+                </div>
+                <div class="health-feature-content">
+                    <h5>Комплексное лечение</h5>
+                    <p>Используем безоперационные методы и минимум лекарств</p>
+                </div>
             </div>
+            <div class="health-feature">
+                <div class="img">
+                    <img src="/images/home/years.png" alt="">
+                </div>
+                <div class="health-feature-content">
+                    <h5>Методика Евминова</h5>
+                    <p>В лечении используем запатентованную методику Евминова</p>
+                </div>
             </div>
-            <div class="flex-column" style="display: flex;">
-            <div class="column">
-                <ul class="features-list gold">
-                    <li class="sl-small-methodic">
-                        <h5>Методика Евминова</h5>
-                        <p>В лечении используем запатентованную методику Евминова</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="column">
-                <ul class="features-list gold">
-                    <li class="sl-small-doctors">
-                        <h5>Квалифицированные врачи</h5>
-                        <p>Опытные врачи с 20-летним стажем лечебной практики</p>
-                    </li>
-                </ul>
-            </div>
+            <div class="health-feature">
+                <div class="img">
+                    <img src="/images/home/years.png" alt="">
+                </div>
+                <div class="health-feature-content">
+                    <h5>Квалифицированные врачи</h5>
+                    <p>Опытные врачи с 20-летним стажем лечебной практики</p>
+                </div>
             </div>
         </div>
     </div>

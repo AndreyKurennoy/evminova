@@ -74,7 +74,7 @@
 		width: 300px;
 	}
 	.page-header-right
-	{	
+	{
 		width: 450px;
 	}
 	/* --- menu --- */
@@ -344,7 +344,7 @@
 	/* --- tabs navigation --- */
 	.tabs .ui-tabs-panel p
 	{
-		padding: 24px 0 0; 
+		padding: 24px 0 0;
 	}
 	/* --- call to action --- */
 	.call-to-action .more
@@ -381,7 +381,12 @@
 	.page-margin-right{
 		margin-right: 0;
 	}
-
+	#health-features .flex-features-container{
+		justify-content: center;
+	}
+	#health-features .flex-features-container .health-feature {
+		max-width: 40%;
+	}
 }
 @media screen and (max-width:767px)
 {
@@ -753,6 +758,12 @@
 	.flex-feature{
 		max-width: 89%;
 	}
+	#health-features .flex-features-container .health-feature{
+		max-width: unset;
+		width: 586px;
+		padding: 10px;
+	}
+
 
 }
 @media screen and (max-width:479px)
