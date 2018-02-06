@@ -11,7 +11,7 @@
                 <li class="template-mail">
                     <a href="mailto:evminov.com.ua@ukr.net">evminov.com.ua@ukr.net</a>
                 </li>
-                <li class="template-map-marker">
+                <li class="template-custom">
                     Черноморский вертебрально-оздоровительный центр Евминова
                 </li>
                 <li class="template-phone">
@@ -26,7 +26,7 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="header-toggle template-arrow-up"></a>
+        <a href="#" class="header-toggle template-arrow-up" style="display: none;"></a>
     </div>
     <div class="header-container">
         <!--<div class="header-container sticky">-->

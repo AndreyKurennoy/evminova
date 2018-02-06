@@ -9,45 +9,6 @@
         <div class="row margin-bottom-20">
             <h3 class="header" style="text-align: center; color: #FFFFFF;">Центр Евминова - вернет здоровье вашему позвоночнику!</h3>
         </div>
-        {{--<div id="top-block" class="row padding-top-7 full-width" style="display: flex">--}}
-            {{--<div class="flex-column" style="display: flex;">--}}
-            {{--<div class="column">--}}
-                {{--<ul class="features-list gold">--}}
-                    {{--<li class="sl-small-years">--}}
-                        {{--<h5>Работаем с 2002 года</h5>--}}
-                        {{--<p>За 15 лет работы мы помогли 4000 пациентам</p>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-            {{--<div class="column">--}}
-                {{--<ul class="features-list gold">--}}
-                    {{--<li class="sl-small-complex">--}}
-                        {{--<h5>Комплексное лечение</h5>--}}
-                        {{--<p>Используем безоперационные методы и минимум лекарств</p>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="flex-column" style="display: flex;">--}}
-            {{--<div class="column">--}}
-                {{--<ul class="features-list gold">--}}
-                    {{--<li class="sl-small-methodic">--}}
-                        {{--<h5>Методика Евминова</h5>--}}
-                        {{--<p>В лечении используем запатентованную методику Евминова</p>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-            {{--<div class="column">--}}
-                {{--<ul class="features-list gold">--}}
-                    {{--<li class="sl-small-doctors">--}}
-                        {{--<h5>Квалифицированные врачи</h5>--}}
-                        {{--<p>Опытные врачи с 20-летним стажем лечебной практики</p>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
         <div class="flex-features-container">
             <div class="health-feature">
                 <div class="img">
@@ -60,7 +21,7 @@
             </div>
             <div class="health-feature">
                 <div class="img">
-                    <img src="/images/home/years.png" alt="">
+                    <img src="/images/home/complex.png" alt="">
                 </div>
                 <div class="health-feature-content">
                     <h5>Комплексное лечение</h5>
@@ -69,7 +30,7 @@
             </div>
             <div class="health-feature">
                 <div class="img">
-                    <img src="/images/home/years.png" alt="">
+                    <img src="/images/home/methodics.png" alt="">
                 </div>
                 <div class="health-feature-content">
                     <h5>Методика Евминова</h5>
@@ -78,7 +39,7 @@
             </div>
             <div class="health-feature">
                 <div class="img">
-                    <img src="/images/home/years.png" alt="">
+                    <img src="/images/home/doctors.png" alt="">
                 </div>
                 <div class="health-feature-content">
                     <h5>Квалифицированные врачи</h5>
@@ -218,7 +179,7 @@
     </div>
 
     <div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-1">
-        <div class="row full-width testimonials-container">
+        <div class="row  testimonials-container">
             <a href="#" class="slider-control left template-arrow-left-1"></a>
             <ul class="testimonials-list">
                 <li class="sl-small-conversation">
@@ -230,7 +191,6 @@
                         сейчас вот по специально написаному курсу долечиваюсь дома. Вообщем всем советую!
                         Не бойтесь идти к врачам, врачи плохого не сделают."</p>
                     <div class="author">Руслан</div>
-                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
                 </li>
                 <li class="sl-small-conversation">
                     <div class="ornament"></div>
@@ -238,7 +198,6 @@
                         чему я ей намного благодарна редко встретишь врачей,
                         уважительно и понимающие относящихся к твоему возрасту, состоянию и болезням"</p>
                     <div class="author">Валерия Васильевна</div>
-                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
                 </li>
                 <li class="sl-small-conversation">
                     <div class="ornament"></div>
@@ -253,7 +212,6 @@
                         в течении полугода боли в спине.... уже прошло 4 месяца после занятий, но слава богу,
                         боли не возвращались. И если они вернутся (не дай бог) , я обязательно обращусь к Вам!"</p>
                     <div class="author">Александр Викторович</div>
-                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
                 </li>
                 <li class="sl-small-conversation">
                     <div class="ornament"></div>
@@ -262,7 +220,6 @@
                         ломило спину ужасно! пошла на занятия йогой и массаж - как же это релаксирует и как же это приятно!
                         Очень все понравилось! неприятные ощущения до сих пор не возвращались!"</p>
                     <div class="author">Лера</div>
-                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
                 </li>
                 <li class="sl-small-conversation">
                     <div class="ornament"></div>
@@ -272,7 +229,6 @@
                         Прошла 4 занятия по коррекции позвоночника+курс ЛФК, в общей сложности чуть больше недели,
                         и Вы не поверите, но боли прошли, и я вспоминаю то время, как страшный сон! СПАСИБО!"</p>
                     <div class="author">Екатерина Ивановна</div>
-                    {{--<div class="author-details">CEO OF NEW PORT COMPANY</div>--}}
                 </li>
             </ul>
             <a href="#" class="slider-control right template-arrow-left-1"></a>

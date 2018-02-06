@@ -3663,7 +3663,9 @@ body.lock-position
 .call_me_desktop{
 	display: block;
 }
-
+.contact-details .template-phone{
+	display: none;
+}
 
 /*Features block FLEX styles*/
 .flex-features-container{
@@ -3725,7 +3727,7 @@ body.lock-position
 .health-feature{
 	display: flex;
 	flex-direction: row;
-	max-width: 400px;
+	max-width: 350px;
 }
 .health-feature h5 {
 	color: #F4BC16;

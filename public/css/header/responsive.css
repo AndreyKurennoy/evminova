@@ -53,8 +53,8 @@
 	.row,
 	.announcement
 	{
-		/*width: 900px;*/
-		width:100%;
+		width: auto;
+		/*width:100%;*/
 	}
 	.header-container
 	{
@@ -466,6 +466,8 @@
 	.header .mobile-menu-switch
 	{
 		display: table-cell;
+		float: right;
+		margin-top: 40px;
 	}
 	/* --- vertical menu --- */
 	.vertical-menu li a
@@ -1163,7 +1165,7 @@
 	.sf-menu{
 		justify-content: baseline;
 	}
-	.header-top-bar .contact-details .template-map-marker, .header-top-bar .contact-details .template-mail{
+	.header-top-bar .contact-details .template-custom, .header-top-bar .contact-details .template-mail{
 		display: none;
 
 	}
