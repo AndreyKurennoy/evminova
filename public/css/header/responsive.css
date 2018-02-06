@@ -1105,6 +1105,9 @@
 	.page-margin-right{
 		margin-right: 0;
 	}
+	.flex-service{
+		max-width: 100%;
+	}
 }
 @media screen and (max-device-width: 480px)
 {
@@ -1194,6 +1197,10 @@
 	.flex-feature{
 		margin:10px 0;
 	}
+
+	.flex-service{
+		max-width: 46%;
+	}
 }
 
 /*@media screen and (min-device-width: 651px){*/
@@ -1241,4 +1248,8 @@
     .troubles-block {
         width:unset;
     }
+
+	.flex-service{
+		max-width: 100%;
+	}
 }

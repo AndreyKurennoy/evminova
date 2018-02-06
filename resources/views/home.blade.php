@@ -119,50 +119,56 @@
         <div class="catalog-article description align-justify">
             {!!$options->where('option_name', 'text_1')->pluck('value')->first()!!}
         </div>
-        <ul class="services-list clearfix padding-top-30">
-            <li>
-                <a href="/catalog/lechebni-massage" title="Лечебный массаж">
-                    <img src="images/home/procedures/massage.jpg" alt="" style="display: block;">
-                </a>
-                <h4 class="box-header"><a href="/catalog/lechebni-massage" title="Лечебный массаж">Лечебный массаж</a></h4>
-                {{--<p>We can help you bring new life to existing rooms and develop unused spaces.</p>--}}
-            </li>
-            <li>
-                <a href="/catalog/manual-terapi" title="Мануальная терапия">
-                    <img src="images/home/procedures/manual-therapy.jpg" alt="" style="display: block;">
-                </a>
+        <div class="flex-services-container">
+            <div class="flex-service">
+                <div class="img">
+                    <a href="/catalog/lechebni-massage" title="Лечебный массаж">
+                        <img src="images/home/procedures/massage.jpg" alt="Лечебный массаж">
+                    </a>
+                </div>
+                <h4 class="box-header"><a href="/catalog/kinezioterapia" title="Лечебный массаж">Лечебный массаж</a></h4>
+            </div>
+            <div class="flex-service">
+                <div class="img">
+                    <a href="/catalog/manual-terapi" title="Мануальная терапия">
+                        <img src="images/home/procedures/manual-therapy.jpg" alt="Мануальная терапия">
+                    </a>
+                </div>
                 <h4 class="box-header"><a href="/catalog/manual-terapi" title="Мануальная терапия">Мануальная терапия</a></h4>
-                {{--<p>From initial design and project specification to archieving a high end finish.</p>--}}
-            </li>
-            <li>
-                <a href="/catalog/korrekciya-i-lechenie-pozvonochnika-v-odesse" title="Коррекция позвоночника">
-                    <img src="images/home/procedures/correction.jpg" alt="" style="display: block;">
-                </a>
+            </div>
+            <div class="flex-service">
+                <div class="img">
+                    <a href="/catalog/korrekciya-i-lechenie-pozvonochnika-v-odesse" title="Коррекция позвоночника">
+                        <img src="images/home/procedures/correction.jpg" alt="Коррекция позвоночника" >
+                    </a>
+                </div>
                 <h4 class="box-header"><a href="/catalog/korrekciya-i-lechenie-pozvonochnika-v-odesse" title="Коррекция позвоночника">Коррекция позвоночника</a></h4>
-                {{--<p>We offer quality tiling and painting solutions for interior and exterior.</p>--}}
-            </li>
-            <li>
-                <a href="/catalog/lefk" title="ЛФК">
-                    <img src="images/home/procedures/lfk.jpg" alt="" style="display: block;">
-                </a>
+            </div>
+            <div class="flex-service">
+                <div class="img">
+                    <a href="/catalog/lefk" title="ЛФК">
+                        <img src="images/home/procedures/lfk.jpg" alt="ЛФК" >
+                    </a>
+                </div>
                 <h4 class="box-header"><a href="/catalog/lefk" title="ЛФК">ЛФК</a></h4>
-                {{--<p>Brick pavers define beauty, elegance and durability for driveways, patios and walkways.</p>--}}
-            </li>
-            <li>
-                <a href="/catalog/fizioterapi" title="Физиотерапия">
-                    <img src="images/home/procedures/fiziotherapy.jpg" alt="" style="display: block;">
-                </a>
+            </div>
+            <div class="flex-service">
+                <div class="img">
+                    <a href="/catalog/fizioterapi" title="Физиотерапия">
+                        <img src="images/home/procedures/fiziotherapy.jpg" alt="Физиотерапия" >
+                    </a>
+                </div>
                 <h4 class="box-header"><a href="/catalog/fizioterapi" title="Физиотерапия">Физиотерапия</a></h4>
-                {{--<p>We offer affordable and reliable repairs and improvements to the home.</p>--}}
-            </li>
-            <li>
-                <a href="/catalog/kinezioterapia" title="Кинезитерапия">
-                    <img src="images/home/procedures/kinezoterapia.jpg" alt="" style="display: block;">
-                </a>
+            </div>
+            <div class="flex-service">
+                <div class="img">
+                    <a href="/catalog/kinezioterapia" title="Кинезитерапия">
+                        <img src="images/home/procedures/kinezoterapia.jpg" alt="Кинезитерапия" >
+                    </a>
+                </div>
                 <h4 class="box-header"><a href="/catalog/kinezioterapia" title="Кинезитерапия">Кинезитерапия</a></h4>
-                {{--<p>Generate cheap, green electricity from sunlight using photovoltaic cells.</p>--}}
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 
     <div class="row  padding-top-bottom-30">
@@ -173,7 +179,7 @@
     </div>
 
     <div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-1">
-        <div class="row testimonials-container">
+        <div class="row full-width testimonials-container">
             <a href="#" class="slider-control left template-arrow-left-1"></a>
             <ul class="testimonials-list">
                 <li class="sl-small-conversation">

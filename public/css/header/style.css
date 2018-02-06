@@ -11,8 +11,8 @@
 body
 {
 	background: #FFF;
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	font-family: 'Arial';
 	font-size: 14px;
 	color: #444;
@@ -3665,8 +3665,7 @@ body.lock-position
 }
 
 
-
-
+/*Features block FLEX styles*/
 .flex-features-container{
 	display: flex;
 	flex-direction: row;
@@ -3691,3 +3690,32 @@ body.lock-position
 .flex-feature .img {
 	padding: 0 20px ;
 }
+/*END of FLEX Features block*/
+
+/*Services block FLEX styles*/
+.flex-services-container{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.flex-service{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+	max-width: 31%;
+
+}
+.flex-service img {
+	/*width:380px;*/
+}
+
+.flex-service h4 {
+	margin-top: 10px;
+}
+.flex-service .box-header:after{
+	margin: auto;
+	margin-top: 5px;
+}
+/*END of Services block FLEX styles*/
