@@ -11,8 +11,18 @@
                 <li class="template-mail">
                     <a href="mailto:evminov.com.ua@ukr.net">evminov.com.ua@ukr.net</a>
                 </li>
-                <li>
+                <li class="template-map-marker">
                     Черноморский вертебрально-оздоровительный центр Евминова
+                </li>
+                <li class="template-phone">
+                    048 700-83-03
+                </li>
+                <li class="call_me_tablet">
+                    <a href="#">
+                        <span class="call_me">
+                            ПЕРЕЗВОНИТЕ МНЕ
+                        </span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -73,7 +83,7 @@
 
                         </ul>
                     </nav>
-                    <span>
+                    <span class="call_me_desktop">
                     <a href="#">
                             <span class="call_me">
                                 ПЕРЕЗВОНИТЕ МНЕ

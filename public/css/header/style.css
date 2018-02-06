@@ -3657,3 +3657,37 @@ body.lock-position
 .profilactor-container{
     margin-top: 10px;
 }
+.call_me_tablet{
+	display: none;
+}
+.call_me_desktop{
+	display: block;
+}
+
+
+
+
+.flex-features-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.flex-feature{
+	max-width: 47%;
+	/*width:600px;*/
+	display: flex;
+	align-items: flex-start;
+	padding: 0 5px;
+	margin: 20px 0;
+}
+.flex-feature h4{
+	color: #1892df;
+	margin:0;
+}
+.flex-feature p{
+	padding-top: 0;
+}
+.flex-feature .img {
+	padding: 0 20px ;
+}
