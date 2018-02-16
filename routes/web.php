@@ -35,6 +35,14 @@ Route::group(['prefix' => 'admin'], function () {
         'as' => 'voyager'
     ]);
 
+    Route::resource('about', 'AdminAboutController', [
+        'as' => 'voyager'
+    ]);
+
+    Route::resource('prices', 'AdminPricesController', [
+        'as' => 'voyager'
+    ]);
+
     Route::resource('home', 'AdminHomeController', [
         'as' => 'voyager'
     ], ['only' => ['index', 'store']]);

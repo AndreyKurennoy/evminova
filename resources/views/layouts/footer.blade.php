@@ -32,47 +32,45 @@
 <div class="row gray full-width page-padding-top padding-bottom-50">
     <div class="row row-4-4">
         <div class="column column-1-4">
-            <h6 class="box-header">About Us</h6>
-            <p class="description t1">Founded by Kevin Smith back in 2000. Renovate has estabilished itself as one of the greatest and prestigious providers of construction focused interior renovation services and building.</p>
-            <ul class="social-icons yellow margin-top-26">
-                <li>
-                    <a target="_blank" href="http://facebook.com/QuanticaLabs" class="social-facebook" title="facebook"></a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://twitter.com/QuanticaLabs" class="social-twitter" title="twitter"></a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://themeforest.net/user/QuanticaLabs/portfolio?ref=QuanticaLabs" class="social-linkedin" title="linkedin"></a>
-                </li>
-                <li>
-                    <a href="https://pinterest.com/quanticalabs/" class="social-pinterest" title="pinterest"></a>
-                </li>
-            </ul>
+            <h6 class="box-header">Услуги нашего центра</h6>
+                <ul class="list margin-top-20">
+                    <li class="template-bullet">Профилактор Евминова</li>
+                    <li class="template-bullet">ЛФК</li>
+                    <li class="template-bullet">Кинезетерапия</li>
+                    <li class="template-bullet">Коррекция позвоночника</li>
+                    <li class="template-bullet">Мануальная терапия</li>
+                    <li class="template-bullet">Лечебный массаж</li>
+                    <li class="template-bullet">Массаж головы и лица</li>
+                    <li class="template-bullet">Йога для позвоночника</li>
+                    <li class="template-bullet">Тайские массажи</li>
+                </ul>
+            {{--<ul class="social-icons yellow margin-top-26">--}}
+                {{--<li>--}}
+                    {{--<a target="_blank" href="http://facebook.com/QuanticaLabs" class="social-facebook" title="facebook"></a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a target="_blank" href="https://twitter.com/QuanticaLabs" class="social-twitter" title="twitter"></a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a target="_blank" href="http://themeforest.net/user/QuanticaLabs/portfolio?ref=QuanticaLabs" class="social-linkedin" title="linkedin"></a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="https://pinterest.com/quanticalabs/" class="social-pinterest" title="pinterest"></a>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
         </div>
         <div class="column column-1-4">
-            <h6 class="box-header">Our Services</h6>
+            <h6 class="box-header">Какие методы лечения?</h6>
             <ul class="list margin-top-20">
-                <li class="template-bullet">Interior Renovation</li>
-                <li class="template-bullet">Design and Build</li>
-                <li class="template-bullet">Tiling and Painting</li>
-                <li class="template-bullet">Paver Walkways</li>
-                <li class="template-bullet">Household Repairs</li>
-                <li class="template-bullet">Solar Systems</li>
-            </ul>
-        </div>
-        <div class="column column-1-4">
-            <h6 class="box-header">Categories</h6>
-            <ul class="taxonomies margin-top-30">
-                <li><a href="category.html" title="BUILD">BUILD</a></li>
-                <li><a href="category.html" title="DESIGN">DESIGN</a></li>
-                <li><a href="category.html" title="FLOORING">FLOORING</a></li>
-                <li><a href="category.html" title="PAINTING">PAINTING</a></li>
-                <li><a href="category.html" title="PAVERS">PAVERS</a></li>
-                <li><a href="category.html" title="PLUMBING">PLUMBING</a></li>
-                <li><a href="category.html" title="RENOVATION">RENOVATION</a></li>
-                <li><a href="category.html" title="REPAIRS">REPAIRS</a></li>
-                <li><a href="category.html" title="SOLAR SYSTEMS">SOLAR SYSTEMS</a></li>
-                <li><a href="category.html" title="TILING">TILING</a></li>
+                <li class="template-bullet">Сколиоз</li>
+                <li class="template-bullet">Искривление позвоночника</li>
+                <li class="template-bullet">Остеохондроз</li>
+                <li class="template-bullet">Грыжа межпозвонковых дисков</li>
+                <li class="template-bullet">Артрит</li>
+                <li class="template-bullet">Артроз</li>
+                <li class="template-bullet">Радикулит</li>
+                <li class="template-bullet">Протрузии</li>
+                <li class="template-bullet">Кифоза</li>
             </ul>
         </div>
         <div class="column column-1-4">
@@ -100,6 +98,21 @@
                         </ul>
                     </div>
                 </li>
+            </ul>
+        </div>
+        <div class="column column-1-4">
+            <h6 class="box-header">Перезвонить вам?</h6>
+            <ul class="taxonomies margin-top-30">
+                <li><a href="category.html" title="BUILD">BUILD</a></li>
+                <li><a href="category.html" title="DESIGN">DESIGN</a></li>
+                <li><a href="category.html" title="FLOORING">FLOORING</a></li>
+                <li><a href="category.html" title="PAINTING">PAINTING</a></li>
+                <li><a href="category.html" title="PAVERS">PAVERS</a></li>
+                <li><a href="category.html" title="PLUMBING">PLUMBING</a></li>
+                <li><a href="category.html" title="RENOVATION">RENOVATION</a></li>
+                <li><a href="category.html" title="REPAIRS">REPAIRS</a></li>
+                <li><a href="category.html" title="SOLAR SYSTEMS">SOLAR SYSTEMS</a></li>
+                <li><a href="category.html" title="TILING">TILING</a></li>
             </ul>
         </div>
     </div>

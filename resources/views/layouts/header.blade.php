@@ -46,7 +46,7 @@
                     <nav style="width: -webkit-fill-available;">
                         <ul class="sf-menu">
                             <li>
-                                <a href="#" title="О ЦЕНТРЕ">
+                                <a href="/about" title="О ЦЕНТРЕ">
                                     О ЦЕНТРЕ
                                 </a>
                             </li>

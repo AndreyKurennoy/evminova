@@ -782,7 +782,7 @@ ul.sf-menu li li:first-child li:first-child:hover ul, ul.sf-menu li li:first-chi
 /* --- vertical menu --- */
 .vertical-menu li
 {
-	margin-top: 10px;
+	margin-top: 6px;
 }
 .vertical-menu li:first-child
 {
@@ -792,7 +792,7 @@ ul.sf-menu li li:first-child li:first-child:hover ul, ul.sf-menu li li:first-chi
 {	
 	display: block;
 	background: #F5F5F5;
-	padding: 18px 18px 18px 19px;
+	padding: 13px 18px 13px 19px;
 	font-family: 'Open Sans';
 	line-height: 24px;
 	color: #444;
@@ -2519,19 +2519,19 @@ span.odometer.number:after
 {
 	padding-top: 3px;
 	padding-bottom: 3px;
-	font-family: 'Raleway';
+	font-family: 'Open Sans';
 	font-size: 14px;
-	line-height: 24px;
+	line-height: 17px;
 	padding-left: 30px;
 }
 .list li a
 {
-	color: #F4BC16;
+	color: #1892df;
 	font-weight: 600;
 }
 li.template-bullet:before
 {
-	color: #F4BC16;
+	color: #1892df;
 	padding-right: 15px;
 	margin-left: -30px;
 	vertical-align: text-top;
