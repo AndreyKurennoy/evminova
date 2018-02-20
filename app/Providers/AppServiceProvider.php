@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        $this->composeSite();
     }
 
     /**
@@ -25,5 +26,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    public function composeSite()
+    {
+        view()->composer('*', 'App\Http\Composers\SiteComposer@showAllSitePages');
     }
 }
