@@ -18,6 +18,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/', 'HomeController@index');
 
     Route::get('/about', 'AboutController@index');
+    Route::get('/about/doctors', 'AboutController@doctors');
+    Route::get('/guestbook', 'AboutController@guestbook');
 //Route::get('/services', 'ServicesController@index');
 //Route::get('/prices', 'AboutController@index');
 //Route::get('/about', 'AboutController@index');
@@ -40,6 +42,10 @@ Route::group(['prefix' => 'admin'], function () {
     ]);
 
     Route::resource('prices', 'AdminPricesController', [
+        'as' => 'voyager'
+    ]);
+
+    Route::resource('guestbook', 'AdminGuestbookController', [
         'as' => 'voyager'
     ]);
 

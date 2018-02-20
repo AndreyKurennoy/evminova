@@ -6,7 +6,8 @@
     margin-top: 5px;
     line-height: 19px;
     padding: 7px;
-    background: #f0f0f0;
+    background: #f0faff;
+    border: 1px solid #bddef6;
 }
 .name-review{
     color: #1892df;

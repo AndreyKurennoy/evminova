@@ -3685,6 +3685,7 @@ body.lock-position
 .flex-feature h4{
 	color: #1892df;
 	margin:0;
+	letter-spacing: 0;
 }
 .flex-feature p{
 	padding-top: 0;
@@ -3711,6 +3712,7 @@ body.lock-position
 }
 .flex-service img {
 	/*width:380px;*/
+	border: 1px solid #867f7f;
 }
 
 .flex-service h4 {
@@ -3742,3 +3744,35 @@ body.lock-position
 	padding: 0 10px
 }
 /* Health Features block FLEX styles*/
+
+/*Doctors Flex block styles */
+
+.doctors-container{
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+.doctor{
+	display: flex;
+	max-width: 100%;
+	margin-top: 30px;
+}
+.doctor:first-child{
+	margin-top: 0;
+}
+.doctor-description{
+	padding-left: 10px;
+}
+.doctors-container img{
+	max-width: 270px;
+}
+.doctor-name{
+	color:#1892df;
+	font-size: 15px;
+	font-weight: 400;
+	padding-left: 15px;
+	flex-wrap: wrap;
+}
+
+/*End Doctors Flex block styles */
