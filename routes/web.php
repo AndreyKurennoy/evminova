@@ -45,7 +45,7 @@ Route::group(['prefix' => 'admin'], function () {
         'as' => 'voyager'
     ]);
 
-    Route::resource('guestbook', 'AdminGuestbookController', [
+    Route::resource('guestbook', 'Admin\AdminGuestbookController', [
         'as' => 'voyager'
     ]);
 

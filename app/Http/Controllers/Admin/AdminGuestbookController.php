@@ -14,7 +14,7 @@ class AdminGuestbookController extends Controller
      */
     public function index()
     {
-        return view();
+        return view('vendor.voyager.guestbook.browse');
     }
 
     /**
