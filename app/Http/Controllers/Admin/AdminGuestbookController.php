@@ -2,11 +2,24 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\ReviewRequest;
+use App\Models\Admin\Review;
+use App\Services\Admin\ReviewService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class AdminGuestbookController extends Controller
 {
+
+    public $reviewService;
+
+    public function __construct(
+        ReviewService $reviewService
+    )
+    {
+        $this->reviewService = $reviewService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +27,8 @@ class AdminGuestbookController extends Controller
      */
     public function index()
     {
-        return view('vendor.voyager.guestbook.browse');
+        $reviews = Review::all();
+        return view('vendor.voyager.guestbook.browse', compact('reviews'));
     }
 
     /**
@@ -24,7 +38,7 @@ class AdminGuestbookController extends Controller
      */
     public function create()
     {
-        //
+        return view('vendor.voyager.guestbook.add');
     }
 
     /**
@@ -33,9 +47,10 @@ class AdminGuestbookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReviewRequest $request)
     {
-        //
+        $this->reviewService->storeData($request->request->all());
+        return redirect(route("voyager.guestbook.index"));
     }
 
     /**
@@ -57,7 +72,8 @@ class AdminGuestbookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $review = Review::findOrFail($id);
+        return view('vendor.voyager.guestbook.edit', compact('review'));
     }
 
     /**
@@ -67,9 +83,10 @@ class AdminGuestbookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ReviewRequest $request, $id)
     {
-        //
+        $this->reviewService->updateById($id, $request->request->all());
+        return redirect(route("voyager.guestbook.index"));
     }
 
     /**
@@ -80,6 +97,7 @@ class AdminGuestbookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->reviewService->deleteById($id);
+        return redirect(route("voyager.guestbook.index"));
     }
 }

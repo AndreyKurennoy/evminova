@@ -12,6 +12,6 @@ class SiteComposer
     public function showAllSitePages(View $view)
     {
 //        $view->with('aboutMenus', Menu::all() );
-//        $view->with('aboutSheets', Sheet::where(['status'=>1, 'category' => 2])->get());
+//        $view->with('catalogSheets', Sheet::where(['status'=>1, 'category' => 2])->get());
     }
 }

@@ -54,7 +54,7 @@
             <i class="voyager-file-text"></i> О Центре
         </h1>
         @can('add',app("TCG\Voyager\Models\Page"))
-            <a href="{{ route('voyager.about.create') }}" class="btn btn-success btn-add-new">
+            <a href="{{ route('voyager.guestbook.create') }}" class="btn btn-success btn-add-new">
                 <i class="voyager-plus"></i> <span>Добавить отзыв</span>
             </a>
         @endcan
@@ -71,30 +71,32 @@
                             <table id="dataTable" class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th class="sorting">Название</th>
-                                    {{--<th class="sorting">Категория</th>--}}
+                                    <th class="sorting">Имя</th>
+                                    <th class="sorting">Email</th>
+                                    <th class="sorting">Проблема</th>
                                     <th class="sorting">Статус</th>
                                     <th class="sorting">Дата изменения</th>
                                     <th class="sorting">Доступные действия</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {{--@foreach($sheets as $sheet)--}}
-                                    {{--<tr id="{{$sheet->id}}">--}}
-                                        {{--<td><div class="readmore" style="max-height: none;">{{$sheet->title}}</div></td>--}}
-                                        {{--<td>Новости</td>--}}
-                                        {{--<td>@if($sheet->status == 1)Опубликовано @else Черновик @endif</td>--}}
-                                        {{--<td>{{ !empty($sheet->updated_at) ? $sheet->updated_at : $sheet->created_at }}</td>--}}
-                                        {{--<td class="no-sort no-click" id="bread-actions">--}}
-                                            {{--<a href="#" title="Удалить" class="btn btn-sm btn-danger pull-right delete" data-id="{{$sheet->id}}" id="delete1">--}}
-                                                {{--<i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Удалить</span>--}}
-                                            {{--</a>--}}
-                                            {{--<a href="{{ route('voyager.about.edit', $sheet->id) }}" title="Изменить" class="btn btn-sm btn-primary pull-right edit">--}}
-                                                {{--<i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Изменить</span>--}}
-                                            {{--</a>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                {{--@endforeach--}}
+                                @foreach($reviews as $review)
+                                    <tr id="{{$review->id}}">
+                                        <td><div class="readmore" style="max-height: none;">{{$review->name}}</div></td>
+                                        <td><div class="readmore" style="max-height: none;">{{$review->email}}</div></td>
+                                        <td><div class="readmore" style="max-height: none;">{{$review->problem}}</div></td>
+                                        <td>@if($review->status == 1)Опубликовано @else Черновик @endif</td>
+                                        <td>{{ !empty($review->updated_at) ? $review->updated_at : $review->created_at }}</td>
+                                        <td class="no-sort no-click" id="bread-actions">
+                                            <a href="#" title="Удалить" class="btn btn-sm btn-danger pull-right delete" data-id="{{$review->id}}" id="delete1">
+                                                <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Удалить</span>
+                                            </a>
+                                            <a href="{{ route('voyager.guestbook.edit', $review->id) }}" title="Изменить" class="btn btn-sm btn-primary pull-right edit">
+                                                <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Изменить</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -113,7 +115,7 @@
                     <h4 class="modal-title"><i class="voyager-trash"></i> {{ __('voyager.generic.delete_question') }}?</h4>
                 </div>
                 <div class="modal-footer">
-                    <form action="{{ route('voyager.about.index') }}" id="delete_form" method="POST">
+                    <form action="{{ route('voyager.guestbook.index') }}" id="delete_form" method="POST">
                         {{ method_field("DELETE") }}
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-danger pull-right delete-confirm"

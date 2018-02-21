@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\Review;
+use App\Services\Admin\ReviewService;
 use App\Models\Admin\Sheet;
 use App\Services\Admin\DoctorService;
 use Illuminate\Http\Request;
@@ -9,12 +11,15 @@ use Illuminate\Http\Request;
 class AboutController extends Controller
 {
     public $doctorService;
+    public $reviewService;
 
     public function __construct(
-        DoctorService $doctorService
+        DoctorService $doctorService,
+        ReviewService $reviewService
     )
     {
         $this->doctorService = $doctorService;
+        $this->reviewService = $reviewService;
     }
     public function index(){
 
@@ -34,6 +39,8 @@ class AboutController extends Controller
     }
 
     public function guestbook(){
-        return view('about.guestbook');
+
+        $reviews = $this->reviewService->getAllReviews();
+        return view('about.guestbook', compact('reviews'));
     }
 }
