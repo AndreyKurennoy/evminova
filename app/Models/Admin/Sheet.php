@@ -13,6 +13,7 @@ class Sheet extends Model
     protected $fillable = [
         'category',
         'title',
+        'category_name',
         'seo_title',
         'body',
         'meta_description',

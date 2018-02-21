@@ -2,10 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\Sheet;
 use Illuminate\Http\Request;
-
+use App\Services\Admin\SheetsService;
+use App\Http\Requests\SheetsRequest;
 class AdminAboutController extends Controller
 {
+    public $sheetsService;
+
+    public function __construct(
+        SheetsService $sheetsService
+    )
+    {
+        $this->sheetsService = $sheetsService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +24,9 @@ class AdminAboutController extends Controller
      */
     public function index()
     {
-        return view('vendor.voyager.about.browse');
+
+        $sheets = Sheet::where(['category_name' => 'about'])->get();
+        return view('vendor.voyager.about.browse',compact('sheets'));
     }
 
     /**
@@ -23,7 +36,8 @@ class AdminAboutController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('vendor.voyager.about.add');
     }
 
     /**
@@ -32,9 +46,10 @@ class AdminAboutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SheetsRequest $request)
     {
-        //
+        $this->sheetsService->storeAbout($request->request->all());
+        return redirect(route("voyager.about.index"));
     }
 
     /**
@@ -45,7 +60,7 @@ class AdminAboutController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -56,7 +71,8 @@ class AdminAboutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sheet = $this->sheetsService->getById($id);
+        return view('vendor.voyager.about.edit', compact('sheet'));
     }
 
     /**
@@ -66,9 +82,10 @@ class AdminAboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SheetsRequest $request, $id)
     {
-        //
+        $this->sheetsService->updateAbout($request->request->all(), $id);
+        return redirect(route("voyager.about.index"));
     }
 
     /**
@@ -79,6 +96,7 @@ class AdminAboutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->sheetsService->softDelete($id);
+        return redirect(route("voyager.about.index"));
     }
 }

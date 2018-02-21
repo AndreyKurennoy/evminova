@@ -5,14 +5,15 @@
         <div class="column column-1-4 margin-bottom-30">
             <ul class="vertical-menu">
                 {{--@foreach($sheets as $sheet)--}}
-                <li {{--@if(isset($currentSheet->slug) and $currentSheet->slug == $sheet->slug) class="selected"  @endif --}}>
-                    <a href="/catalog/{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
+
+                <li @if(Request::is('about')) class="selected"  @endif>
+                    <a href="/about{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
                         {{--{{$sheet->title}}--}}
                         О Центре
                         <span class="template-arrow-menu"></span>
                     </a>
                 </li>
-                <li {{--@if(isset($currentSheet->slug) and $currentSheet->slug == $sheet->slug) class="selected"  @endif --}}>
+                <li @if(Request::is('about/doctors')) class="selected"  @endif>
                     <a href="/about/doctors{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
                         {{--{{$sheet->title}}--}}
                         Доктора
@@ -33,7 +34,7 @@
                         <span class="template-arrow-menu"></span>
                     </a>
                 </li>
-                <li {{--@if(isset($currentSheet->slug) and $currentSheet->slug == $sheet->slug) class="selected"  @endif --}}>
+                <li @if(Request::is('guestbook')) class="selected"  @endif>
                     <a href="/guestbook{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
                         {{--{{$sheet->title}}--}}
                         Отзывы

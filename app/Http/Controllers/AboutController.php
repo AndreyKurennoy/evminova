@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\Sheet;
 use App\Services\Admin\DoctorService;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,14 @@ class AboutController extends Controller
         $this->doctorService = $doctorService;
     }
     public function index(){
-        return view('about.about');
+
+//        dd($content);
+
+    }
+
+    public function about(){
+        $content = Sheet::where(['category_name' => 'about', 'slug' => 'about'])->first();
+        return view('about.center', compact('content'));
     }
 
     public function doctors(){
