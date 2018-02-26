@@ -105,6 +105,43 @@
             </div>
         </div>
     </div>
+    <form class="form-edit-add" role="form" action="{{ route('voyager.savepage') }}" method="POST" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <input type="hidden" name="slug" value="guestbook">
+    <div class="col-md-4">
+        <div class="panel panel-bordered panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="icon wb-search"></i>SEO информация</h3>
+                <div class="panel-actions">
+                    <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="title">Заголовок</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Заголовок"  data-slug-origin="title" data-slug-forceupdate="true" value="@if(null !== Request::old('title')){{Request::old('title')}}
+                    @elseif(!empty($sheet->title)) {{$sheet->title}} @else {{''}}@endif">
+                </div>
+                <div class="form-group">
+                    <label for="name">Описание (meta)</label>
+                    <textarea class="form-control" name="meta_description">@if(null !== Request::old('meta_description')){{Request::old('meta_description')}}
+                    @elseif(!empty($sheet->meta_description)) {{$sheet->meta_description}} @else {{''}}@endif</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="name">Ключевые слова (meta)</label>
+                    <textarea class="form-control" name="meta_keywords">@if(null !== Request::old('meta_keywords')){{Request::old('meta_keywords')}}
+                        @elseif(!empty($sheet->meta_keywords)) {{$sheet->meta_keywords}} @else {{''}}@endif</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="name">SEO название</label>
+                    <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="@if(null !== Request::old('seo_title')){{Request::old('seo_title')}}
+                    @elseif(!empty($sheet->seo_title)) {{$sheet->seo_title}} @else {{''}}@endif">
+                </div>
+            </div>
+        </div>
+    </div>
+        <button type="submit" class="btn btn-primary pull-right">Сохранить мета</button>
+    </form>
     {{--Single delete modal --}}
     <div class="modal modal-danger fade" tabindex="-1" id="delete_modal" role="dialog">
         <div class="modal-dialog">

@@ -56,7 +56,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="ЦЕНЫ">
+                                <a href="/prices" title="ЦЕНЫ">
                                     ЦЕНЫ
                                 </a>
                             </li>

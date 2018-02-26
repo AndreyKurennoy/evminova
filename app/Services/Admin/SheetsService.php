@@ -78,6 +78,19 @@ class SheetsService
 //    public function doctors(){
 //        return $this->belongsToMany('App\Models\Admin\Doctor');
 //    }
-
+    public function savePage($data){
+//        dd($data);
+        $sheets = Sheet::where('slug', $data['slug'])->first();
+        if (!empty($sheets)){
+            $sheets->fill($data);
+            $sheets->status = 1;
+            $sheets->save();
+        }else{
+            $sheets = new Sheet();
+            $sheets->fill($data);
+            $sheets->status = 1;
+            $sheets->save();
+        }
+    }
 
 }

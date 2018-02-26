@@ -17,7 +17,9 @@ class Rating extends Model
         'category_id',
         'sheet_id',
         'points',
-        'token'
+        'token',
+        'ip',
+        'slug'
     ];
 
     public function sheet(){

@@ -3,6 +3,7 @@
 namespace App\Services\Admin;
 
 use App\Models\Admin\Rating;
+use App\Models\Admin\Sheet;
 
 class RatingService {
     public function findToken($token){
@@ -13,5 +14,29 @@ class RatingService {
         $raiting = new Rating();
         $raiting->fill($data);
         $raiting->save();
+    }
+
+    public function saveSlugRating($data){
+        $rating = new Rating();
+        $rating->fill($data);
+        $rating->save();
+    }
+
+    public function getSlugRating($slug){
+        $ratings = Rating::where('slug', $slug)->get();
+//        dd($ratings);
+        $ratingSlug['count'] = $ratings->count();
+        $title = Sheet::where('slug', $slug)->first();
+        $ratingSlug['name'] = !empty($title) ? $title->title : '';
+        $ratingsSum = 0;
+        if ($ratingSlug['count'] !== 0) {
+            foreach ($ratings as $rating){
+                $ratingsSum += $rating->points;
+            }
+            $ratingSlug['value'] = $ratingsSum / $ratingSlug['count'];
+        }else{
+            $ratingSlug['value'] = 5;
+        }
+        return $ratingSlug;
     }
 }

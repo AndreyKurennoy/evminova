@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ReviewRequest;
 use App\Models\Admin\Review;
+use App\Models\Admin\Sheet;
 use App\Services\Admin\ReviewService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,7 +29,9 @@ class AdminGuestbookController extends Controller
     public function index()
     {
         $reviews = Review::all();
-        return view('vendor.voyager.guestbook.browse', compact('reviews'));
+        $sheet = Sheet::where('slug', 'guestbook')->first();
+
+        return view('vendor.voyager.guestbook.browse', compact('reviews', 'sheet'));
     }
 
     /**

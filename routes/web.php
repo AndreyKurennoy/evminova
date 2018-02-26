@@ -21,12 +21,14 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/about/doctors', 'AboutController@doctors');
     Route::get('/guestbook', 'AboutController@guestbook');
 //Route::get('/services', 'ServicesController@index');
-//Route::get('/prices', 'AboutController@index');
+    Route::get('/prices', 'AboutController@prices');
 //Route::get('/about', 'AboutController@index');
 //Route::get('/about', 'AboutController@index');
     Route::resource('catalog', 'CatalogController');
 
-
+    //Rating and Reviews
+    Route::post('/saverating', 'RatingReviewController@addRating')->name('saverating');
+    Route::post('/savereview', 'RatingReviewController@addReview')->name('savereview');
 });
 
 
@@ -36,6 +38,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('test', 'AdminPagesCustomController', [
         'as' => 'voyager'
     ]);
+    Route::post('/savepage', 'AdminPagesCustomController@savePage')->name('voyager.savepage');
 
     Route::resource('about', 'AdminAboutController', [
         'as' => 'voyager'

@@ -99,4 +99,8 @@ class AdminAboutController extends Controller
         $this->sheetsService->softDelete($id);
         return redirect(route("voyager.about.index"));
     }
+
+    public function saveMeta(Request $request){
+//        $sheets = $this->sheetsService
+    }
 }

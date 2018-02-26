@@ -1,4 +1,4 @@
-@if(isset($currentSheet) && !empty($currentSheet))
+{{--@if(isset($currentSheet) && !empty($currentSheet))--}}
     <div class="row">
         <div class="body_rating">
             <div class="rating-title">
@@ -16,14 +16,14 @@
             <div class="text-rating" itemscope="" itemtype="http://schema.org/Service">
                 <div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
                             <span itemprop="itemReviewed" style="display: none">
-                                <span id="itemReviewed_name" itemprop="name">{{$currentSheet->title}}</span>
+                                <span id="itemReviewed_name" itemprop="name">{{$ratingSlug['name']}}</span>
                             </span>
-                    Рейтинг <span id="Agr_Rating" itemprop="ratingValue">{{$rating['value']}}</span> из
+                    Рейтинг <span id="Agr_Rating" itemprop="ratingValue">{{$ratingSlug['value']}}</span> из
                     <span itemprop="bestRating">5</span>
-                    -  <span id="Count_Rating" itemprop="ratingCount">{{$rating['count']}}</span> проголосовало
+                    -  <span id="Count_Rating" itemprop="ratingCount">{{$ratingSlug['count']}}</span> проголосовало
                 </div>
             </div>
             <div class="loading">Загрузка…</div>
         </div>
     </div>
-@endif
+{{--@endif--}}

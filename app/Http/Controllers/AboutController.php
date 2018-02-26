@@ -43,4 +43,8 @@ class AboutController extends Controller
         $reviews = $this->reviewService->getAllReviews();
         return view('about.guestbook', compact('reviews'));
     }
+
+    public function prices(){
+        return view('about.prices');
+    }
 }

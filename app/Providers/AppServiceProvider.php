@@ -30,6 +30,6 @@ class AppServiceProvider extends ServiceProvider
 
     public function composeSite()
     {
-        view()->composer('*', 'App\Http\Composers\SiteComposer@showAllSitePages');
+        view()->composer('*', 'App\Http\Composers\SiteComposer@showSlugRatings');
     }
 }

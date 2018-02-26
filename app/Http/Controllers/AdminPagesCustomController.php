@@ -122,4 +122,8 @@ class AdminPagesCustomController extends Controller
         $this->sheetsService->softDelete($id);
 //        redirect('voyager.test.index');
     }
+
+    public function savePage(Request $request){
+        $this->sheetsService->savePage($request->request->all());
+    }
 }

@@ -30,6 +30,7 @@ class ReviewService
     public function updateById($id, $data){
         $review = Review::findOrFail($id);
         $review->fill($data);
+        $review->status = 0;
         $review->save();
 
     }

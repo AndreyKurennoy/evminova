@@ -18,8 +18,8 @@
 @stop
 
 @section('scripts')
-    @if(isset($currentSheet) && !empty($currentSheet))
-        <script> var entityCategory = 2; var url = "{{route('catalog.store')}}"; var token = "{{ csrf_token() }}"; var id = "{{$content->id}}" </script>
+    {{--@if(isset($currentSheet) && !empty($currentSheet))--}}
+        <script> var url = "{{route('saverating')}}"; var token = "{{ csrf_token() }}"; var slug = "{{request()->path()}}"; </script>
         <script type="text/javascript" src="{{ asset('/js/rating.js')}}"></script>
-    @endif
+    {{--@endif--}}
 @stop
