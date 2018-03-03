@@ -20,8 +20,8 @@
                         <span class="template-arrow-menu"></span>
                     </a>
                 </li>
-                <li {{--@if(isset($currentSheet->slug) and $currentSheet->slug == $sheet->slug) class="selected"  @endif --}}>
-                    <a href="/catalog/{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
+                <li @if(Request::is('certificates')) class="selected"  @endif>
+                    <a href="/certificates/{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
                         {{--{{$sheet->title}}--}}
                         Сертификаты
                         <span class="template-arrow-menu"></span>

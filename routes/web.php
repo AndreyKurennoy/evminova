@@ -20,19 +20,19 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/about', 'AboutController@about');
     Route::get('/about/doctors', 'AboutController@doctors');
     Route::get('/guestbook', 'AboutController@guestbook');
-//Route::get('/services', 'ServicesController@index');
+    Route::get('/certificates', 'AboutController@certificates');
     Route::get('/prices', 'AboutController@prices');
-//Route::get('/about', 'AboutController@index');
+    Route::get('/Lechim', 'NewsController@index');
 //Route::get('/about', 'AboutController@index');
     Route::resource('catalog', 'CatalogController');
-
+    Route::resource('news', 'NewsController');
     //Rating and Reviews
     Route::post('/saverating', 'RatingReviewController@addRating')->name('saverating');
     Route::post('/savereview', 'RatingReviewController@addReview')->name('savereview');
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Voyager::routes();
 
     Route::resource('test', 'AdminPagesCustomController', [
@@ -48,6 +48,10 @@ Route::group(['prefix' => 'admin'], function () {
         'as' => 'voyager'
     ]);
 
+    Route::resource('pricestypes', 'Admin\PricesTypesController', [
+        'as' => 'voyager'
+    ]);
+
     Route::resource('guestbook', 'Admin\AdminGuestbookController', [
         'as' => 'voyager'
     ]);
@@ -57,6 +61,10 @@ Route::group(['prefix' => 'admin'], function () {
     ], ['only' => ['index', 'store']]);
 
     Route::resource('services', 'AdminMainServicesController', [
+        'as' => 'voyager'
+    ], ['only' => ['index', 'store']]);
+
+    Route::resource('services-news', 'AdminMainServicesController', [
         'as' => 'voyager'
     ], ['only' => ['index', 'store']]);
 

@@ -3776,3 +3776,31 @@ body.lock-position
 }
 
 /*End Doctors Flex block styles */
+
+.alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+.alert {
+	padding: 15px;
+	/* margin-bottom: 20px; */
+	margin-top: 16px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.review-success{
+	padding:25px 15px 25px 15px;
+	background: #1892df;
+	width: fit-content;
+	margin: auto;
+	color: #FFF;
+}
+.price-header:after{
+	margin-top: 0;
+}
+.wpb_wrapper td {
+	padding: 9px 30px;
+
+}

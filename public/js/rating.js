@@ -49,13 +49,32 @@ $(function () {
             success: function (data2) {
                 if (data2.success) {
                 //    Скрываем форму и выводим блок об успешной отправке отзыва на модерацию
+                    $('#review-form').hide();
+                    $('<div class="review-success">Ваш отзыв успешно отправлен на модерацию!</div>').insertBefore($('#review-form'));
                 }
             },
             error: function (data2) {
+                $('.alert').remove();
                 var errors = data2.responseJSON.errors;
+                console.log(errors);
                 // $(errors).each(e)
             //    прозодимся циклом по всем ошибкам и перед формой выводим их в бутрстаптном варике
-
+                if(errors.email){
+                    $('input[name=email]').focus();
+                    $('<div class="alert alert-danger">'+ errors.email +'</div>').insertBefore($('input[name=email]'));
+                }
+                if(errors.name){
+                    $('input[name=name]').focus();
+                    $('<div style="margin-top: 0;" class="alert alert-danger">'+ errors.name +'</div>').insertBefore($('input[name=name]'));
+                }
+                if(errors.problem){
+                    $('input[name=problem]').focus();
+                    $('<div class="alert alert-danger">'+ errors.problem +'</div>').insertBefore($('input[name=problem]'));
+                }
+                if(errors.body){
+                    $('textarea[name=body]').focus();
+                    $('<div class="alert alert-danger" style="margin-bottom: 16px; margin-top: 0!important;">'+ errors.body +'</div>').insertBefore($('textarea[name=body]'));
+                }
             }
         });
     });

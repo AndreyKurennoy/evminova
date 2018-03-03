@@ -74,6 +74,7 @@ class AdminDoctorsController extends Controller
     public function edit($id)
     {
         $doctor = $this->doctorService->getById($id);
+
         return view('vendor.voyager.doctors.edit', compact('doctor'));
     }
 

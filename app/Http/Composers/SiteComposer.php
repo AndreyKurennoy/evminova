@@ -11,9 +11,13 @@ use TCG\Voyager\Models\Menu;
 class SiteComposer
 {
     public $ratingService;
-    public function __construct(RatingService $ratingService)
+    public $sheetService;
+    public function __construct(RatingService $ratingService,
+                                SheetsService $sheetsService
+                                )
     {
         $this->ratingService = $ratingService;
+        $this->sheetService = $sheetsService;
     }
 
     public function showAllSitePages(View $view)
@@ -25,5 +29,9 @@ class SiteComposer
 
     public function showSlugRatings(View $view){
         $view->with('ratingSlug', $this->ratingService->getSlugRating(request()->path()));
+    }
+
+    public function showNewsMenu(View $view){
+        $view->with('news_sheets', $this->sheetService->getAllPublishedNews());
     }
 }

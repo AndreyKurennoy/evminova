@@ -2,12 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin\Prices;
-use App\Models\Admin\PricesTypes;
 use Illuminate\Http\Request;
+use App\Services\Admin\SheetsService;
+use App\Services\Admin\RatingService;
+use App\Services\Admin\MainOptionsService;
 
-class AdminPricesController extends Controller
+class NewsController extends Controller
 {
+
+    public $ratingService;
+    public $sheetsService;
+    public $mainOptionsService;
+
+    public function __construct(
+        RatingService $ratingService,
+        SheetsService $sheetsService,
+        MainOptionsService $mainOptionsService
+    )
+    {
+        $this->sheetsService = $sheetsService;
+        $this->ratingService = $ratingService;
+        $this->mainOptionsService = $mainOptionsService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,10 +31,14 @@ class AdminPricesController extends Controller
      */
     public function index()
     {
-        $price_types = PricesTypes::all();
-        $prices_all = PricesTypes::withTrashed()->get();
-        $prices = Prices::all();
-        return view("vendor.voyager.prices.browse", compact('price_types', 'prices', 'prices_all'));
+        $options = $this->mainOptionsService->getPageOptions('services-news');
+//        dd($options);
+        $meta = [
+            'title' => $options->where('option_name', 'seo_title')->pluck('value')->first(),
+            'description' => $options->where('option_name', 'meta_description')->pluck('value')->first(),
+            'keywords' => $options->where('option_name', 'meta_keywords')->pluck('value')->first(),
+        ];
+        return view('lechim', compact('options', 'meta'));
     }
 
     /**
@@ -39,11 +59,7 @@ class AdminPricesController extends Controller
      */
     public function store(Request $request)
     {
-        $type = new Prices();
-        $type->fill($request->request->all());
-        $type->save();
-        $output = array('success' => 'true');
-        return response()->json($output);
+        //
     }
 
     /**
@@ -52,9 +68,11 @@ class AdminPricesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($keyword)
     {
-        //
+        $currentSheet = $this->sheetsService->getByKeywordPublished($keyword);
+//        dd($currentSheet);
+        return view('lechim', compact('currentSheet'));
     }
 
     /**
@@ -77,11 +95,7 @@ class AdminPricesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $prices_type = Prices::where('id', $id)->first();
-        $prices_type->fill($request->request->all());
-        $prices_type->save();
-        $output = array('success' => 'true');
-        return response()->json($output);
+        //
     }
 
     /**
@@ -92,8 +106,6 @@ class AdminPricesController extends Controller
      */
     public function destroy($id)
     {
-        $prices_type = new Prices();
-        $prices_type->destroy($id);
-        return redirect(route("voyager.prices.index"));
+        //
     }
 }

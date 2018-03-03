@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Admin\ReviewService;
 use Illuminate\Http\Request;
 use App\Services\Admin\MainOptionsService;
 class AdminMainServicesController extends Controller
@@ -19,10 +20,13 @@ class AdminMainServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $options = $this->mainOptionsService->getPageOptions('services');
-        return view('vendor.voyager.home.services', compact('options'));
+        $url_pathes = explode('/',$request->path());
+        $url_path = end($url_pathes);
+        $options = $this->mainOptionsService->getPageOptions(end($url_pathes));
+//        dd($options);
+        return view('vendor.voyager.home.services', compact('options', 'url_path'));
     }
     /**
      * Store a newly created resource in storage.
@@ -32,8 +36,8 @@ class AdminMainServicesController extends Controller
      */
     public function store(Request $request)
     {
-        $options = $this->mainOptionsService->update($request->request->all(), 'services');
-
-        return redirect(route("voyager.services.index"));
+        $url_pathes = explode('/',$request->path());
+        $options = $this->mainOptionsService->update($request->request->all(), end($url_pathes));
+        return redirect(route("voyager.". end($url_pathes) .".index"));
     }
 }

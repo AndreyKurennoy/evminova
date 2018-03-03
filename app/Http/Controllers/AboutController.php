@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\Prices;
+use App\Models\Admin\PricesTypes;
 use App\Models\Admin\Review;
 use App\Services\Admin\ReviewService;
 use App\Models\Admin\Sheet;
@@ -45,6 +47,17 @@ class AboutController extends Controller
     }
 
     public function prices(){
-        return view('about.prices');
+        $prices = Prices::all();
+        $price_types = PricesTypes::all();
+        return view('prices', compact('price_types', 'prices'));
+    }
+
+    public function certificates(){
+        return view('about.certificates');
+    }
+
+    public function lechim(){
+//        $sheets = Sheet::where('category', 3)->get();
+        return view('lechim', compact('sheets'));
     }
 }

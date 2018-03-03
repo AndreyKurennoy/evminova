@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Admin\Prices;
 use App\Models\Admin\PricesTypes;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class AdminPricesController extends Controller
+class PricesTypesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,8 @@ class AdminPricesController extends Controller
      */
     public function index()
     {
-        $price_types = PricesTypes::all();
-        $prices_all = PricesTypes::withTrashed()->get();
-        $prices = Prices::all();
-        return view("vendor.voyager.prices.browse", compact('price_types', 'prices', 'prices_all'));
+        $prices_types = PricesTypes::all();
+        return view('vendor.voyager.prices.typesbrowse', compact('prices_types'));
     }
 
     /**
@@ -39,7 +37,7 @@ class AdminPricesController extends Controller
      */
     public function store(Request $request)
     {
-        $type = new Prices();
+        $type = new PricesTypes();
         $type->fill($request->request->all());
         $type->save();
         $output = array('success' => 'true');
@@ -77,7 +75,7 @@ class AdminPricesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $prices_type = Prices::where('id', $id)->first();
+        $prices_type = PricesTypes::where('id', $id)->first();
         $prices_type->fill($request->request->all());
         $prices_type->save();
         $output = array('success' => 'true');
@@ -92,8 +90,8 @@ class AdminPricesController extends Controller
      */
     public function destroy($id)
     {
-        $prices_type = new Prices();
+        $prices_type = PricesTypes::where('id', $id)->first();
         $prices_type->destroy($id);
-        return redirect(route("voyager.prices.index"));
+        return redirect(route("voyager.pricestypes.index"));
     }
 }

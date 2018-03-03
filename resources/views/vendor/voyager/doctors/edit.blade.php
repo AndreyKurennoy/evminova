@@ -118,7 +118,10 @@
                 </div>
             </div>
             <button type="button" onclick="BrowseServer('id_of_the_target_input');">Выберите изображение</button>
-            <input type="hidden" name="photo" id="id_of_the_target_input" value="@if($text_1 = $options->where('option_name', 'photo')->pluck('value')->first()) {{$text_1}}@endif"/>
+            <input type="hidden" name="photo" id="id_of_the_target_input" value="@if($doctor->photo !== null) {{$doctor->photo}}@endif"/>
+            <div>
+                <img class="doctor_photo" style="" src="{{$doctor->photo}}" alt="">
+            </div>
             <button type="submit" class="btn btn-primary pull-right">Обновить</button>
         </form>
     </div>
@@ -154,6 +157,7 @@
         function SetUrl( url, width, height, alt )
         {
             document.getElementById(urlobj).value = url ;
+            jQuery('.doctor_photo').attr('src', url);
             oWindow = null;
         }
     </script>

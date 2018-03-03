@@ -14,6 +14,10 @@ class SheetsService
         return Sheet::where(['category' => 2, 'status' => 1])->get();
     }
 
+    public function getAllPublishedNews(){
+        return Sheet::where(['category' => 3, 'status' => 1])->get();
+    }
+
     public function getCatalogByKeywordPublished($keyword, $category){
         return Sheet::where(['slug'=> $keyword, 'category' => $category, 'status' => 1])->first();
     }
@@ -24,6 +28,10 @@ class SheetsService
 
     public function getByKeyword($keyword){
         return Sheet::where('slug', $keyword)->first();
+    }
+
+    public function getByKeywordPublished($keyword){
+        return Sheet::where(['slug'=> $keyword, 'status' => 1])->first();
     }
 
     public function softDelete($id){

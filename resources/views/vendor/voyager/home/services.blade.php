@@ -59,7 +59,7 @@
 
 @section('content')
     <div class="page-content container-fluid">
-        <form class="form-edit-add" role="form" action="{{ route('voyager.services.store') }}" method="POST" enctype="multipart/form-data">
+        <form class="form-edit-add" role="form" action="{{ route('voyager.'. $url_path .'.store') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="row">
                 <div class="col-md-8">

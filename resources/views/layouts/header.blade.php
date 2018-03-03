@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="ЧТО ЛЕЧИМ">
+                                <a href="/Lechim" title="ЧТО ЛЕЧИМ">
                                     ЧТО ЛЕЧИМ
                                 </a>
                             </li>
