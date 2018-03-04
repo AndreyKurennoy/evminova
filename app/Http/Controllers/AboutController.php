@@ -60,4 +60,8 @@ class AboutController extends Controller
 //        $sheets = Sheet::where('category', 3)->get();
         return view('lechim', compact('sheets'));
     }
+
+    public function contacts(){
+        return view('contacts');
+    }
 }

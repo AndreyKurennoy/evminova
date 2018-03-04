@@ -76,7 +76,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="КОНТАКТЫ">
+                                <a href="/contacts" title="КОНТАКТЫ">
                                     КОНТАКТЫ
                                 </a>
                             </li>

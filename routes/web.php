@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/certificates', 'AboutController@certificates');
     Route::get('/prices', 'AboutController@prices');
     Route::get('/Lechim', 'NewsController@index');
-//Route::get('/about', 'AboutController@index');
+    Route::get('/contacts', 'AboutController@contacts');
     Route::resource('catalog', 'CatalogController');
     Route::resource('news', 'NewsController');
     //Rating and Reviews
