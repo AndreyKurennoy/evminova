@@ -1,7 +1,14 @@
 @extends('voyager::master')
 
-@section('page_title', __('voyager.generic.add').' страницу')
+@section('page_title', __('voyager.generic.edit').' Профилактор')
 
+@section('page_header')
+    <div class="container-fluid">
+        <h1 class="page-title">
+            <i class="voyager-file-text"></i> Раздел Профилактор
+        </h1>
+    </div>
+@stop
 @section('css')
     <style>
         .panel .mce-panel {
@@ -49,17 +56,14 @@
         }
     </style>
 @stop
-
-@section('page_header')
-    <h1 class="page-title">
-        <i class="voyager-news"></i>
-        {{ __('voyager.generic.add').' страницу ' }}
-    </h1>
-@stop
-
 @section('content')
     <div class="page-content container-fluid">
-        <form class="form-edit-add" role="form" action="{{ route('voyager.test.store') }}" method="POST" enctype="multipart/form-data">
+        <form class="form-edit-add" role="form" action="@if(isset($sheets->id)){{ route('voyager.profilaktor.update', $sheets->id) }}@else{{ route('voyager.test.store') }}@endif" method="POST" enctype="multipart/form-data">
+
+            <!-- PUT Method if we are editing -->
+            {{--@if(isset($edit))--}}
+            {{ method_field("PUT") }}
+            {{--@endif--}}
             {{ csrf_field() }}
             <div class="row">
                 @if (count($errors) > 0)
@@ -86,7 +90,7 @@
                             </div>
                         </div>
                         <div class="panel-body" style="">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Название" value="{{Request::old('title')}}">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Название" value="{{$sheets->title}}">
                         </div>
                     </div>
                     <!-- ### CONTENT ### -->
@@ -97,7 +101,7 @@
                                 <a class="panel-action voyager-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
                             </div>
                         </div>
-                        <textarea class="form-control custom-mce" id="richtextbody" name="body" style="border: 0px;">{{Request::old('body')}}</textarea>
+                        <textarea class="form-control custom-mce" id="" name="body" style="border: 0px;">{{$sheets->body}}</textarea>
                     </div>
 
                 </div>
@@ -105,7 +109,7 @@
                     <!-- ### DETAILS ### -->
                     <div class="panel panel panel-bordered panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-clipboard"></i> Свойства</h3>
+                            <h3 class="panel-title"><i class="icon wb-clipboard"></i>Свойства</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
@@ -113,31 +117,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Ссылка</label>
-                                <input type="text" class="form-control" id="slug" name="slug" placeholder="slug"  data-slug-origin="title" data-slug-forceupdate="true" value="{{Request::old('slug')}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Статус публикации</label>
-                                <select class="form-control" name="status">
-                                    <option value="1" @if(old('status') == 1) selected @endif>Опубликовано</option>
-                                    <option value="0" @if(old('status') == 0) selected @endif>Черновик</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Категория статьи</label>
-                                <select class="form-control" name="category">
-                                    <option value="1" @if(old('category') == 1) selected @endif>Новости</option>
-                                    <option value="2" @if(old('category') == 2) selected @endif>Услуга</option>
-                                    <option value="3" @if(old('category') == 3) selected @endif>Заболевания</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Превью (только для новостей)</label>
-                                <textarea class="form-control" name="preview">{{Request::old('preview')}}</textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="button" onclick="BrowseServer('id_of_the_target_input');">Выберите изображение превью</button>
-                                <span id="img-success" style="@if(Request::old('preview_img') === null) display:none;@endif float: right; color: green;font-weight: 600;">Выбрано!</span>
-                                <input type="hidden" name="preview_img" id="id_of_the_target_input" value="{{Request::old('preview_img')}}"/>
+                                <input type="text" class="form-control" id="slug" name="slug" placeholder="slug"  data-slug-origin="title" data-slug-forceupdate="true" value="{{$sheets->slug}}">
                             </div>
                         </div>
                     </div>
@@ -153,65 +133,26 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Описание (meta)</label>
-                                <textarea class="form-control" name="meta_description">{{Request::old('meta_description')}}</textarea>
+                                <textarea class="form-control" name="meta_description">{{$sheets->meta_description}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="name">Ключевые слова (meta)</label>
-                                <textarea class="form-control" name="meta_keywords">{{Request::old('meta_keywords')}}</textarea>
+                                <textarea class="form-control" name="meta_keywords">{{$sheets->meta_keywords}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="name">SEO название</label>
-                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="{{Request::old('seo_title')}}">
+                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="{{$sheets->seo_title}}">
                             </div>
                         </div>
-                    </div>
-                    <div class="panel panel-bordered panel-warning">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-clipboard"></i> Свойства</h3>
-                            <div class="panel-actions">
-                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                        <div class="form-group">
-                            <label for="name">Первый</label>
-                            <select class="form-control" name="doctor[]">
-                                @foreach($doctors as $doctor)
-                                    <option value="{{$doctor->id}}" @if(old('doctor.0') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Второй</label>
-                            <select class="form-control" name="doctor[]">
-                                @foreach($doctors as $doctor)
-                                    <option value="{{$doctor->id}}" @if(old('doctor.1') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Третий</label>
-                            <select class="form-control" name="doctor[]">
-                                @foreach($doctors as $doctor)
-                                    <option value="{{$doctor->id}}" @if(old('doctor.2') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary pull-right">Обновить</button>
+            <button type="submit" id="update" class="btn btn-primary pull-right">Обновить</button>
         </form>
     </div>
 @stop
 
 @section('javascript')
-    <script>
-        $(document).ready(function(){
-            $(".form-edit-add").unbind('submit');
-        });
-    </script>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>
         jQuery(document).ready(function() {

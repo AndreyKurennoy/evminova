@@ -1,6 +1,6 @@
 @extends('voyager::master')
 
-@section('page_title', __('voyager.generic.'.(isset($edit) ? 'edit' : 'show')).' Записи')
+@section('page_title', __('voyager.generic.'.(isset($edit) ? 'edit' : 'edit')).' Записи')
 
 @section('css')
     <style>
@@ -53,7 +53,7 @@
 @section('page_header')
     <h1 class="page-title">
         <i class="voyager-news"></i>
-        {{ __('voyager.generic.'.(isset($edit) ? 'edit' : 'show')).' ' }}
+        Изменение записи
     </h1>
 @stop
 
@@ -134,6 +134,15 @@
                                     <option value="2" @if($sheets->category == 2) selected @endif>Услуга</option>
                                     <option value="3" @if($sheets->category == 3) selected @endif>Заболевания</option>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Превью (только для новостей)</label>
+                                <textarea class="form-control" name="preview">{{$sheets->preview}}</textarea>
+                            </div>
+                            <div class="form-group">
+                            <button type="button" onclick="BrowseServer('id_of_the_target_input');">Выберите изображение превью</button>
+                            <span id="img-success" style="@if($sheets->preview_img === null) display:none;@endif float: right; color: green;font-weight: 600;">Выбрано!</span>
+                            <input type="hidden" name="preview_img" id="id_of_the_target_input" value="{{$sheets->preview_img}}"/>
                             </div>
                         </div>
                     </div>
@@ -244,5 +253,39 @@
             tinymce.init(editor_config);
 
         });
+    </script>
+    <script type="text/javascript">
+        // File Picker modification for FCK Editor v2.0 - www.fckeditor.net
+        // by: Pete Forde <pete@unspace.ca> @ Unspace Interactive
+        var urlobj;
+
+        function BrowseServer(obj)
+        {
+            urlobj = obj;
+            OpenServerBrowser(
+                '/laravel-filemanager?type=Images',
+                screen.width * 0.7,
+                screen.height * 0.7 ) ;
+        }
+
+        function OpenServerBrowser( url, width, height )
+        {
+            var iLeft = (screen.width - width) / 2 ;
+            var iTop = (screen.height - height) / 2 ;
+            var sOptions = "toolbar=no,status=no,resizable=yes,dependent=yes" ;
+            sOptions += ",width=" + width ;
+            sOptions += ",height=" + height ;
+            sOptions += ",left=" + iLeft ;
+            sOptions += ",top=" + iTop ;
+            var oWindow = window.open( url, "BrowseWindow", sOptions ) ;
+        }
+
+        function SetUrl( url, width, height, alt )
+        {
+            document.getElementById(urlobj).value = url ;
+            jQuery('#img-success').show();
+            oWindow = null;
+
+        }
     </script>
 @stop

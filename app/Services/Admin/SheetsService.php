@@ -2,6 +2,7 @@
 namespace App\Services\Admin;
 
 use App\Models\Admin\Doctor;
+use App\Models\Admin\MainOptions;
 use App\Models\Admin\Sheet;
 use Illuminate\Database\Eloquent\Model;
 class SheetsService
@@ -54,12 +55,11 @@ class SheetsService
     }
 
     public function storeData($data){
-//        $sheet = Sheet::create($data);
         $sheet = new Sheet;
         $sheet->fill($data);
         $sheet->category_name = 'catalog';
         $sheet->save();
-
+        $id = $sheet->id;
         $doctor = [];
 
         foreach($data['doctor'] as $doctor_row)
@@ -67,6 +67,7 @@ class SheetsService
             $doctor[] = Doctor::findOrFail($doctor_row);
         }
         $sheet->doctors()->saveMany($doctor);
+        return $id;
     }
 
     public function storeAbout($data){
@@ -83,11 +84,7 @@ class SheetsService
         $sheets->save();
     }
 
-//    public function doctors(){
-//        return $this->belongsToMany('App\Models\Admin\Doctor');
-//    }
     public function savePage($data){
-//        dd($data);
         $sheets = Sheet::where('slug', $data['slug'])->first();
         if (!empty($sheets)){
             $sheets->fill($data);
@@ -101,4 +98,43 @@ class SheetsService
         }
     }
 
+    public function getSheetByCategoryName($name){
+        return $sheets = Sheet::where('category_name', $name)->get();
+    }
+
+    public function getMeta($slug)
+    {
+
+        $slug_arr = explode('/', $slug);
+        $meta_collection = $this->getByKeyword(end($slug_arr));
+        $meta = [];
+
+        if ($meta_collection){
+        $meta['title'] = $meta_collection->seo_title;
+        $meta['description'] = $meta_collection->meta_description;
+        $meta['keywords'] = $meta_collection->meta_keywords;
+        } else {
+            $slug_new = '';
+            switch ($slug){
+                case 'catalog':
+                    $slug_new = 'services';
+                    break;
+                case '/':
+                    $slug_new = 'home';
+                    break;
+                case 'lechim':
+                    $slug_new = 'services-news';
+                    break;
+            }
+
+            if (!empty($slug_new)){
+                $main_options = MainOptions::where('page', $slug_new)->get();
+                $meta['title'] = $main_options->where('option_name', 'seo_title')->pluck('value')->first();
+                $meta['description'] = $main_options->where('option_name', 'meta_description')->pluck('value')->first();
+                $meta['keywords'] = $main_options->where('option_name', 'meta_keywords')->pluck('value')->first();
+            }
+        }
+        return $meta;
+
+    }
 }

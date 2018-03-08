@@ -67,8 +67,8 @@ class AdminPagesCustomController extends Controller
      */
     public function store(SheetsRequest $request)
     {
-        $this->sheetsService->storeData($request->request->all());
-        return redirect(route("voyager.test.index"));
+        $id = $this->sheetsService->storeData($request->request->all());
+        return redirect(route("voyager.test.edit", $id));
     }
 
     /**
@@ -108,7 +108,7 @@ class AdminPagesCustomController extends Controller
     public function update(SheetsRequest $request, $id)
     {
         $this->sheetsService->update($id,$request->request->all());
-        return redirect(route("voyager.test.index"));
+        return redirect(route("voyager.test.edit", $id));
     }
 
     /**

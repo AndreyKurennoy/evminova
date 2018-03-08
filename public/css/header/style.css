@@ -2511,8 +2511,8 @@ span.odometer.number:after
 .pagination li.selected a
 {
 	color: #FFF;
-	background-color: #F4BC16;
-	border-color: #F4BC16;
+	background-color: #1892df;
+	border-color: #1892df;
 }
 /* --- list bullet --- */
 .list li
@@ -3809,7 +3809,7 @@ body.lock-position
 .icon-boxes-1 {
 	float: left;
 	width: 100%;
-	margin: 65px 0 65px 0;
+	margin: 35px 0 35px 0;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -4022,4 +4022,53 @@ body.lock-position
 	-o-transition: .5s;
 	transition: .5s;
 }
+.maps-box{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
 /*END Contacts*/
+
+/*BLog*/
+.article-preview{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.article-img{
+	padding: 0 20px 5px 10px;
+}
+.article-img-after a{
+	font-size: 13px;
+	color: #1892df;
+	/*text-decoration: none;*/
+}
+.article-content{
+	display: flex;
+	max-width: 50%;
+	align-items: flex-start;
+}
+.article-block{
+
+}
+.article-text{
+	padding: 0;
+	line-height: 150%;
+}
+.article-date{
+	 padding-bottom: 5px;
+	 color: #999999;
+ }
+.article-title a h4{
+	color: #1892df;
+	text-decoration: none;
+}
+.article-image{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*END BLog*/

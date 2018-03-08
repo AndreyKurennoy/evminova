@@ -6,8 +6,8 @@ use App\Models\Admin\Rating;
 use App\Models\Admin\Sheet;
 
 class RatingService {
-    public function findToken($token){
-        return Rating::where('token', $token)->first();
+    public function findToken($token, $slug){
+        return Rating::where(['token' => $token, 'slug' => $slug])->first();
     }
 
     public function saveRating($data){
@@ -23,10 +23,13 @@ class RatingService {
     }
 
     public function getSlugRating($slug){
+        $slug_arr = explode('/',$slug);
+        $slug_1 = end($slug_arr);
         $ratings = Rating::where('slug', $slug)->get();
 //        dd($ratings);
         $ratingSlug['count'] = $ratings->count();
-        $title = Sheet::where('slug', $slug)->first();
+        $title = Sheet::where('slug', $slug_1)->first();
+//        dd($title);
         $ratingSlug['name'] = !empty($title) ? $title->title : '';
         $ratingsSum = 0;
         if ($ratingSlug['count'] !== 0) {

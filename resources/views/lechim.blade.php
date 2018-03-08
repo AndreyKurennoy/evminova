@@ -131,3 +131,10 @@
 
     <div class="margin-top-30"></div>
 @stop
+
+@section('scripts')
+    {{--@if(isset($currentSheet) && !empty($currentSheet))--}}
+    <script> var url = "{{route('saverating')}}"; var token = "{{ csrf_token() }}"; var slug = "{{request()->path()}}"; </script>
+    <script type="text/javascript" src="{{ asset('/js/rating.js')}}"></script>
+    {{--@endif--}}
+@stop

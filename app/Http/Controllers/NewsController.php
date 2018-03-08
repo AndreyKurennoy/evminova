@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\Sheet;
 use Illuminate\Http\Request;
 use App\Services\Admin\SheetsService;
 use App\Services\Admin\RatingService;
 use App\Services\Admin\MainOptionsService;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -32,7 +35,6 @@ class NewsController extends Controller
     public function index()
     {
         $options = $this->mainOptionsService->getPageOptions('services-news');
-//        dd($options);
         $meta = [
             'title' => $options->where('option_name', 'seo_title')->pluck('value')->first(),
             'description' => $options->where('option_name', 'meta_description')->pluck('value')->first(),
@@ -107,5 +109,29 @@ class NewsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function all(Request $request)
+    {
+        if($request['page'] == 1){
+            return redirect(route('articles'));
+        }
+        $news = Sheet::where('category', 3)->paginate(10);
+//        dd($news);
+        $img = Storage::url('public/thumbs/наш_центр.jpg');
+
+        $counter = 0;
+        foreach ($news as $article){
+            $img = $article->preview_img;
+            $img_array = explode('/', $img);
+            $news[$counter]->preview_img = end($img_array);
+
+            $date = $article->created_at;
+            $news[$counter]->date = date('d.m.Y',strtotime($date));
+
+            $counter++;
+        }
+
+        return view('allNews', compact('img', 'news'));
     }
 }

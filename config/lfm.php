@@ -48,7 +48,7 @@ return [
     'images_folder_name' => 'storage',
     'files_folder_name'  => 'files',
 
-    'shared_folder_name' => './',
+    'shared_folder_name' => '',
     'thumb_folder_name'  => 'thumbs',
 
     /*
@@ -129,8 +129,8 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'thumb_img_width' => '100',
-    'thumb_img_height' => '100',
+    'thumb_img_width' => 100,
+    'thumb_img_height' => 100,
 
     /*
     |--------------------------------------------------------------------------

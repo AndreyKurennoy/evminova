@@ -22,10 +22,17 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/guestbook', 'AboutController@guestbook');
     Route::get('/certificates', 'AboutController@certificates');
     Route::get('/prices', 'AboutController@prices');
-    Route::get('/Lechim', 'NewsController@index');
+    Route::get('/lechim', 'NewsController@index');
     Route::get('/contacts', 'AboutController@contacts');
     Route::resource('catalog', 'CatalogController');
-    Route::resource('news', 'NewsController');
+    Route::get('news', 'NewsController@all')->name('articles');
+    Route::resource('news', 'NewsController', [
+        'except' => [
+            'index'
+    ]]);
+
+    Route::resource('question', 'QuestionController');
+
     //Rating and Reviews
     Route::post('/saverating', 'RatingReviewController@addRating')->name('saverating');
     Route::post('/savereview', 'RatingReviewController@addReview')->name('savereview');
@@ -69,6 +76,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     ], ['only' => ['index', 'store']]);
 
     Route::resource('doctor', 'AdminDoctorsController', [
+        'as' => 'voyager'
+    ]);
+
+    Route::resource('contacts', 'Admin\ContactsController', [
+        'as' => 'voyager'
+    ]);
+
+    Route::resource('profilaktor', 'Admin\QuestionController', [
         'as' => 'voyager'
     ]);
 

@@ -1,11 +1,11 @@
 @extends('voyager::master')
 
-@section('page_title', __('voyager.generic.viewing').' Test')
+@section('page_title', __('voyager.generic.viewing').' Страницы')
 
 @section('page_header')
     <div class="container-fluid">
         <h1 class="page-title">
-            <i class="voyager-file-text"></i> Tests
+            <i class="voyager-file-text"></i> Страницы
         </h1>
         @can('add',app("TCG\Voyager\Models\Page"))
             <a href="{{ route('voyager.test.create') }}" class="btn btn-success btn-add-new">

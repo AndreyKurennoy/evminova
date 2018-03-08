@@ -34,4 +34,8 @@ class SiteComposer
     public function showNewsMenu(View $view){
         $view->with('news_sheets', $this->sheetService->getAllPublishedNews());
     }
+
+    public function meta(View $view){
+        $view->with('meta', $this->sheetService->getMeta(request()->path()));
+    }
 }

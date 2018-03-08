@@ -21,8 +21,7 @@ class RatingReviewController extends Controller
     }
 
     public function addRating(Request $request){
-//        dd($request);
-        $verify = $this->ratingService->findToken($request->input('token'));
+        $verify = $this->ratingService->findToken($request->input('token'), $request->input('slug'));
         if ($verify === null){
             $this->ratingService->saveSlugRating($request->request->all());
             $output = array('success' => 'true');

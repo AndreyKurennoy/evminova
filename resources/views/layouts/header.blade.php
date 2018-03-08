@@ -61,17 +61,17 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/Lechim" title="ЧТО ЛЕЧИМ">
+                                <a href="/lechim" title="ЧТО ЛЕЧИМ">
                                     ЧТО ЛЕЧИМ
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="ПРОФИЛАКТОР">
+                                <a href="/question" title="ПРОФИЛАКТОР">
                                     ПРОФИЛАКТОР
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="СТАТЬИ">
+                                <a href="/news" title="СТАТЬИ">
                                     СТАТЬИ
                                 </a>
                             </li>

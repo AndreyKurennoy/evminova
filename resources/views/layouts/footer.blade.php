@@ -139,6 +139,7 @@
 <script type="text/javascript" src="{{ asset('js/slider/jquery.prettyPhoto.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery.qtip.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery.blockUI.min.js')}}"></script>
+{{--<script type="text/javascript" src="{{ asset('js/slider/main.js')}}"></script>--}}
 {{--<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>--}}
 
 <script type="text/javascript" src="{{ asset('plugins/lightbox/js/lightbox.js')}}"></script>
@@ -146,4 +147,3 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-<script type="text/javascript">ript>

@@ -84,12 +84,12 @@ class CatalogController extends Controller
         $doctors = $currentSheet->doctors->all();
 
         //Rating defining for each article in categories
-        $ratingPoints = $currentSheet->ratings->sum('points');
-        $ratingRows = $currentSheet->ratings->count();
-        $rating =[
-            'count' => $ratingRows,
-            'value' => ($ratingRows !== 0) ? ($ratingPoints / $ratingRows) : 5,
-        ];
+//        $ratingPoints = $currentSheet->ratings->sum('points');
+//        $ratingRows = $currentSheet->ratings->count();
+//        $rating =[
+//            'count' => $ratingRows,
+//            'value' => ($ratingRows !== 0) ? ($ratingPoints / $ratingRows) : 5,
+//        ];
         //End of rating
         $profPhoto = $this->mainOptionsService->profPhoto();
 
