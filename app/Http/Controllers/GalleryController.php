@@ -1,25 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Models\Admin\Sheet;
-use App\Services\Admin\SheetsService;
-use App\Services\GalleryService;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class AdminCertificatesController extends Controller
+class GalleryController extends Controller
 {
-
-    public $gallery;
-    public $sheets;
-
-    public function __construct(GalleryService $galleryService, SheetsService $sheetsService)
-    {
-        $this->gallery = $galleryService;
-        $this->sheets = $sheetsService;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -27,10 +15,14 @@ class AdminCertificatesController extends Controller
      */
     public function index()
     {
-        $photos = $this->gallery->getbyType('certificate');
-        $count = count($photos);
-        $sheets = Sheet::where(['slug' => 'certificates'])->first();
-        return view('vendor.voyager.certificates.browse', compact('photos', 'count', 'sheets'));
+        $photos_pages = Sheet::where('category_name', 'gallery')->get();
+//        dd($photos_pages);
+        $photos = [];
+        foreach ($photos_pages as $page){
+            $photos[] = Gallery::where('url', $page->slug)->first();
+        }
+
+        return view('about.gallery', compact('photos', 'photos_pages'));
     }
 
     /**
@@ -38,7 +30,7 @@ class AdminCertificatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         //
     }
@@ -51,14 +43,7 @@ class AdminCertificatesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'meta_description' => 'required',
-            'meta_keywords' => 'required',
-            'seo_title' => 'required'
-        ]);
-        $this->gallery->storeData($request->request->all(), 'certificate');
-        $this->sheets->savePage($request->request->all());
-        return redirect(route('voyager.certificates.index'));
+        //
     }
 
     /**
@@ -67,9 +52,12 @@ class AdminCertificatesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $sheets = Sheet::where('slug', $slug)->first();
+        $photos = Gallery::where('url', $slug)->get();
+//        dd($photos);
+        return view('about.gallery-inner', compact('photos', 'sheets'));
     }
 
     /**

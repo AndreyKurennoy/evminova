@@ -1,6 +1,6 @@
 @extends('voyager::master')
 
-@section('page_title', __('voyager.generic.viewing').' Сертификаты')
+@section('page_title', __('voyager.generic.viewing').' Галерея')
 @section('css')
     <style>
         .admin-certificate{
@@ -31,6 +31,7 @@
         }
     </style>
 @stop
+
 @section('content')
     <div class="row">
         @if (count($errors) > 0)
@@ -45,25 +46,29 @@
     </div>
     <div class="page-content browse container-fluid">
         <div class="row">
-            <form role="form" action="{{ route('voyager.certificates.store') }}" method="POST" enctype="multipart/form-data">
+            <form class="form-edit-add" role="form" action="{{ route('voyager.gallery.update', $sheets->id) }}" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-8">
                         {{ csrf_field() }}
+                        {{ method_field("PUT") }}
+                        <input type="hidden" name="category_name" value="gallery">
                         <button class=" btn btn-primary add_field_button">Добавить изображение</button>
                         <div class="input_fields_wrap">
 
+                            {{--<div class="certificate-container">--}}
                             @foreach($photos as $photo)
-                            <div class="admin-certificate">
-                                <div class="img-preview">
-                                    <img src="{{$photo->name}}" id="prev_img_{{$loop->index}}" alt="">
+                                <div class="admin-certificate">
+                                    <div class="img-preview">
+                                        <img src="{{$photo->name}}" id="prev_img_{{$loop->index}}" alt="">
+                                    </div>
+                                    <input class="certificate-img-admin" id="input_{{$loop->index}}" type="hidden" name="photo[]" value="{{$photo->name}}"/>
+                                    <div>
+                                        <input class="alt-img form-control" type="text" name="alt[]" placeholder="Alt картинки" value="{{$photo->alt}}">
+                                        <input class="alt-description form-control" type="text" name="description[]" placeholder="Мини-описание картинки" value="{{$photo->description}}">
+                                        <button style="display: block; margin-top: 5px;" class="btn btn-primary" type="button" data-img="prev_img_{{$loop->index}}" data-id="input_{{$loop->index}}" onclick="BrowseServer(this);">Выбрать</button></div>
                                 </div>
-                                <input class="certificate-img-admin" id="input_{{$loop->index}}" type="hidden" name="photo[]" value="{{$photo->name}}"/>
-                                <div>
-                                    <input class="alt-img form-control" type="text" name="alt[]" placeholder="Alt картинки" value="{{$photo->alt}}">
-                                    <input class="alt-description form-control" type="text" name="description[]" placeholder="Мини-описание картинки" value="{{$photo->description}}">
-                                <button style="display: block; margin-top: 5px;" class="btn btn-primary" type="button" data-img="prev_img_{{$loop->index}}" data-id="input_{{$loop->index}}" onclick="BrowseServer(this);">Выбрать</button></div>
-                            </div>
                             @endforeach
+                            {{--</div>--}}
                         </div>
 
                     </div>
@@ -79,12 +84,16 @@
                             </div>
                             <div class="panel-body">
                                 <div class="form-group">
+                                    <label for="name">Url</label>
+                                    <input class="form-control" name="slug" value="@if(Request::old('slug')){{Request::old('slug')}}@elseif(isset($sheets->slug)){{$sheets->slug}}@endif">
+                                </div>
+                                <div class="form-group">
                                     <label for="name">Описание (meta)</label>
-                                    <textarea class="form-control" name="meta_description">@if(Request::old('meta_description') !== null){{Request::old('meta_description')}}@elseif(isset($sheets->meta_description)){{$sheets->meta_description}}@endif</textarea>
+                                    <textarea class="form-control" name="meta_description">@if(Request::old('meta_description')){{Request::old('meta_description')}}@elseif(isset($sheets->meta_description)){{$sheets->meta_description}}@endif</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Ключевые слова (meta)</label>
-                                    <textarea class="form-control" name="meta_keywords">@if(Request::old('meta_keywords') !== null){{Request::old('meta_keywords')}}@elseif(isset($sheets->meta_keywords)){{$sheets->meta_keywords}}@endif</textarea>
+                                    <textarea class="form-control" name="meta_keywords">@if(Request::old('meta_keywords')){{Request::old('meta_keywords')}}@elseif(isset($sheets->meta_keywords)){{$sheets->meta_keywords}}@endif</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">SEO название</label>
@@ -107,11 +116,11 @@
 @section('javascript')
     <script>
         $(document).ready(function() {
-            var max_fields      = 20; //maximum input boxes allowed
+            var max_fields      = 40; //maximum input boxes allowed
             var wrapper         = $(".input_fields_wrap"); //Fields wrapper
             var add_button      = $(".add_field_button"); //Add button ID
 
-            var x = '{{$count}}'; //initlal text box count
+            var x = '1'; //initlal text box count
             $(add_button).click(function(e){ //on add input button click
                 e.preventDefault();
                 if(x < max_fields){ //max input box allowed

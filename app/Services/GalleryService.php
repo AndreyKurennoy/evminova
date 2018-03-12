@@ -14,12 +14,13 @@ class GalleryService {
             if(!empty($photo)) {
                 $photo_arr = explode('/', $photo);
                 $photo_name = end($photo_arr);
-
+                $thumbs = str_replace($photo_name, '', $photo);
+                $thumbs .= 'thumbs/' . $photo_name;
                 $image = new Gallery([
                     'name' => $photo,
                     'alt' => $data['alt'][$i],
                     'type' => $type,
-                    'thumb' => '/storage/thumbs/' . $photo_name,
+                    'thumb' => $thumbs,
                     'url' => $url,
                     'description' => $data['description'][$i]
                 ]);

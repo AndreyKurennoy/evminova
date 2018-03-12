@@ -27,8 +27,8 @@
                         <span class="template-arrow-menu"></span>
                     </a>
                 </li>
-                <li {{--@if(isset($currentSheet->slug) and $currentSheet->slug == $sheet->slug) class="selected"  @endif --}}>
-                    <a href="/catalog/{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
+                <li @if(Request::is('gallery')) class="selected"  @endif>
+                    <a href="/gallery{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
                         {{--{{$sheet->title}}--}}
                         Фотографии
                         <span class="template-arrow-menu"></span>

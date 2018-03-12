@@ -25,7 +25,6 @@ class AdminMainServicesController extends Controller
         $url_pathes = explode('/',$request->path());
         $url_path = end($url_pathes);
         $options = $this->mainOptionsService->getPageOptions(end($url_pathes));
-//        dd($options);
         return view('vendor.voyager.home.services', compact('options', 'url_path'));
     }
     /**

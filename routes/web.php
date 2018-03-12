@@ -30,7 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
         'except' => [
             'index'
     ]]);
-
+    Route::resource('gallery', 'GalleryController');
     Route::resource('question', 'QuestionController');
 
     //Rating and Reviews
@@ -91,6 +91,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         'as' => 'voyager'
     ]);
 
+    Route::resource('gallery', 'Admin\AdminGalleryController', [
+        'as' => 'voyager'
+    ]);
+    Route::post('/gallerymeta', 'Admin\AdminGalleryController@mainMeta');
 });
 
 Auth::routes();

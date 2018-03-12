@@ -96,6 +96,7 @@ class SheetsService
             $sheets->status = 1;
             $sheets->save();
         }
+        return $sheets->id;
     }
 
     public function getSheetByCategoryName($name){
@@ -126,6 +127,8 @@ class SheetsService
                 case 'lechim':
                     $slug_new = 'services-news';
                     break;
+                default:
+                    $slug_new = $slug;
             }
 
             if (!empty($slug_new)){
@@ -133,6 +136,7 @@ class SheetsService
                 $meta['title'] = $main_options->where('option_name', 'seo_title')->pluck('value')->first();
                 $meta['description'] = $main_options->where('option_name', 'meta_description')->pluck('value')->first();
                 $meta['keywords'] = $main_options->where('option_name', 'meta_keywords')->pluck('value')->first();
+                $meta['h1'] = $main_options->where('option_name', 'title')->pluck('value')->first();
             }
         }
         return $meta;

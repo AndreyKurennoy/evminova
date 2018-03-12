@@ -17,7 +17,7 @@ class CreateTableGallery extends Migration
             $table->increments('id');
             $table->string('type');
             $table->string('name');
-            $table->string('alt');
+            $table->string('alt')->nullable();
             $table->string('thumb');
             $table->string('url')->nullable();
             $table->string('description')->nullable();
