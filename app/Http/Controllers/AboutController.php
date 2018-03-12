@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin\Prices;
 use App\Models\Admin\PricesTypes;
 use App\Models\Admin\Review;
+use App\Models\Gallery;
 use App\Services\Admin\ReviewService;
 use App\Models\Admin\Sheet;
 use App\Services\Admin\DoctorService;
@@ -53,7 +54,8 @@ class AboutController extends Controller
     }
 
     public function certificates(){
-        return view('about.certificates');
+        $photos = Gallery::where('type', 'certificate')->get();
+        return view('about.certificates', compact('photos'));
     }
 
     public function lechim(){
@@ -64,4 +66,5 @@ class AboutController extends Controller
     public function contacts(){
         return view('contacts');
     }
+
 }

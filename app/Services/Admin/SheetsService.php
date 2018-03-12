@@ -113,6 +113,7 @@ class SheetsService
         $meta['title'] = $meta_collection->seo_title;
         $meta['description'] = $meta_collection->meta_description;
         $meta['keywords'] = $meta_collection->meta_keywords;
+        $meta['h1'] = $meta_collection->title;
         } else {
             $slug_new = '';
             switch ($slug){

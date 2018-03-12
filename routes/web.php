@@ -87,6 +87,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         'as' => 'voyager'
     ]);
 
+    Route::resource('certificates', 'Admin\AdminCertificatesController', [
+        'as' => 'voyager'
+    ]);
 
 });
 

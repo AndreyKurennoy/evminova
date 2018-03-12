@@ -21,7 +21,7 @@
                     </a>
                 </li>
                 <li @if(Request::is('certificates')) class="selected"  @endif>
-                    <a href="/certificates/{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
+                    <a href="/certificates{{--$sheet->slug--}}" title="{{--$sheet->title--}}">
                         {{--{{$sheet->title}}--}}
                         Сертификаты
                         <span class="template-arrow-menu"></span>
