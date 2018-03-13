@@ -80,7 +80,8 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->sheetsService->updateOnly($request->request->all(), $id);
+        return redirect(route('voyager.profilaktor.edit', $id));
     }
 
     /**
