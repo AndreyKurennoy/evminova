@@ -31,7 +31,8 @@ class SheetsRequest extends FormRequest
             'slug' => "required|unique:sheets,slug,". $this->route()->test,
             'meta_description' => "required",
             'meta_keywords' => "required",
-            'seo_title' => "required"
+            'seo_title' => "required",
+            'header' => "required"
 
         ];
     }
@@ -46,6 +47,7 @@ class SheetsRequest extends FormRequest
             'meta_description.required' => 'Не указано мета описание страницы!',
             'meta_keywords.required' => 'Не указаны мета ключи страницы!',
             'seo_title.required' => 'Не указан title страницы!',
+            'header.required' => 'Не указано название в меню!',
         ];
     }
 }

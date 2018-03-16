@@ -19,17 +19,22 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/about', 'AboutController@about');
     Route::get('/about/doctors', 'AboutController@doctors');
+
     Route::get('/guestbook', 'AboutController@guestbook');
     Route::get('/certificates', 'AboutController@certificates');
     Route::get('/prices', 'AboutController@prices');
-    Route::get('/lechim', 'NewsController@index');
+    Route::resource('lechim', 'LechimController');
     Route::get('/contacts', 'AboutController@contacts');
     Route::resource('catalog', 'CatalogController');
+
+
     Route::get('news', 'NewsController@all')->name('articles');
     Route::resource('news', 'NewsController', [
         'except' => [
             'index'
     ]]);
+
+
     Route::resource('gallery', 'GalleryController');
     Route::resource('question', 'QuestionController');
 

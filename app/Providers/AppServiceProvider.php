@@ -33,5 +33,8 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', 'App\Http\Composers\SiteComposer@showSlugRatings');
         view()->composer('*', 'App\Http\Composers\SiteComposer@showNewsMenu');
         view()->composer('*', 'App\Http\Composers\SiteComposer@meta');
+        view()->composer('*', 'App\Http\Composers\SiteComposer@showLechimMenu');
+        view()->composer('*', 'App\Http\Composers\SiteComposer@showInnerNewsMenu');
+        view()->composer('*', 'App\Http\Composers\SiteComposer@showNewsFooter');
     }
 }

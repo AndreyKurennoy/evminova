@@ -35,7 +35,21 @@ class SiteComposer
         $view->with('news_sheets', $this->sheetService->getAllPublishedNews());
     }
 
+    public function showLechimMenu(View $view){
+        $view->with('lechim_sheets', $this->sheetService->getAllPublishedLechim());
+    }
+
+    public function showInnerNewsMenu(View $view){
+        $view->with('innerNews', $this->sheetService->getNewsInnerMenu());
+    }
+
+    public function showNewsFooter(View $view){
+        $view->with('footerNews', $this->sheetService->getNewsFooter());
+    }
+
     public function meta(View $view){
         $view->with('meta', $this->sheetService->getMeta(request()->path()));
     }
+
+
 }

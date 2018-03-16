@@ -2824,8 +2824,8 @@ li.template-bullet:before
 }
 .social-icons.yellow li
 {
-	background: #F4BC16;
-	border: 2px solid #F4BC16;
+	background: #1892df;
+	border: 2px solid #1892df;
 	margin-left: 1px;	
 }
 .social-icons.yellow li:hover
@@ -4114,5 +4114,9 @@ body.lock-position
 }
 .footer-look-all-articles {
 	color: #1892df;
+	margin-left: 27px;
 
+}
+.margin-bottom-5 {
+	margin-bottom: 5px;
 }

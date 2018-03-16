@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/css/header/odometer-theme-default.css" />
 
     <!--fonts-->
+    <link rel="stylesheet" type="text/css" href="/css/header/fonts/socicon/style.css">
     <link rel="stylesheet" type="text/css" href="/css/header/fonts/streamline-small/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/header/fonts/streamline-large/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/header/fonts/template/styles.css">

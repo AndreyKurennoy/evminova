@@ -10,7 +10,7 @@ use App\Services\Admin\MainOptionsService;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 
-class NewsController extends Controller
+class LechimController extends Controller
 {
 
     public $ratingService;
@@ -27,6 +27,7 @@ class NewsController extends Controller
         $this->ratingService = $ratingService;
         $this->mainOptionsService = $mainOptionsService;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -73,7 +74,7 @@ class NewsController extends Controller
     public function show($keyword)
     {
         $currentSheet = $this->sheetsService->getByKeywordPublished($keyword);
-        return view('currentArticle', compact('currentSheet'));
+        return view('lechim', compact('currentSheet'));
     }
 
     /**
@@ -108,29 +109,5 @@ class NewsController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function all(Request $request)
-    {
-        if($request['page'] == 1){
-            return redirect(route('articles'));
-        }
-        $news = Sheet::where('category', 1)->paginate(10);
-//        dd($news);
-        $img = Storage::url('public/thumbs/наш_центр.jpg');
-
-        $counter = 0;
-        foreach ($news as $article){
-            $img = $article->preview_img;
-            $img_array = explode('/', $img);
-            $news[$counter]->preview_img = end($img_array);
-
-            $date = $article->created_at;
-            $news[$counter]->date = date('d.m.Y',strtotime($date));
-
-            $counter++;
-        }
-
-        return view('allNews', compact('img', 'news'));
     }
 }
