@@ -44,6 +44,7 @@
                     <li class="template-bullet">Йога для позвоночника</li>
                     <li class="template-bullet">Тайские массажи</li>
                 </ul>
+            <a href="" class="footer-look-all-articles">смотреть все</a>
             {{--<ul class="social-icons yellow margin-top-26">--}}
                 {{--<li>--}}
                     {{--<a target="_blank" href="http://facebook.com/QuanticaLabs" class="social-facebook" title="facebook"></a>--}}
@@ -72,9 +73,10 @@
                 <li class="template-bullet">Протрузии</li>
                 <li class="template-bullet">Кифоза</li>
             </ul>
+            <a href="" class="footer-look-all-articles">смотреть все</a>
         </div>
         <div class="column column-1-4">
-            <h6 class="box-header">Latest Posts</h6>
+            <h6 class="box-header">Полезные новости</h6>
             <ul class="blog small margin-top-30">
                 <li>
                     <a href="post.html" title="What a Difference a Few Months Make" class="post-image">
@@ -102,18 +104,23 @@
         </div>
         <div class="column column-1-4">
             <h6 class="box-header">Перезвонить вам?</h6>
-            <ul class="taxonomies margin-top-30">
-                <li><a href="category.html" title="BUILD">BUILD</a></li>
-                <li><a href="category.html" title="DESIGN">DESIGN</a></li>
-                <li><a href="category.html" title="FLOORING">FLOORING</a></li>
-                <li><a href="category.html" title="PAINTING">PAINTING</a></li>
-                <li><a href="category.html" title="PAVERS">PAVERS</a></li>
-                <li><a href="category.html" title="PLUMBING">PLUMBING</a></li>
-                <li><a href="category.html" title="RENOVATION">RENOVATION</a></li>
-                <li><a href="category.html" title="REPAIRS">REPAIRS</a></li>
-                <li><a href="category.html" title="SOLAR SYSTEMS">SOLAR SYSTEMS</a></li>
-                <li><a href="category.html" title="TILING">TILING</a></li>
-            </ul>
+            {{--<ul class="taxonomies margin-top-30">--}}
+                {{--<li><a href="category.html" title="BUILD">BUILD</a></li>--}}
+                {{--<li><a href="category.html" title="DESIGN">DESIGN</a></li>--}}
+                {{--<li><a href="category.html" title="FLOORING">FLOORING</a></li>--}}
+                {{--<li><a href="category.html" title="PAINTING">PAINTING</a></li>--}}
+                {{--<li><a href="category.html" title="PAVERS">PAVERS</a></li>--}}
+                {{--<li><a href="category.html" title="PLUMBING">PLUMBING</a></li>--}}
+                {{--<li><a href="category.html" title="RENOVATION">RENOVATION</a></li>--}}
+                {{--<li><a href="category.html" title="REPAIRS">REPAIRS</a></li>--}}
+                {{--<li><a href="category.html" title="SOLAR SYSTEMS">SOLAR SYSTEMS</a></li>--}}
+                {{--<li><a href="category.html" title="TILING">TILING</a></li>--}}
+            {{--</ul>--}}
+            <div class="footer-phone-me">
+                <input type="text" class="footer-phone-me-input" placeholder="Имя*">
+                <input type="text" class="footer-phone-me-input" placeholder="Телефон*">
+                <div class="footer-phone-me-button">Перезвоните мне</div>
+            </div>
         </div>
     </div>
 </div>

@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Services\Admin\MainOptionsService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ContactsController extends Controller
 {
+    public $options;
+
+    public function __construct(MainOptionsService $mainOptionsService)
+    {
+        $this->options = $mainOptionsService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,8 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        return view('vendor.voyager.home.contacts');
+        $options = $this->options->getPageOptions('contacts');
+        return view('vendor.voyager.home.contacts', compact('options'));
     }
 
     /**
@@ -35,7 +44,8 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->options->update($request->request->all(), 'contacts');
+        return redirect(route('voyager.contacts.index'));
     }
 
     /**

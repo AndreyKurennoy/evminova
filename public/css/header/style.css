@@ -4091,3 +4091,28 @@ body.lock-position
 	text-align: center;
 }
 /*END Certificates*/
+
+.footer-phone-me {
+	margin-top: 10px;
+}
+.footer-phone-me-input {
+	padding: 3px 15px;
+	border-radius: 15px;
+	margin-top: 5px;
+	border: 1px solid #1892df;
+	width: 200px;
+}
+.footer-phone-me-button {
+	padding: 9px 15px;
+	border-radius: 15px;
+	margin-top: 5px;
+	border: 1px solid #0c448a;
+	background: #1892df;
+	width: 200px;
+	text-align: center;
+	color:white;
+}
+.footer-look-all-articles {
+	color: #1892df;
+
+}
