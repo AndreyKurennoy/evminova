@@ -40,6 +40,12 @@ class SheetsService
         $sheet->delete();
     }
 
+    public function updateOnly($data, $id)
+    {
+        $sheets = Sheet::findOrFail($id);
+        $sheets->fill($data);
+        $sheets->save();
+    }
     public function update($id, $data){
         $sheets = Sheet::findOrFail($id);
         $sheets->fill($data);
