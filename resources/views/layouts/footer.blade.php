@@ -125,6 +125,10 @@
 <script type="text/javascript" src="{{ asset('js/slider/jquery.prettyPhoto.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery.qtip.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery.blockUI.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('/plugins/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/slider/main.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/slider/odometer.min.js')}}"></script>
 {{--<script type="text/javascript" src="{{ asset('js/slider/main.js')}}"></script>--}}
 {{--<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>--}}
 

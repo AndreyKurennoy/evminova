@@ -46,37 +46,98 @@
                     <nav style="width: -webkit-fill-available;">
                         <ul class="sf-menu">
                             <li>
-                                <a href="/about" title="О ЦЕНТРЕ">
+                                <a rel="canonical" href="/about" title="О ЦЕНТРЕ">
                                     О ЦЕНТРЕ
                                 </a>
+
+                                <ul>
+                                    <li>
+                                        <a rel="canonical" href="/about/doctors" title="Доктора">
+                                            Доктора
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="canonical" href="/certificates" title="Сертификаты">
+                                            Сертификаты
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="canonical" href="/gallery" title="Фотографии">
+                                            Фотографии
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="canonical" href="/guestbook" title="Отзывы">
+                                            Отзывы
+                                        </a>
+                                    </li>
+                                    @foreach($headerAbout as $item)
+                                        @if($item->slug !== 'about')
+                                            <li>
+                                                <a rel="canonical" href="/about/{{$item->slug}}" title="{{$item->header}}">
+                                                    {{$item->header}}
+                                                </a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
                             </li>
                             <li>
-                                <a href="/catalog" title="УСЛУГИ">
+                                <a rel="canonical" href="/catalog" title="УСЛУГИ">
                                     УСЛУГИ
                                 </a>
+                                <ul>
+                                    @foreach($headerCatalog as $item)
+                                            <li>
+                                                <a rel="canonical" href="/catalog/{{$item->slug}}" title="{{$item->header}}">
+                                                    {{$item->header}}
+                                                </a>
+                                            </li>
+                                    @endforeach
+                                </ul>
                             </li>
                             <li>
-                                <a href="/prices" title="ЦЕНЫ">
+                                <a rel="canonical" href="/prices" title="ЦЕНЫ">
                                     ЦЕНЫ
                                 </a>
                             </li>
                             <li>
-                                <a href="/lechim" title="ЧТО ЛЕЧИМ">
+                                <a rel="canonical" href="/lechim" title="ЧТО ЛЕЧИМ">
                                     ЧТО ЛЕЧИМ
                                 </a>
+                                <ul>
+                                    @foreach($headerLechim as $item)
+                                        <li>
+                                            <a rel="canonical" href="/lechim/{{$item->slug}}" title="{{$item->header}}">
+                                                {{$item->header}}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </li>
                             <li>
-                                <a href="/question" title="ПРОФИЛАКТОР">
+                                <a rel="canonical" href="/question" title="ПРОФИЛАКТОР">
                                     ПРОФИЛАКТОР
                                 </a>
+                                <ul>
+                                    @foreach($headerProfilaktor as $item)
+                                        @if($item->slug !== 'question')
+                                        <li>
+                                            <a rel="canonical" href="/question/{{$item->slug}}" title="{{$item->header}}">
+                                                {{$item->header}}
+                                            </a>
+                                        </li>
+                                        @endif()
+                                    @endforeach
+                                </ul>
                             </li>
                             <li>
-                                <a href="/news" title="СТАТЬИ">
+                                <a rel="canonical" href="/news" title="СТАТЬИ">
                                     СТАТЬИ
                                 </a>
                             </li>
                             <li>
-                                <a href="/contacts" title="КОНТАКТЫ">
+                                <a rel="canonical" href="/contacts" title="КОНТАКТЫ">
                                     КОНТАКТЫ
                                 </a>
                             </li>
@@ -100,58 +161,104 @@
                         <div class="mobile-menu-divider"></div>
                         <nav>
                             <ul class="mobile-menu collapsible-mobile-submenus">
-                                <li class="selected">
-                                    <a href="#" title="Home">
-                                        HOME
-                                    </a>
-                                    <a href="#" class="template-arrow-menu"></a>
-                                    <ul>
-                                        <li class="selected">
-                                            <a href="#" title="Home Style 1">
-                                                Home Style 1
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Home Style 2">
-                                                Home Style 2
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li>
-                                    <a href="#" title="Services">
-                                        SERVICES
-                                    </a>
-                                    <a href="#" class="template-arrow-menu"></a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Projects">
-                                        PROJECTS
-                                    </a>
-                                    <a href="#" class="template-arrow-menu"></a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Our Team">
-                                        OUR TEAM
-                                    </a>
-                                </li>
-                                <li class="left-flyout">
-                                    <a href="contact.html" title="Contact">
-                                        CONTACT
+                                    <a rel="canonical" href="/about" title="О ЦЕНТРЕ">
+                                        О ЦЕНТРЕ
                                     </a>
                                     <a href="#" class="template-arrow-menu"></a>
                                     <ul>
                                         <li>
-                                            <a href="contact.html" title="Contact Style 1">
-                                                Contact Style 1
+                                            <a rel="canonical" href="/about/doctors" title="Доктора">
+                                                Доктора
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="contact_2.html" title="Contact Style 2">
-                                                Contact Style 2
+                                            <a rel="canonical" href="/certificates" title="Сертификаты">
+                                                Сертификаты
                                             </a>
                                         </li>
+                                        <li>
+                                            <a rel="canonical" href="/gallery" title="Фотографии">
+                                                Фотографии
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a rel="canonical" href="/guestbook" title="Отзывы">
+                                                Отзывы
+                                            </a>
+                                        </li>
+                                        @foreach($headerAbout as $item)
+                                            @if($item->slug !== 'about')
+                                                <li>
+                                                    <a rel="canonical" href="/about/{{$item->slug}}" title="{{$item->header}}">
+                                                        {{$item->header}}
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        @endforeach
                                     </ul>
+                                </li>
+                                <li>
+                                    <a rel="canonical" href="/catalog" title="УСЛУГИ">
+                                        УСЛУГИ
+                                    </a>
+                                    <a href="#" class="template-arrow-menu"></a>
+                                    <ul>
+                                        @foreach($headerCatalog as $item)
+                                            <li>
+                                                <a rel="canonical" href="/catalog/{{$item->slug}}" title="{{$item->header}}">
+                                                    {{$item->header}}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a rel="canonical" href="/prices" title="ЦЕНЫ">
+                                        ЦЕНЫ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="canonical" href="/lechim" title="ЧТО ЛЕЧИМ">
+                                        ЧТО ЛЕЧИМ
+                                    </a>
+                                    <a href="#" class="template-arrow-menu"></a>
+                                    <ul>
+                                        @foreach($headerLechim as $item)
+                                            <li>
+                                                <a rel="canonical" href="/lechim/{{$item->slug}}" title="{{$item->header}}">
+                                                    {{$item->header}}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a rel="canonical" href="/question" title="ПРОФИЛАКТОР">
+                                        ПРОФИЛАКТОР
+                                    </a>
+                                    <a href="#" class="template-arrow-menu"></a>
+                                    <ul>
+                                        @foreach($headerProfilaktor as $item)
+                                            @if($item->slug !== 'question')
+                                                <li>
+                                                    <a rel="canonical" href="/question/{{$item->slug}}" title="{{$item->header}}">
+                                                        {{$item->header}}
+                                                    </a>
+                                                </li>
+                                            @endif()
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a rel="canonical" href="/news" title="СТАТЬИ">
+                                        СТАТЬИ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="canonical" href="/contacts" title="КОНТАКТЫ">
+                                        КОНТАКТЫ
+                                    </a>
                                 </li>
                             </ul>
                         </nav>

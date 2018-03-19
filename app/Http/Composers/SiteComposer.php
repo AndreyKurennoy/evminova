@@ -51,5 +51,20 @@ class SiteComposer
         $view->with('meta', $this->sheetService->getMeta(request()->path()));
     }
 
+    public function headerAbout(View $view){
+        $view->with('headerAbout', $this->sheetService->getHeaderAbout());
+    }
+
+    public function headerCatalog(View $view){
+        $view->with('headerCatalog', $this->sheetService->getHeaderCatalog());
+    }
+
+    public function headerLechim(View $view){
+        $view->with('headerLechim', $this->sheetService->getHeaderLechim());
+    }
+
+    public function headerProfilaktor(View $view){
+        $view->with('headerProfilaktor', $this->sheetService->getHeaderProfilaktor());
+    }
 
 }

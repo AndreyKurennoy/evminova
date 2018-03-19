@@ -186,4 +186,28 @@ class SheetsService
         }
         return $news;
     }
+
+    public function getHeaderAbout()
+    {
+        $items = Sheet::where(['category_name' => 'about'])->get()->take(2);
+        return $items;
+    }
+
+    public function getHeaderCatalog()
+    {
+        $items = Sheet::where(['category' => '2'])->get()->take(6);
+        return $items;
+    }
+
+    public function getHeaderLechim()
+    {
+        $items = Sheet::where(['category' => '3'])->get()->take(6);
+        return $items;
+    }
+
+    public function getHeaderProfilaktor()
+    {
+        $items = Sheet::where(['category_name' => 'profilaktor'])->get()->take(6);
+        return $items;
+    }
 }
