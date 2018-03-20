@@ -90,22 +90,15 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Номера телефона, через запятую</label>
-                                <input type="text" class="form-control" id="slug" name="slug" placeholder="slug"  data-slug-origin="title" data-slug-forceupdate="true" value="">
+                                <input type="text" class="form-control" name="phones" value="{{$options->where('option_name', 'phones')->pluck('value')->first()?:''}}">
                             </div>
                             <div class="form-group">
-                                <label for="name">Статус публикации</label>
-                                <select class="form-control" name="status">
-                                    <option value="1">Опубликовано</option>
-                                    <option value="0"> Черновик</option>
-                                </select>
+                                <label for="name">Адрес</label>
+                                <textarea class="form-control" name="address">{{$options->where('option_name', 'address')->pluck('value')->first()?:''}}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="name">Категория статьи</label>
-                                <select class="form-control" name="category">
-                                    <option value="1" >Новости</option>
-                                    <option value="2" >Услуга</option>
-                                    <option value="3" >Заболевания</option>
-                                </select>
+                                <label for="name">Схема проезда</label>
+                                <textarea class="form-control" name="way">{{$options->where('option_name', 'way')->pluck('value')->first()?:''}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -122,15 +115,43 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Описание (meta)</label>
-                                <textarea class="form-control" name="meta_description"></textarea>
+                                <textarea class="form-control" name="meta_description">{{$options->where('option_name', 'meta_description')->pluck('value')->first()?:''}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="name">Ключевые слова (meta)</label>
-                                <textarea class="form-control" name="meta_keywords"></textarea>
+                                <textarea class="form-control" name="meta_keywords">{{$options->where('option_name', 'meta_keywords')->pluck('value')->first()?:''}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="name">SEO название</label>
-                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="">
+                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="{{$options->where('option_name', 'seo_title')->pluck('value')->first()?:''}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Заголовок</label>
+                                <input type="text" class="form-control" name="title" placeholder="" value="{{$options->where('option_name', 'title')->pluck('value')->first()?:''}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel panel-bordered panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="icon wb-clipboard"></i>Режим работы</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="name">Пн - пт</label>
+                                <input type="text" class="form-control"  name="work-week" value="{{$options->where('option_name', 'work-week')->pluck('value')->first()?:''}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Сб</label>
+                                <input type="text" class="form-control" name="work-sat"  value="{{$options->where('option_name', 'work-sat')->pluck('value')->first()?:''}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Вс</label>
+                                <input type="text" class="form-control"  name="work-sun" value="{{$options->where('option_name', 'work-sun')->pluck('value')->first()?:''}}">
                             </div>
                         </div>
                     </div>

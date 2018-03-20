@@ -73,8 +73,7 @@ class NewsController extends Controller
     public function show($keyword)
     {
         $currentSheet = $this->sheetsService->getByKeywordPublished($keyword);
-//        dd($currentSheet);
-        return view('lechim', compact('currentSheet'));
+        return view('currentArticle', compact('currentSheet'));
     }
 
     /**
@@ -116,7 +115,7 @@ class NewsController extends Controller
         if($request['page'] == 1){
             return redirect(route('articles'));
         }
-        $news = Sheet::where('category', 3)->paginate(10);
+        $news = Sheet::where('category', 1)->paginate(10);
 //        dd($news);
         $img = Storage::url('public/thumbs/наш_центр.jpg');
 

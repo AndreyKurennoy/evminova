@@ -16,6 +16,10 @@ class SheetsService
     }
 
     public function getAllPublishedNews(){
+        return Sheet::where(['category' => 1, 'status' => 1])->get();
+    }
+
+    public function getAllPublishedLechim(){
         return Sheet::where(['category' => 3, 'status' => 1])->get();
     }
 
@@ -147,5 +151,63 @@ class SheetsService
         }
         return $meta;
 
+    }
+
+    public function getNewsInnerMenu(){
+        $news = Sheet::where(['category' => 1, 'status' => 1])->orderBy('updated_at', 'desc')->get()->take(6);
+
+        $counter = 0;
+        foreach ($news as $article){
+            $img = $article->preview_img;
+            $img_array = explode('/', $img);
+            $news[$counter]->preview_img = end($img_array);
+
+            $date = $article->created_at;
+            $news[$counter]->date = date('d.m.Y',strtotime($date));
+
+            $counter++;
+        }
+        return $news;
+    }
+
+    public function getNewsFooter(){
+        $news = Sheet::where(['category' => 1, 'status' => 1])->orderBy('created_at', 'desc')->get()->take(2);
+
+        $counter = 0;
+        foreach ($news as $article){
+            $img = $article->preview_img;
+            $img_array = explode('/', $img);
+            $news[$counter]->preview_img = end($img_array);
+
+            $date = $article->created_at;
+            $news[$counter]->date = date('d.m.Y',strtotime($date));
+
+            $counter++;
+        }
+        return $news;
+    }
+
+    public function getHeaderAbout()
+    {
+        $items = Sheet::where(['category_name' => 'about'])->get()->take(2);
+        return $items;
+    }
+
+    public function getHeaderCatalog()
+    {
+        $items = Sheet::where(['category' => '2'])->get()->take(6);
+        return $items;
+    }
+
+    public function getHeaderLechim()
+    {
+        $items = Sheet::where(['category' => '3'])->get()->take(6);
+        return $items;
+    }
+
+    public function getHeaderProfilaktor()
+    {
+        $items = Sheet::where(['category_name' => 'profilaktor'])->get()->take(6);
+        return $items;
     }
 }

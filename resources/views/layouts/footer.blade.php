@@ -33,7 +33,7 @@
     <div class="row row-4-4">
         <div class="column column-1-4">
             <h6 class="box-header">Услуги нашего центра</h6>
-                <ul class="list margin-top-20">
+                <ul class="list margin-top-20 margin-bottom-5">
                     <li class="template-bullet">Профилактор Евминова</li>
                     <li class="template-bullet">ЛФК</li>
                     <li class="template-bullet">Кинезетерапия</li>
@@ -44,24 +44,11 @@
                     <li class="template-bullet">Йога для позвоночника</li>
                     <li class="template-bullet">Тайские массажи</li>
                 </ul>
-            {{--<ul class="social-icons yellow margin-top-26">--}}
-                {{--<li>--}}
-                    {{--<a target="_blank" href="http://facebook.com/QuanticaLabs" class="social-facebook" title="facebook"></a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a target="_blank" href="https://twitter.com/QuanticaLabs" class="social-twitter" title="twitter"></a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a target="_blank" href="http://themeforest.net/user/QuanticaLabs/portfolio?ref=QuanticaLabs" class="social-linkedin" title="linkedin"></a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a href="https://pinterest.com/quanticalabs/" class="social-pinterest" title="pinterest"></a>--}}
-                {{--</li>--}}
-            {{--</ul>--}}
+            <a href="/catalog" rel=canonical  class="footer-look-all-articles">смотреть все</a>
         </div>
         <div class="column column-1-4">
-            <h6 class="box-header">Какие методы лечения?</h6>
-            <ul class="list margin-top-20">
+            <h6 class="box-header">Какие заболевания лечим</h6>
+            <ul class="list margin-top-20 margin-bottom-5">
                 <li class="template-bullet">Сколиоз</li>
                 <li class="template-bullet">Искривление позвоночника</li>
                 <li class="template-bullet">Остеохондроз</li>
@@ -72,47 +59,46 @@
                 <li class="template-bullet">Протрузии</li>
                 <li class="template-bullet">Кифоза</li>
             </ul>
+            <a href="/lechim" rel=canonical  class="footer-look-all-articles">смотреть все</a>
         </div>
         <div class="column column-1-4">
-            <h6 class="box-header">Latest Posts</h6>
+            <h6 class="box-header">Полезные новости</h6>
             <ul class="blog small margin-top-30">
-                <li>
-                    <a href="post.html" title="What a Difference a Few Months Make" class="post-image">
-                        <img src="/images/samples/90x90/image_10.jpg" alt="">
-                    </a>
-                    <div class="post-content">
-                        <a href="post.html" title="What a Difference a Few Months Make">What a Difference a Few Months Make</a>
-                        <ul class="post-details">
-                            <li class="date">April 25, 2015</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="post.html" title="Kitchen and Living Room Renovation" class="post-image">
-                        <img src="/images/samples/90x90/image_07.jpg" alt="">
-                    </a>
-                    <div class="post-content">
-                        <a href="post.html" title="Kitchen and Living Room Renovation">Kitchen and Living Room Renovation</a>
-                        <ul class="post-details">
-                            <li class="date">April 17, 2015</li>
-                        </ul>
-                    </div>
-                </li>
+                @foreach($footerNews as $article)
+                    <li>
+                        <a style="width: 90px;" href="/news/{{$article->slug}}" title="What a Difference a Few Months Make" class="post-image">
+                            <img src="/storage/thumbs/{{$article->preview_img}}" alt="">
+                        </a>
+                        <div class="post-content">
+                            <a href="/news/{{$article->slug}}" title="{{$article->header}}">{{$article->header}}</a>
+                            <ul class="post-details">
+                                <li class="date">{{$article->date}}</li>
+                            </ul>
+                        </div>
+                    </li>
+                @endforeach
             </ul>
         </div>
         <div class="column column-1-4">
             <h6 class="box-header">Перезвонить вам?</h6>
-            <ul class="taxonomies margin-top-30">
-                <li><a href="category.html" title="BUILD">BUILD</a></li>
-                <li><a href="category.html" title="DESIGN">DESIGN</a></li>
-                <li><a href="category.html" title="FLOORING">FLOORING</a></li>
-                <li><a href="category.html" title="PAINTING">PAINTING</a></li>
-                <li><a href="category.html" title="PAVERS">PAVERS</a></li>
-                <li><a href="category.html" title="PLUMBING">PLUMBING</a></li>
-                <li><a href="category.html" title="RENOVATION">RENOVATION</a></li>
-                <li><a href="category.html" title="REPAIRS">REPAIRS</a></li>
-                <li><a href="category.html" title="SOLAR SYSTEMS">SOLAR SYSTEMS</a></li>
-                <li><a href="category.html" title="TILING">TILING</a></li>
+            <div class="footer-phone-me">
+                <input type="text" class="footer-phone-me-input" placeholder="Имя*">
+                <input type="text" class="footer-phone-me-input" placeholder="Телефон*">
+                <div class="footer-phone-me-button">Перезвоните мне</div>
+            </div>
+            <ul class="social-icons yellow margin-top-26">
+                <li>
+                    <a target="_blank" rel="nofollow" href="https://www.facebook.com/EvminovOdessa" class="social-facebook" title="facebook"></a>
+                </li>
+                <li>
+                    <a target="_blank" rel="nofollow" href="https://vk.com/evminov" class="socicon-vkontakte" title="vk"></a>
+                </li>
+                {{--<li>--}}
+                    {{--<a target="_blank" rel="nofollow" href="http://themeforest.net/user/QuanticaLabs/portfolio?ref=QuanticaLabs" class="social-linkedin" title="linkedin"></a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="https://pinterest.com/quanticalabs/" class="social-pinterest" title="pinterest"></a>--}}
+                {{--</li>--}}
             </ul>
         </div>
     </div>
@@ -139,6 +125,10 @@
 <script type="text/javascript" src="{{ asset('js/slider/jquery.prettyPhoto.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery.qtip.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/slider/jquery.blockUI.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('/plugins/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/slider/main.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/slider/odometer.min.js')}}"></script>
 {{--<script type="text/javascript" src="{{ asset('js/slider/main.js')}}"></script>--}}
 {{--<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>--}}
 

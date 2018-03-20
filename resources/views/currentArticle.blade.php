@@ -10,24 +10,23 @@
 
     <div class="clearfix">
         <div class="row margin-top-30">
-            <div class="column column-1-4 margin-bottom-30">
-                <ul class="vertical-menu">
-                    @foreach($lechim_sheets as $sheet)
-                        <li @if(isset($currentSheet->slug) and $currentSheet->slug == $sheet->slug) class="selected"  @endif>
-                            <a href="/lechim/{{$sheet->slug}}" title="{{$sheet->title}}">
-                                {{$sheet->title}}
-                                <span class="template-arrow-menu"></span>
-                            </a>
-                        </li>
+            <div class="column column-1-4">
+                <h6 class="box-header">Интересные новости</h6>
+                <ul class="blog small margin-top-30">
+                    @foreach($innerNews as $article)
+                    <li>
+                        <a style="width: 90px;" href="/news/{{$article->slug}}" title="What a Difference a Few Months Make" class="post-image">
+                            <img src="/storage/thumbs/{{$article->preview_img}}" alt="">
+                        </a>
+                        <div class="post-content">
+                            <a href="/news/{{$article->slug}}" title="{{$article->header}}">{{$article->header}}</a>
+                            <ul class="post-details">
+                                <li class="date">{{$article->date}}</li>
+                            </ul>
+                        </div>
+                    </li>
                     @endforeach
                 </ul>
-                @if(isset($profPhoto))
-                    <div class="profilactor-container">
-                        <a href="#">
-                            <img src="{{$profPhoto->value}}" >
-                        </a>
-                    </div>
-                @endif
             </div>
             <div class="column column-3-4">
                 <div class="row">

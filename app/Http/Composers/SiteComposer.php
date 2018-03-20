@@ -35,7 +35,36 @@ class SiteComposer
         $view->with('news_sheets', $this->sheetService->getAllPublishedNews());
     }
 
+    public function showLechimMenu(View $view){
+        $view->with('lechim_sheets', $this->sheetService->getAllPublishedLechim());
+    }
+
+    public function showInnerNewsMenu(View $view){
+        $view->with('innerNews', $this->sheetService->getNewsInnerMenu());
+    }
+
+    public function showNewsFooter(View $view){
+        $view->with('footerNews', $this->sheetService->getNewsFooter());
+    }
+
     public function meta(View $view){
         $view->with('meta', $this->sheetService->getMeta(request()->path()));
     }
+
+    public function headerAbout(View $view){
+        $view->with('headerAbout', $this->sheetService->getHeaderAbout());
+    }
+
+    public function headerCatalog(View $view){
+        $view->with('headerCatalog', $this->sheetService->getHeaderCatalog());
+    }
+
+    public function headerLechim(View $view){
+        $view->with('headerLechim', $this->sheetService->getHeaderLechim());
+    }
+
+    public function headerProfilaktor(View $view){
+        $view->with('headerProfilaktor', $this->sheetService->getHeaderProfilaktor());
+    }
+
 }

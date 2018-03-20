@@ -1,18 +1,31 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Services\Admin\MainOptionsService;
+use App\Models\Admin\Sheet;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Services\Admin\SheetsService;
+use App\Services\Admin\RatingService;
+use App\Services\Admin\MainOptionsService;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Storage;
 
-class ContactsController extends Controller
+class LechimController extends Controller
 {
-    public $options;
 
-    public function __construct(MainOptionsService $mainOptionsService)
+    public $ratingService;
+    public $sheetsService;
+    public $mainOptionsService;
+
+    public function __construct(
+        RatingService $ratingService,
+        SheetsService $sheetsService,
+        MainOptionsService $mainOptionsService
+    )
     {
-        $this->options = $mainOptionsService;
+        $this->sheetsService = $sheetsService;
+        $this->ratingService = $ratingService;
+        $this->mainOptionsService = $mainOptionsService;
     }
 
     /**
@@ -22,8 +35,13 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        $options = $this->options->getPageOptions('contacts');
-        return view('vendor.voyager.home.contacts', compact('options'));
+        $options = $this->mainOptionsService->getPageOptions('services-news');
+        $meta = [
+            'title' => $options->where('option_name', 'seo_title')->pluck('value')->first(),
+            'description' => $options->where('option_name', 'meta_description')->pluck('value')->first(),
+            'keywords' => $options->where('option_name', 'meta_keywords')->pluck('value')->first(),
+        ];
+        return view('lechim', compact('options', 'meta'));
     }
 
     /**
@@ -44,8 +62,7 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->options->update($request->request->all(), 'contacts');
-        return redirect(route('voyager.contacts.index'));
+        //
     }
 
     /**
@@ -54,9 +71,10 @@ class ContactsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($keyword)
     {
-        //
+        $currentSheet = $this->sheetsService->getByKeywordPublished($keyword);
+        return view('lechim', compact('currentSheet'));
     }
 
     /**
