@@ -163,6 +163,10 @@
                                 <label for="name">SEO название</label>
                                 <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="{{Request::old('seo_title')}}">
                             </div>
+                            <div class="form-group">
+                                <label for="name">Название в меню</label>
+                                <input type="text" class="form-control" name="header" placeholder="" value="{{Request::old('header')}}">
+                            </div>
                         </div>
                     </div>
                     <div class="panel panel-bordered panel-warning">

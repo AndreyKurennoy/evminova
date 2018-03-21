@@ -54,7 +54,7 @@
     </div>
 </div>
 <div class="row full-width">
-    <div class="contact-map margin-bottom-30" id="map" data-scroll-wheel="0" data-draggable="0">
+    <div class="contact-map " id="map" data-scroll-wheel="0" data-draggable="0">
         <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJd28cjIcxxkARRO8m9GXymzs&key=AIzaSyAAUAEfP75_KdlNVMt0tW7AvNVfsEvh5E8" allowfullscreen></iframe>
     </div>
 </div>

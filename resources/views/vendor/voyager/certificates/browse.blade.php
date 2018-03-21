@@ -119,8 +119,9 @@
                     $(wrapper).append('<div class="admin-certificate">                        <div class="img-preview">\n' +
                         '                            <img id="prev_img_'+ x+'" src="/images/0-img.jpg" alt="">\n' +
                         '                        </div><input class="certificate-img-admin" id="input_'+ x +'" type="hidden" name="photo[]" value=""/>\n' +
-                        '<div><input class="alt-img form-control" type="text" name="description[]" placeholder="Мини-описание картинки" value="">' +
-                        '         <input class="alt-img form-control" type="text" name="alt[]">               <button style="display: block; margin-top: 5px;" class="btn btn-primary" type="button" data-img="prev_img_'+ x +'" data-id="input_'+ x +'" onclick="BrowseServer(this);">Выбрать</button><a href="#" class="remove_field">Удалить</a></div></div>'); //add input box
+                        '<div><input class="alt-img form-control" type="text" name="alt[]" placeholder="Alt картинки">' +
+                        '<input class="alt-img form-control" type="text" name="description[]" placeholder="Мини-описание картинки" value="">' +
+                        '                        <button style="display: block; margin-top: 5px;" class="btn btn-primary" type="button" data-img="prev_img_'+ x +'" data-id="input_'+ x +'" onclick="BrowseServer(this);">Выбрать</button><a href="#" class="remove_field">Удалить</a></div></div>'); //add input box
                 }
                 x++; //text box increment
             });

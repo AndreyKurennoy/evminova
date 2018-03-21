@@ -29,7 +29,7 @@
         </div>
     </div>
 </div>
-<div class="row gray full-width page-padding-top padding-bottom-50">
+<div class=" footer row gray full-width page-padding-top padding-bottom-50">
     <div class="row row-4-4">
         <div class="column column-1-4">
             <h6 class="box-header">Услуги нашего центра</h6>
@@ -92,6 +92,9 @@
                 </li>
                 <li>
                     <a target="_blank" rel="nofollow" href="https://vk.com/evminov" class="socicon-vkontakte" title="vk"></a>
+                </li>
+                <li>
+                    <a target="_blank" rel="nofollow" href="#" class="social-instagram" title="instagram"></a>
                 </li>
                 {{--<li>--}}
                     {{--<a target="_blank" rel="nofollow" href="http://themeforest.net/user/QuanticaLabs/portfolio?ref=QuanticaLabs" class="social-linkedin" title="linkedin"></a>--}}

@@ -18,36 +18,6 @@
                     </div>
                 </div>
             @endforeach
-                <div class="certificate">
-                    <div class="certificates-img">
-                        <a href="/gallery/vasiliev">
-                            <img src="/storage/thumbs/кинезиотерапия.jpg" alt="afaf">
-                        </a>
-                    </div>
-                    <div class="certificates-preview">
-                        Корпоратив
-                    </div>
-                </div>
-                <div class="certificate">
-                    <div class="certificates-img">
-                        <a href="/gallery/vasiliev">
-                            <img src="/storage/thumbs/кинезиотерапия.jpg" alt="afaf">
-                        </a>
-                    </div>
-                    <div class="certificates-preview">
-                        Корпоратив
-                    </div>
-                </div>
-                <div class="certificate">
-                    <div class="certificates-img">
-                        <a href="/gallery/vasiliev">
-                            <img src="/storage/thumbs/кинезиотерапия.jpg" alt="afaf">
-                        </a>
-                    </div>
-                    <div class="certificates-preview">
-                        Корпоратив
-                    </div>
-                </div>
         </div>
 
         @include('questions')

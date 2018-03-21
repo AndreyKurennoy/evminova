@@ -2826,7 +2826,7 @@ li.template-bullet:before
 {
 	background: #1892df;
 	border: 2px solid #1892df;
-	margin-left: 1px;	
+	margin-left: 6px;
 }
 .social-icons.yellow li:hover
 {
@@ -4097,20 +4097,22 @@ body.lock-position
 }
 .footer-phone-me-input {
 	padding: 3px 15px;
-	border-radius: 15px;
+	border-radius: 30px;
 	margin-top: 5px;
 	border: 1px solid #1892df;
-	width: 200px;
+	width: 230px;
+	line-height: 34px;
 }
 .footer-phone-me-button {
 	padding: 9px 15px;
-	border-radius: 15px;
+	border-radius: 30px;
 	margin-top: 5px;
 	border: 1px solid #0c448a;
 	background: #1892df;
-	width: 200px;
+	width: 230px;
 	text-align: center;
 	color:white;
+	line-height: 24px;
 }
 .footer-look-all-articles {
 	color: #1892df;
@@ -4119,4 +4121,8 @@ body.lock-position
 }
 .margin-bottom-5 {
 	margin-bottom: 5px;
+}
+
+.footer .box-header {
+	color: #1892df;
 }

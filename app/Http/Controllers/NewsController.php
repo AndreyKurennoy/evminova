@@ -115,7 +115,7 @@ class NewsController extends Controller
         if($request['page'] == 1){
             return redirect(route('articles'));
         }
-        $news = Sheet::where('category', 1)->paginate(10);
+        $news = Sheet::where(['category' => 1, 'status' => 1])->paginate(10);
 //        dd($news);
         $img = Storage::url('public/thumbs/наш_центр.jpg');
 
