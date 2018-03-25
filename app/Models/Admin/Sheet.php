@@ -33,4 +33,8 @@ class Sheet extends Model
     public function ratings(){
         return $this->hasMany('App\Models\Admin\Rating');
     }
+
+    public function reviews() {
+        return $this->belongsToMany('App\Models\Admin\Review', 'reviews_sheets');
+    }
 }

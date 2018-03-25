@@ -67,4 +67,8 @@ class SiteComposer
         $view->with('headerProfilaktor', $this->sheetService->getHeaderProfilaktor());
     }
 
+    public function reviews(View $view){
+        $view->with('reviews_sheet', $this->sheetService->getReviews(request()->path()));
+    }
+
 }

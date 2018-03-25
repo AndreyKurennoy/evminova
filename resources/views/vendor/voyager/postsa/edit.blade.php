@@ -48,6 +48,7 @@
             min-height: 100%;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
 @stop
 
 @section('page_header')
@@ -186,6 +187,7 @@
                             <div class="form-group">
                                 <label for="name">Первый</label>
                                 <select class="form-control" name="doctor[]">
+                                    <option value="none">Не выбрано</option>
                                     @foreach($doctors as $doctor)
                                         <option value="{{$doctor->id}}" @if(isset($exist_doctors[0]) && $exist_doctors[0]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                     @endforeach
@@ -194,18 +196,34 @@
                             <div class="form-group">
                                 <label for="name">Второй</label>
                                 <select class="form-control" name="doctor[]">
+                                    <option value="none">Не выбрано</option>
                                     @foreach($doctors as $doctor)
-                                        <option value="{{$doctor->id}}" @if(isset($exist_doctors[0]) && $exist_doctors[1]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                        <option value="{{$doctor->id}}" @if(isset($exist_doctors[1]) && $exist_doctors[1]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="name">Третий</label>
                                 <select class="form-control" name="doctor[]">
+                                    <option value="none">Не выбрано</option>
                                     @foreach($doctors as $doctor)
-                                        <option value="{{$doctor->id}}" @if(isset($exist_doctors[0]) && $exist_doctors[2]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
+                                        <option value="{{$doctor->id}}" @if(isset($exist_doctors[2]) && $exist_doctors[2]->id == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel panel-bordered panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="icon wb-clipboard"></i>Отзывы</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <span id="select-reviews" class="btn btn-primary">Выбрать отзывы</span>
                             </div>
                         </div>
                     </div>
@@ -218,8 +236,12 @@
 {{--<script type="text/javascript" src="/js/slider/jquery-1.11.3.min.js"></script>--}}
 @section('javascript')
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
     <script>
         jQuery(document).ready(function() {
+            $(document).on('click', '#select-reviews', function () {
+
+            });
 
             var editor_config = {
                 path_absolute : "/",

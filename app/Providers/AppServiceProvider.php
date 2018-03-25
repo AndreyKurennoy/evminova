@@ -41,5 +41,6 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', 'App\Http\Composers\SiteComposer@headerCatalog');
         view()->composer('*', 'App\Http\Composers\SiteComposer@headerLechim');
         view()->composer('*', 'App\Http\Composers\SiteComposer@headerProfilaktor');
+        view()->composer('*', 'App\Http\Composers\SiteComposer@reviews');
     }
 }

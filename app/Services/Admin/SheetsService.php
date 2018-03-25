@@ -5,6 +5,8 @@ use App\Models\Admin\Doctor;
 use App\Models\Admin\MainOptions;
 use App\Models\Admin\Sheet;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Null_;
+
 class SheetsService
 {
     public function getAllData(){
@@ -57,8 +59,9 @@ class SheetsService
         $doctor = [];
 
         foreach($data['doctor'] as $doctor_row)
-        {
+        {   if ($doctor_row !== 'none') {
             $doctor[] = Doctor::findOrFail($doctor_row);
+            }
         }
         $sheets->save();
         $sheets->doctors()->saveMany($doctor);
@@ -209,5 +212,27 @@ class SheetsService
     {
         $items = Sheet::where(['category_name' => 'profilaktor'])->get()->take(6);
         return $items;
+    }
+
+    public function getReviews($slug) {
+        $reviews = NULL;
+
+        $slug_arr = explode('/', $slug);
+        $sheet = $this->getByKeyword(end($slug_arr));
+        if ($sheet !== null) {
+            $reviews = $sheet->reviews->all();
+            $counter = 0;
+            if (count($reviews) !== 0) {
+                foreach ($reviews as $article) {
+
+                    $date = $article->updated_at;
+                    $reviews[$counter]->date = date('d.m.Y', strtotime($date));
+
+                    $counter++;
+                }
+            }
+        }
+        return $reviews;
+
     }
 }

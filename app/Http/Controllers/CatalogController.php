@@ -82,6 +82,7 @@ class CatalogController extends Controller
         $sheets = $this->sheetsService->getAllPublishedCatalog();
         $currentSheet = $this->sheetsService->getCatalogByKeywordPublished($keyword, 2);
         $doctors = $currentSheet->doctors->all();
+        $reviews = $currentSheet->reviews->all();
 
         //Rating defining for each article in categories
 //        $ratingPoints = $currentSheet->ratings->sum('points');
