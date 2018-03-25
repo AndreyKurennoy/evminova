@@ -14,7 +14,7 @@
                     <div class="header-review">
                         <div class="name-review">{{$review->name}}</div>
                         <div class="category-review">{{$review->problem}}</div>
-                        <div class="date-review">{{$review->created_at}}</div>
+                        <div class="date-review date">{{$review->date}}</div>
                     </div>
                     <div class="message-review">{!! $review->body !!}
                     </div>

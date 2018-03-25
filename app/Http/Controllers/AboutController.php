@@ -44,6 +44,14 @@ class AboutController extends Controller
     public function guestbook(){
 
         $reviews = $this->reviewService->getAllReviews();
+        $counter = 0;
+        foreach ($reviews as $article){
+
+            $date = $article->updated_at;
+            $reviews[$counter]->date = date('d.m.Y',strtotime($date));
+
+            $counter++;
+        }
         return view('about.guestbook', compact('reviews'));
     }
 
