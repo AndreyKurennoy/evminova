@@ -100,6 +100,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         'as' => 'voyager'
     ]);
     Route::post('/gallerymeta', 'Admin\AdminGalleryController@mainMeta');
+
+    Route::post('/reviews', 'AdminPagesCustomController@getReviewsAdmin');
+    Route::post('/saveReviews', 'AdminPagesCustomController@saveReviewsAdmin');
 });
 
 Auth::routes();

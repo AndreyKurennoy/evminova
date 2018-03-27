@@ -47,6 +47,19 @@
             overflow-x: hidden;
             min-height: 100%;
         }
+        .white-popup {
+            position: relative;
+            background: #FFF;
+            padding: 20px;
+            width: auto;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        .review-link{
+            margin-left: 10px;
+            color: green;
+            font-size: 20px;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
 @stop
@@ -59,6 +72,7 @@
 @stop
 
 @section('content')
+    <div class="content-id" style="display: none">{{$sheets->id}}</div>
     <div class="page-content container-fluid">
         <form class="form-edit-add" role="form" action="@if(isset($sheets->id)){{ route('voyager.test.update', $sheets->id) }}@else{{ route('voyager.test.store') }}@endif" method="POST" enctype="multipart/form-data">
 
@@ -223,7 +237,12 @@
                         </div>
                         <div class="panel-body">
                             <div class="form-group">
-                                <span id="select-reviews" class="btn btn-primary">Выбрать отзывы</span>
+                                <a href="/admin/reviews" id="select-reviews" class="btn btn-primary">Выбрать отзывы</a>
+                                <span id="pasteReviews" style="color: green;margin-left: 10px;">
+                                    @foreach($reviews as $review)
+                                    <a class="review-link" href="/admin/guestbook/{{$review}}/edit" target="_blank">{{$review}}</a>
+                                    @endforeach
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -239,9 +258,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
     <script>
         jQuery(document).ready(function() {
-            $(document).on('click', '#select-reviews', function () {
+//                REVIEWS POPUP
+                 $('#select-reviews').magnificPopup({
+                    type: 'ajax',
+                    ajax: {
+                        settings:{
+                            type: 'post',
+                            data:{id: $('.content-id').html()}
 
+                        }
+                    },
+                    callbacks: {
+                        updateStatus: function () {
+                            $('#dataTable').DataTable();
+                        }
+                    }
+                });
+
+//                REVIEWS SAVE
+            $(document).on('click', '#saveReviews', function () {
+                var selected = [];
+                $('#getReviews input:checked').each(function() {
+//                    console.log($(this).attr('data-id'));
+                    selected.push($(this).attr('data-id'));
+                });
+                console.log(selected);
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    url: '/admin/saveReviews',
+                    data: {selected: selected, id:$('.content-id').html()},
+                    success: function (json) {
+                        if(json.success){
+                            $.magnificPopup.close();
+                            $('#pasteReviews').html('');
+                            $.each(json.reviews, function(i, item) {
+                                $('#pasteReviews').append('<a class="review-link" href="/admin/guestbook/'+ json.reviews[i] +'/edit" target="_blank">'+ json.reviews[i] +'</a>');
+                            });
+                        }
+                    }
+                });
             });
+
 
             var editor_config = {
                 path_absolute : "/",

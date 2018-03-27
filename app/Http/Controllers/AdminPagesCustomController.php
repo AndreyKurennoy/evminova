@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SheetsRequest;
 use App\Models\Admin\Doctor;
+use App\Models\Admin\Review;
 use Illuminate\Http\Request;
 use App\Services\Admin\DoctorService;
 use App\Services\Admin\SheetsService;
@@ -95,7 +96,8 @@ class AdminPagesCustomController extends Controller
         $sheets = $this->sheetsService->getById($id);
         $doctors = $this->doctorService->getAll();
         $exist_doctors = $sheets->doctors->all();
-        return view('vendor.voyager.postsa.edit', compact('sheets',  'doctors', 'exist_doctors'));
+        $reviews = $this->sheetsService->getAdminSheetReviews($id);
+        return view('vendor.voyager.postsa.edit', compact('sheets',  'doctors', 'exist_doctors', 'reviews'));
     }
 
     /**
@@ -125,5 +127,20 @@ class AdminPagesCustomController extends Controller
 
     public function savePage(Request $request){
         $this->sheetsService->savePage($request->request->all());
+    }
+
+    public function getReviewsAdmin(Request $request){
+
+        $reviews = $this->sheetsService->getAdminReviews($request->request->get('id'));
+
+        return view('layouts.reviews-admin', compact('reviews'));
+    }
+
+    public function saveReviewsAdmin(Request $request)
+    {
+        $this->sheetsService->saveAdminReviews($request);
+        $reviews = $this->sheetsService->getAdminSheetReviews($request->request->get('id'));
+        $output = array('success' => 'true', 'reviews' => $reviews);
+        return response()->json($output);
     }
 }

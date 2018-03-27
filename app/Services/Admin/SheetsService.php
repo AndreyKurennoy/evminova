@@ -3,6 +3,7 @@ namespace App\Services\Admin;
 
 use App\Models\Admin\Doctor;
 use App\Models\Admin\MainOptions;
+use App\Models\Admin\Review;
 use App\Models\Admin\Sheet;
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\Null_;
@@ -233,6 +234,55 @@ class SheetsService
             }
         }
         return $reviews;
+
+    }
+
+    public function getAdminReviews($id){
+        $reviews = Review::where('status', 1)->get();
+
+        $reviews_existed = $this->getAdminSheetReviews($id);
+        if (count($reviews_existed) > 0) {
+            foreach ($reviews_existed as $item) {
+                $reviews->where('id', $item)->first()->exist = true;
+            }
+        }
+//        dd($reviews);
+        return $reviews;
+    }
+
+    public function getAdminSheetReviews($id)
+    {
+        $sheet = $this->getById($id);
+        $reviews = $sheet->reviews->all();
+        $result = '';
+        $reviews_array = [];
+        if(count($reviews) > 0) {
+
+            foreach ($reviews as $review) {
+                $reviews_array[] = $review->id;
+            }
+
+            $result = implode(', ',$reviews_array);
+        }
+
+        return $reviews_array;
+    }
+
+    public function saveAdminReviews($request)
+    {
+        $id = $request->request->get('id');
+        $selected = $request->request->get('selected');
+
+        $sheet = Sheet::findOrFail($id);
+        $sheet->reviews()->detach();
+
+        $review = [];
+        if(count($selected) > 0) {
+            foreach ($selected as $item) {
+                $review[] = Review::findOrFail($item);
+            }
+            $sheet->reviews()->saveMany($review);
+        }
 
     }
 }
