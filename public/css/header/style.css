@@ -1534,9 +1534,9 @@ div.team-box
 {
 	font-family: 'Open Sans';
 	font-weight: 300;
-	font-size: 21px;
+	font-size: 18px;
 	color: #FFFFFF;
-	line-height: 36px;
+	line-height: 30px;
 	padding: 29px 50px 0;
 }
 .testimonials-list p::after
@@ -4164,3 +4164,19 @@ body.lock-position
 .z-index-max-class{
 	z-index: 99999;
 }
+
+.parallax-add-div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+}
+
+.reviews{
+	margin-bottom: 10px;
+}
+.reviews-link{
+	margin-left: 10px;
+	color: #1892df;}

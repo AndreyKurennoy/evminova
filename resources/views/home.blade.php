@@ -178,8 +178,9 @@
         </div>
     </div>
 
-    <div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-1">
-        <div class="row  testimonials-container">
+    <div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-1" style="position: relative;">
+        <div class="parallax-add-div "></div>
+            <div class="row  testimonials-container">
             <a href="#" class="slider-control left template-arrow-left-1"></a>
             <ul class="testimonials-list">
                 <li class="sl-small-conversation">
@@ -233,5 +234,6 @@
             </ul>
             <a href="#" class="slider-control right template-arrow-left-1"></a>
         </div>
+
     </div>
 @endsection

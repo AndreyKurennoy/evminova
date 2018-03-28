@@ -15,5 +15,6 @@
             </div>
         @endforeach
     </div>
+    <a class='reviews-link' href="/guestbook">Смотреть все отзывы</a>
 </div>
 @endif
