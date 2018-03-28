@@ -48,8 +48,8 @@
 		line-height: 24px;
 	}
 	/* --- containers --- */
-	.header-top-bar,
-	.header,
+	/*.header-top-bar,*/
+	/*.header,*/
 	.row,
 	.announcement
 	{
@@ -59,7 +59,7 @@
 	}
 	.header-container
 	{
-		padding: 26px 0 13px;
+		/*padding: 26px 0 13px;*/
 	}
 	.header .logo
 	{
@@ -83,7 +83,7 @@
 	{
 		float: left;
 		clear: both;
-		margin-top: 20px;
+		/*margin-top: 20px;*/
 		width: 100%;
 	}
 	.menu-container nav
@@ -395,6 +395,57 @@
 	#health-features .flex-features-container .health-feature {
 		max-width: 40%;
 	}
+	.write-med input{
+		width: 200px;
+		margin-bottom: 10px;
+		margin-right: 0;
+	}
+	.write-med .more {
+		width: 118px;
+		display: block;
+		margin: auto;
+	}
+}
+@media screen and (max-width: 768px) {
+
+	.flex-column .column {
+		margin: 0 auto;
+		/*width: 95%;*/
+	}
+
+	.flex-column{
+		display: flex;
+		flex-wrap: wrap;
+		margin: auto;
+	}
+
+	#top-block {
+		flex-wrap: wrap;
+	}
+
+	.features-list li p{
+		margin-top: 5px;
+		max-width: 210px;
+	}
+
+	.troubles-block {
+		width:unset;
+	}
+
+	.flex-service{
+		max-width: 100%;
+	}
+
+	.write-med input{
+		display: block;
+		width: 300px;
+		margin-bottom: 10px;
+	}
+
+	.write-med .more {
+		display: block;
+		width:218px;
+	}
 }
 @media screen and (max-width:767px)
 {
@@ -410,7 +461,7 @@
 		line-height: 28px;
 	}
 	/* --- containers --- */
-	.header-top-bar,
+	/*.header-top-bar,*/
 	.header,
 	.row,
 	.announcement,
@@ -507,6 +558,11 @@
 		display: table-cell;
 		float: right;
 		margin-top: 40px;
+
+	}
+	.header-top-bar .contact-details .template-custom, .header-top-bar .contact-details .template-clock{
+		display: none;
+
 	}
 	/* --- vertical menu --- */
 	.vertical-menu li a
@@ -842,8 +898,33 @@
 	}
 	.header-top-bar
 	{
-		display: none;
+		display: block;
 		padding-top: 10px;
+		/*position: fixed;*/
+	}
+	.header-top-bar .template-phone{
+		display: none;
+	}
+	.header .mobile-menu-switch{
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		margin: 0;
+	}
+	#content .vertical-menu{
+		display:none;
+	}
+
+	.write-med{
+		width: min-content;
+	}
+	.write-med  input{
+		width:200px;
+		margin-bottom: 10px;
+	}
+	.write-med .more{
+		width: 118px;
+		display: block;
 	}
 	.header-top-bar-container .header-toggle
 	{
@@ -1215,6 +1296,8 @@
 	.doctor .doctor-name{
 		text-align: center;
 	}
+
+
 }
 @media screen and (max-device-width: 1024px) {
 	.no-mobile {
@@ -1238,13 +1321,13 @@
 		margin-top: -2px;
 	}
 	.header-top-bar .contact-details {
-		left: 93px;
-		position: relative;
-		top: 8px;
-		width: auto;
+		/*left: 93px;*/
+		/*position: relative;*/
+		/*top: 8px;*/
+		/*width: auto;*/
 	}
 	.header-top-bar .contact-details li{
-		padding: 5px 5px;
+		/*padding: 5px 5px;*/
 	}
 	.logo {
 		margin-top: -29px !important;
@@ -1256,7 +1339,7 @@
 		margin-top: -3px;
 	}
 	.call_me_tablet{
-		display: block;
+		display: none;
 	}
 	.call_me_desktop{
 		display: none;
@@ -1293,34 +1376,25 @@
 		margin-right: auto;
 	}
 }
-
-@media screen and (max-width: 768px) {
-
-	.flex-column .column {
-		margin: 0 auto;
-		/*width: 95%;*/
+@media screen and  (min-width: 1189px){
+	.write-med input {
+		border-radius: 25px;
+		border: 1px solid #7ea6da;
+		margin-right: 15px;
+		width: 200px;
 	}
 
-	.flex-column{
-		display: flex;
-		flex-wrap: wrap;
-		margin: auto;
+	.write-med span.more {
+		font-size: 16px;
+		padding: 12px 55px 15px;
+		width: 118px;
+		display: inline-block;
 	}
+}
 
-	#top-block {
-		flex-wrap: wrap;
-	}
 
-	.features-list li p{
-		margin-top: 5px;
-		max-width: 210px;
-	}
-
-    .troubles-block {
-        width:unset;
-    }
-
-	.flex-service{
-		max-width: 100%;
+@media screen and (max-width: 1024px){
+	.header-top-bar-container{
+		/*z-index: 99999;*/
 	}
 }

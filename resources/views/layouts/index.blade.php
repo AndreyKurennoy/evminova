@@ -58,8 +58,23 @@
         @yield('content')
     </div>
 
+        <a href="#top" class="scroll-top animated-element template-arrow-up fadeIn" title="Scroll to top" style="animation-duration: 600ms; animation-delay: 0ms; transition-delay: 0ms;"></a>
+    <script>
+        var BASE_URL = "{{ url('/') }}";
+        $(document).ready(function(){
+            var $document = $(document),
+                $element = $('.header-top-bar-container'),
+                className = 'box-shadow';
 
-    <script>    var BASE_URL = "{{ url('/') }}" </script>
+            $document.scroll(function() {
+                $element.toggleClass(className, $document.scrollTop() >= 60);
+            });
+            $document.scroll(function() {
+                $element.toggleClass('z-index-max-class', $document.scrollTop() >= 1);
+            });
+        });
+
+    </script>
     @include('layouts.footer')
 
     </div>

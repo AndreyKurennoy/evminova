@@ -11,11 +11,11 @@
                 <li class="template-mail">
                     <a href="mailto:evminov.com.ua@ukr.net">evminov.com.ua@ukr.net</a>
                 </li>
-                <li class="template-custom">
+                <li style="display: none;" class="template-custom">
                     Черноморский вертебрально-оздоровительный центр Евминова
                 </li>
                 <li class="template-phone">
-                    048 700-83-03
+                    048 700-83-03; 094 953-13-03; 094 064-72-02
                 </li>
                 <li class="call_me_tablet">
                     <a href="#">
@@ -30,7 +30,7 @@
     </div>
     <div class="header-container">
         <!--<div class="header-container sticky">-->
-        <div class="vertical-align-table column-1-1">
+        <div class="vertical-align-table" style="margin: auto;">
             <div class="header clearfix">
 
                 <a href="#" class="mobile-menu-switch vertical-align-cell">
@@ -40,7 +40,7 @@
                 </a>
                 <div class="menu-container clearfix vertical-align-cell">
                     <div class="container">
-                        <div class="logo vertical-align-cell" style="margin-top: -9px;display: -webkit-inline-box;">
+                        <div class="logo vertical-align-cell" style="z-index:1;margin-top: -9px;display: -webkit-inline-box;">
                             <h1><a href="/" title="Renovate"><img src="/images/logo.png" alt=""></a></h1>
                         </div>
                     <nav style="width: -webkit-fill-available;">
@@ -151,7 +151,7 @@
                             </span>
                     </a>
                     </span>
-                    <span class="phones-header">
+                    <span style="display:none;" class="phones-header">
                         <div>048 700-83-03</div>
                         <div>094 953-13-03</div>
                         <div>094 064-72-02</div>
