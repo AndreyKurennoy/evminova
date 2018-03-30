@@ -744,9 +744,18 @@ ul.sf-menu li li:first-child li:first-child:hover ul, ul.sf-menu li li:first-chi
 	font-size: 14px;
 	font-family: "Open Sans";
 	line-height: 24px;
-	padding: 12px 20px;
-	margin-bottom: 1px;
+	padding: 5px 20px;
+	/*margin-bottom: 1px;*/
 }
+.mobile-menu li:first-child a:not(.template-arrow-menu){
+    border: 1px solid #74787b;
+}
+.mobile-menu li a:not(.template-arrow-menu){
+    border-left: 1px solid #74787b;
+    border-right: 1px solid #74787b;
+    border-bottom: 1px solid #74787b;
+}
+
 .mobile-menu li.selected a,
 .mobile-menu li.selected ul li.selected a,
 .mobile-menu li.selected ul li.selected ul li.selected a
@@ -4180,3 +4189,12 @@ body.lock-position
 .reviews-link{
 	margin-left: 10px;
 	color: #1892df;}
+.blue-border-top{
+    border-top: 2px solid #1892df;
+}
+.white-background{
+    background: #fff!important;
+}
+.blue-color{
+    color: #1892df!important;
+}
