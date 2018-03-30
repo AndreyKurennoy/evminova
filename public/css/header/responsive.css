@@ -541,7 +541,7 @@
 	{
 		position: absolute;
 		left: 11px;
-		top: 13px;
+		top: 9px;
 	}
 	.collapsible-mobile-submenus>li a.template-arrow-menu:hover
 	{
@@ -933,8 +933,8 @@
 	}
 	.header .mobile-menu-switch{
 		position: fixed;
-		top: 20px;
-		right: 20px;
+		top: 45px;
+		right: 10px;
 		margin: 0;
 	}
 	#content .vertical-menu{
@@ -1322,8 +1322,44 @@
 	.doctor .doctor-name{
 		text-align: center;
 	}
-
-
+	.header-top-bar-container{
+		height: 90px;
+	}
+	.header .logo a img {
+		position: fixed;
+		top: 29px;
+		left: 5px;
+		width: 62px;
+	}
+	.contact-details .template-location{
+		top:0;
+		position: fixed;
+		left: 0;
+		right: 0;
+		width: fit-content;
+		margin: 0 auto;
+	}
+	.mobile-menu-container nav{
+		margin-top: 95px!important;
+	}
+	.call_me_desktop{
+		display: block!important;
+		z-index: 99999;
+		/*left:0;*/
+		/*right: 0;*/
+		/*!*width:150px;*!*/
+		/*margin: 0 auto;*/
+	}
+	.call_me{
+		z-index: 99999;
+		top:60px;
+		left:0;
+		right: 0;
+		width:130px;
+		height: auto!important;
+		margin: 0 auto;
+		position: fixed;
+	}
 }
 @media screen and (max-device-width: 1024px) {
 	.no-mobile {
