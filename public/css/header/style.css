@@ -2808,7 +2808,7 @@ li.template-bullet:before
 }
 .contact-details li::before
 {
-	color: #AAA;
+	color: gold;
 	font-size: 14px;
 	margin-right: 3px;
 }
@@ -4197,4 +4197,9 @@ body.lock-position
 }
 .blue-color{
     color: #1892df!important;
+}
+.template-phone span{
+	margin-right: 10px;
+	overflow: hidden;
+	color: #1892df;
 }
