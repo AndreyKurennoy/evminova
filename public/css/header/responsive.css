@@ -310,7 +310,7 @@
 	/* --- contact details --- */
 	.contact-details li
 	{
-		padding: 15px 12px;
+		padding: 15px 8px;
 	}
 	.contact-details li:last-child
 	{
@@ -405,6 +405,88 @@
 		display: block;
 		margin: auto;
 	}
+}
+@media screen and (max-device-width: 1024px) {
+    .no-mobile {
+        display: none;
+    }
+    .sf-menu{
+        justify-content: baseline;
+    }
+    .header-top-bar .contact-details .template-custom, .header-top-bar .contact-details .template-mail{
+        display: none;
+
+    }
+
+    .header-container{
+        padding: 0 0 13px;
+    }
+    .menu-container{
+        margin: 0;
+    }
+    .menu-container nav {
+        margin-top: -2px;
+    }
+    .header-top-bar .contact-details {
+        /*left: 93px;*/
+        /*position: relative;*/
+        /*top: 8px;*/
+        /*width: auto;*/
+    }
+    .header-top-bar .contact-details li{
+        /*padding: 5px 5px;*/
+    }
+    .logo {
+        margin-top: -29px !important;
+    }
+    .call_me{
+        /*position: absolute;*/
+        padding-left: 0;
+        height: 25px;
+        margin-top: 10px;
+    }
+    .call_me_tablet{
+        display: none;
+    }
+    .call_me_desktop{
+        /*display: none;*/
+    }
+
+    body .header-container .menu-container .sf-menu>li:first-child>a{
+        padding-right: 5px;
+    }
+    body .header-container .menu-container .sf-menu>li a{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .flex-features-container{
+        justify-content: center;
+    }
+    .flex-feature{
+        margin:10px 0;
+    }
+
+    .flex-service{
+        max-width: 46%;
+    }
+    .header-top-bar .template-phone span:last-child{
+        display: none;
+    }
+    .header .container .logo {
+        width: 48px;
+        margin-right: 10px;
+        margin-top: 1px!important;
+    }
+    .header-container{
+        padding-bottom: 5px;
+        margin-top: 43px;
+    }
+    .header-top-bar-container{
+        height: 42px;
+    }
+    .header-top-bar{
+        height: 42px;
+    }
 }
 @media screen and (max-width: 768px) {
 
@@ -581,10 +663,11 @@
 		float: right;
 		/*margin-top: 40px;*/
         position: fixed;
-        top: 20px;
+        top: 11px;
         right: 20px;
         z-index: 99999;
         margin: 0;
+
 	}
 	.header-top-bar .contact-details .template-custom, .header-top-bar .contact-details .template-clock{
 		display: none;
@@ -893,6 +976,70 @@
 	.col-lg-3 .icon-box-3{
 		margin-bottom: 30px;
 	}
+    .header .logo a img {
+        position: fixed;
+        top: 20px;
+        left: 11px;
+        width: 62px;
+    }
+    .contact-details .template-location{
+        top:53px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: fit-content;
+        width: -moz-fit-content;
+        margin: 0 auto;
+    }
+    .mobile-menu-container nav{
+        margin-top: 95px!important;
+    }
+    .call_me_desktop{
+        display: block!important;
+        z-index: 99999;
+        /*left:0;*/
+        /*right: 0;*/
+        /*!*width:150px;*!*/
+        /*margin: 0 auto;*/
+    }
+    .call_me{
+        z-index: 99999;
+        top:39px;
+        left:0;
+        right: 0;
+        width:130px;
+        height: auto!important;
+        margin: 0 auto;
+        position: fixed;
+    }
+    .call_me:before{
+        content: url("/images/home/button.png");
+        width: 130px;
+    }
+    .header .mobile-menu-switch{
+        position: fixed;
+        top: 11px;
+        right: 10px;
+        margin: 0;
+        border-left: 1px solid #e5e5e5;
+        padding-left: 10px;
+        padding-top: 20px;
+        height: 57px;
+    }
+    .header-top-bar-container{
+        height: 90px;
+        background: #fff;
+    }
+    .header-top-bar .template-phone span{
+        font-size: 16px;
+    }
+    .header-top-bar{
+        border: none;
+
+    }
+    .revolution-slider-container{
+        padding-top: 0;
+    }
 }
 @media screen and (max-width:479px)
 {	
@@ -929,13 +1076,32 @@
 		/*position: fixed;*/
 	}
 	.header-top-bar .template-phone{
-		display: none;
+		display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 4px;
+        width: fit-content;
+        width: -moz-fit-content;
+        margin: auto;
 	}
+    .header-top-bar .template-phone span{
+        display: none;
+    }
+    .header-top-bar .template-phone span:first-child{
+        display: initial;
+        font-size: 17px;
+        font-weight: 400;
+    }
 	.header .mobile-menu-switch{
 		position: fixed;
-		top: 45px;
+		top: 11px;
 		right: 10px;
 		margin: 0;
+        border-left: 1px solid #e5e5e5;
+        padding-left: 10px;
+        padding-top: 20px;
+        height: 57px;
 	}
 	#content .vertical-menu{
 		display:none;
@@ -1278,6 +1444,21 @@
 	.col-lg-3 .icon-box-3{
 		margin-bottom: 30px;
 	}
+    .contact-details .template-location{
+        top:62px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: fit-content;
+        width: -moz-fit-content;
+        margin: 0 auto;
+    }
+    .header .logo a img {
+        position: fixed;
+        top: 4px;
+        left: 11px;
+        width: 62px;
+    }
 }
 @media screen and (max-device-width: 480px)
 {
@@ -1325,99 +1506,9 @@
 	.header-top-bar-container{
 		height: 90px;
 	}
-	.header .logo a img {
-		position: fixed;
-		top: 29px;
-		left: 5px;
-		width: 62px;
-	}
-	.contact-details .template-location{
-		top:0;
-		position: fixed;
-		left: 0;
-		right: 0;
-		width: fit-content;
-		margin: 0 auto;
-	}
-	.mobile-menu-container nav{
-		margin-top: 95px!important;
-	}
-	.call_me_desktop{
-		display: block!important;
-		z-index: 99999;
-		/*left:0;*/
-		/*right: 0;*/
-		/*!*width:150px;*!*/
-		/*margin: 0 auto;*/
-	}
-	.call_me{
-		z-index: 99999;
-		top:60px;
-		left:0;
-		right: 0;
-		width:130px;
-		height: auto!important;
-		margin: 0 auto;
-		position: fixed;
-	}
+
 }
-@media screen and (max-device-width: 1024px) {
-	.no-mobile {
-		display: none;
-	}
-	.sf-menu{
-		justify-content: baseline;
-	}
-	.header-top-bar .contact-details .template-custom, .header-top-bar .contact-details .template-mail{
-		display: none;
 
-	}
-
-	.header-container{
-		padding: 0 0 13px;
-	}
-	.menu-container{
-		margin: 0;
-	}
-	.menu-container nav {
-		margin-top: -2px;
-	}
-	.header-top-bar .contact-details {
-		/*left: 93px;*/
-		/*position: relative;*/
-		/*top: 8px;*/
-		/*width: auto;*/
-	}
-	.header-top-bar .contact-details li{
-		/*padding: 5px 5px;*/
-	}
-	.logo {
-		margin-top: -29px !important;
-	}
-	.call_me{
-		/*position: absolute;*/
-		padding-left: 0;
-		height: 25px;
-		margin-top: -3px;
-	}
-	.call_me_tablet{
-		display: none;
-	}
-	.call_me_desktop{
-		display: none;
-	}
-
-	.flex-features-container{
-		justify-content: center;
-	}
-	.flex-feature{
-		margin:10px 0;
-	}
-
-	.flex-service{
-		max-width: 46%;
-	}
-}
 
 /*@media screen and (min-device-width: 651px){*/
 	/*.map-mobile{*/
@@ -1457,6 +1548,6 @@
 
 @media screen and (max-width: 1024px){
 	.header-top-bar-container{
-		/*z-index: 99999;*/
+		z-index: 99999;
 	}
 }

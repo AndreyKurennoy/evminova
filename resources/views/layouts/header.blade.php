@@ -41,7 +41,7 @@
                 <div class="menu-container clearfix vertical-align-cell">
                     <div class="container">
                         <div class="logo vertical-align-cell" style="z-index:99999;margin-top: -9px;display: -webkit-inline-box;">
-                            <h1><a href="/" title="Renovate"><img src="/images/logo.png" alt=""></a></h1>
+                            <a href="/" title="Renovate"><img src="/images/logo.png" alt=""></a>
                         </div>
                     <nav style="width: -webkit-fill-available;">
                         <ul class="sf-menu">

@@ -456,17 +456,18 @@ h6.box-header:after
 .header-container
 {
 	/*padding: 26px 0;*/
-	margin-top: 71px;
+	margin-top: 65px;
+    padding-bottom: 8px;
 }
 .header-top-bar-container
 {
-	background-color: #fff;
+	background-color: #fcf9f9;
 	top:0;
 	left:0;
 	right:0;
 	z-index: 0;
 	position: fixed;
-	height:60px;
+	height:53px;
 }
 .header-top-bar-container .header-toggle
 {
@@ -511,7 +512,7 @@ h6.box-header:after
 }
 
 .header .logo a img {
-	width: 80%;
+	width: 70px;
     margin: 0 auto;
 }
 
@@ -613,7 +614,7 @@ h6.box-header:after
 .sf-menu
 {
     display: flex;
-	justify-content: space-evenly;
+	justify-content: flex-end;
 	float: none;
 	padding: 0;
 	margin: 0;
@@ -650,6 +651,16 @@ h6.box-header:after
 body .header-container .menu-container .sf-menu>li:first-child>a
 {
 	padding-left: 0;
+    padding-right: 10px;
+}
+.menu-container .container nav {
+    margin-top: 12px;
+}
+body .header-container .menu-container .sf-menu>li a{
+    border-right: 1px solid grey;
+    padding: 0;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .sf-menu li ul
 {
@@ -665,7 +676,7 @@ body .header-container .menu-container .sf-menu>li:first-child>a
 }
 .sf-menu li:hover ul, .sf-menu li.sfHover ul
 {
-	top: 48px;
+	top: 23px;
 	left: 5px;
 }
 .sf-menu li.left-flyout:hover ul, .sf-menu li.left-flyout.sfHover ul
@@ -2794,13 +2805,13 @@ li.template-bullet:before
 	font-family: 'Open Sans';
 	font-weight: 500;
 	font-size: 13px;
-	color: #999999;
+	color: black;
 	line-height: 20px;
 	padding: 15px 20px;
 }
 .contact-details li a
 {
-	color: #999;
+	color: black;
 }
 .contact-details li:first-child
 {
@@ -4172,8 +4183,11 @@ body.lock-position
 }
 .z-index-max-class{
 	z-index: 99999;
-}
 
+}
+.z-index-max-class .header-top-bar{
+    border: none;
+}
 .parallax-add-div{
 	position: absolute;
 	top: 0;
@@ -4202,4 +4216,11 @@ body.lock-position
 	margin-right: 10px;
 	overflow: hidden;
 	color: #1892df;
+    font-size: 16px;
+}
+.header-top-bar{
+    border-bottom: 1px solid grey;
+}
+.header-container{
+    box-shadow: 0 4px 5px #f2f2f2;
 }
