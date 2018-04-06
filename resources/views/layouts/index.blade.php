@@ -74,6 +74,12 @@
             });
         });
 
+        if ($(document).width() > 767){
+            $('nav .sf-menu li a').one( 'click' ,function (e) {
+                e.preventDefault();
+            })
+        }
+
     </script>
     @include('layouts.footer')
 
