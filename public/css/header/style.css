@@ -3535,6 +3535,7 @@ div.pp_default .pp_close:hover
 	background: rgba(38,38,40,0.4);
 	right: 30px;
 	bottom: 30px;
+	z-index: 99999;
 	text-align: center;
 }
 .scroll-top:before
@@ -4166,7 +4167,7 @@ body.lock-position
 	margin-bottom: 5px;
 }
 
-.footer .box-header {
+.footer .box-header, .footer .box-header a {
 	color: #1892df;
 }
 .parallax-1::before {

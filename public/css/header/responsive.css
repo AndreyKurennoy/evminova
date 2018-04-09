@@ -1459,6 +1459,31 @@
         left: 11px;
         width: 62px;
     }
+	.mobile-works ul, .mobile-illness ul, .footer-look-all-articles, .mobile-works .box-header:after, .mobile-illness .box-header:after, .mobile-news{
+		display: none!important;
+	}
+	.mobile-works .box-header, .mobile-illness .box-header{
+		width: -moz-fit-content;
+		width: fit-content;
+		margin: auto;
+		border-bottom: 1px solid #1892df;
+	}
+	.mobile-illness{
+		margin-top: 10px!important;
+	}
+	.questions-form .box-header{
+		padding-bottom: 20px!important;
+	}
+	.questions-form input{
+		margin-top: 10px;
+	}
+	.questions-form fieldset{
+		margin-top: 10px !important;
+	}
+	.questions-form #question{
+		margin-top: 0;
+	}
+
 }
 @media screen and (max-device-width: 480px)
 {

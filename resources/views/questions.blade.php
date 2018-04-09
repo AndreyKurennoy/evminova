@@ -1,4 +1,4 @@
-<div class="row full-width page-margin-top-section padding-bottom-66">
+<div class="questions-form row full-width page-margin-top-section padding-bottom-66">
     <div class="row">
         <h2 class="box-header padding-bottom-61">У МЕНЯ ОСТАЛИСЬ ВОПРОСЫ</h2>
         <form class="contact-form" id="question-form">

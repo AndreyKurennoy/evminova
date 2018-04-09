@@ -31,8 +31,8 @@
 </div>
 <div class=" footer row gray full-width page-padding-top padding-bottom-50">
     <div class="row row-4-4">
-        <div class="column column-1-4">
-            <h6 class="box-header">Услуги нашего центра</h6>
+        <div class="column column-1-4 mobile-works">
+            <h6 class="box-header "><a href="/lechim" rel="canonical">Услуги нашего центра</a></h6>
                 <ul class="list margin-top-20 margin-bottom-5">
                     <li class="template-bullet">Профилактор Евминова</li>
                     <li class="template-bullet">ЛФК</li>
@@ -46,8 +46,8 @@
                 </ul>
             <a href="/catalog" rel=canonical  class="footer-look-all-articles">смотреть все</a>
         </div>
-        <div class="column column-1-4">
-            <h6 class="box-header">Какие заболевания лечим</h6>
+        <div class="column column-1-4 mobile-illness">
+            <h6 class="box-header "><a href="/lechim" rel="canonical">Какие заболевания лечим</a></h6>
             <ul class="list margin-top-20 margin-bottom-5">
                 <li class="template-bullet">Сколиоз</li>
                 <li class="template-bullet">Искривление позвоночника</li>
@@ -61,7 +61,7 @@
             </ul>
             <a href="/lechim" rel=canonical  class="footer-look-all-articles">смотреть все</a>
         </div>
-        <div class="column column-1-4">
+        <div class="column column-1-4 mobile-news">
             <h6 class="box-header">Полезные новости</h6>
             <ul class="blog small margin-top-30">
                 @foreach($footerNews as $article)
