@@ -10,7 +10,7 @@
                     <div class="article-image">
                         <div class="article-img" >
                             <a style="text-decoration: none;" href="/news/{{$new->slug}}">
-                                <img style="width: 100px;max-width: 100px!important;" src="/storage/thumbs/{{$new->preview_img}}" alt="">
+                                <img style="width: 100px;max-width: 100px!important;" src="{{$new->preview_img}}" alt="">
                             </a>
                         </div>
                         <div class="article-img-after">

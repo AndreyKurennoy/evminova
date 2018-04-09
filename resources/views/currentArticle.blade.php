@@ -16,7 +16,7 @@
                     @foreach($innerNews as $article)
                     <li>
                         <a style="width: 90px;" href="/news/{{$article->slug}}" title="What a Difference a Few Months Make" class="post-image">
-                            <img src="/storage/thumbs/{{$article->preview_img}}" alt="">
+                            <img src="{{$article->preview_img}}" alt="">
                         </a>
                         <div class="post-content">
                             <a href="/news/{{$article->slug}}" title="{{$article->header}}">{{$article->header}}</a>

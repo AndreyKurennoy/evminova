@@ -123,7 +123,12 @@ class NewsController extends Controller
         foreach ($news as $article){
             $img = $article->preview_img;
             $img_array = explode('/', $img);
-            $news[$counter]->preview_img = end($img_array);
+            $photo_name = end($img_array);
+
+            $thumbs = str_replace($photo_name, '', $img);
+            $thumbs .= 'thumbs/' . $photo_name;
+
+            $news[$counter]->preview_img = $thumbs;
 
             $date = $article->created_at;
             $news[$counter]->date = date('d.m.Y',strtotime($date));
