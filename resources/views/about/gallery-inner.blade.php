@@ -20,7 +20,7 @@
             @endforeach
         </div>
 
-        @include('questions')
+        @include('zapis')
     </div>
 @stop
 
