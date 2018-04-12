@@ -101,8 +101,8 @@
                     <form action="{{ route('voyager.gallery.index') }}" id="delete_form" method="POST">
                         {{ method_field("DELETE") }}
                         {{ csrf_field() }}
-                        <input type="submit" class="btn btn-danger pull-right delete-confirm"
-                               value="{{ __('voyager.generic.delete_confirm') }}">
+                        {{--<input type="submit" class="btn btn-danger pull-right delete-confirm"--}}
+                               {{--value="{{ __('voyager.generic.delete_confirm') }}">--}}
                         <button type="button" class="btn btn-default pull-right" data-dismiss="modal">{{ __('voyager.generic.cancel') }}</button>
                     </form>
 
