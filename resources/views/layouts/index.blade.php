@@ -50,11 +50,21 @@
 </head>
 <body>
     <div class="site-container">
+
     @include('layouts.header')
 
     @yield('slider')
 
     <div id="content">
+        @if(!Request::is('question') && !Request::is('/'))
+        <div class="mob-prof">
+            <a href="/question" rel="canonical">
+            <img src="/images/mob_prof.png" alt="">
+            <span>Заказать</span>
+            <div>Доску Евминова</div>
+            </a>
+        </div>
+        @endif
         @yield('content')
     </div>
 
@@ -74,7 +84,7 @@
             });
         });
 
-        if ($(document).width() > 767){
+        if ($(document).width() < 767){
             $('nav .sf-menu li a').one( 'click' ,function (e) {
                 e.preventDefault();
             })

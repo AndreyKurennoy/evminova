@@ -1531,7 +1531,44 @@
 	.header-top-bar-container{
 		height: 90px;
 	}
-
+    .mob-prof{
+        width: 200px;
+        margin: auto;
+        margin-top: 19px;
+        padding: 4px;
+        border: 1px solid #1892df;
+        border-radius: 27px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        padding-bottom: 0;
+        display: block;
+    }
+    .mob-prof img{
+        width: 29px;
+        margin-left: 10px;
+    }
+    .mob-prof span{
+        position: relative;
+        top: -38px;
+        left: 72px;
+    }
+    .mob-prof div{
+        top: -32px;
+        position: relative;
+        left: 50px;
+        width: fit-content;
+        width: -moz-fit-content;
+    }
+    .mob-prof a:visited {
+        color: black;
+    }
+    .clearfix .margin-top-30:first-child{
+        margin-top: 0;
+    }
+    .clearfix .column-3-4{
+        margin-top: -10px;
+    }
 }
 
 
