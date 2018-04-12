@@ -11,7 +11,7 @@ use phpDocumentor\Reflection\Types\Null_;
 class SheetsService
 {
     public function getAllData(){
-        return Sheet::all();
+        return Sheet::where('category_name', '!=', 'profilaktor')->where('category_name', '!=', 'about')->where('category_name', '!=', 'gallery')->get();
     }
 
     public function getAllPublishedCatalog(){
