@@ -18,7 +18,7 @@
                             <span itemprop="itemReviewed" style="display: none">
                                 <span id="itemReviewed_name" itemprop="name">{{$ratingSlug['name']}}</span>
                             </span>
-                    Рейтинг <span id="Agr_Rating" itemprop="ratingValue">{{$ratingSlug['value']}}</span> из
+                    Рейтинг <span id="Agr_Rating" itemprop="ratingValue">{{round($ratingSlug['value'],1)}}</span> из
                     <span itemprop="bestRating">5</span>
                     -  <span id="Count_Rating" itemprop="ratingCount">{{$ratingSlug['count']}}</span> проголосовало
                 </div>
