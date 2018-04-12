@@ -15,7 +15,7 @@
                     @foreach($lechim_sheets as $sheet)
                         <li @if(isset($currentSheet->slug) and $currentSheet->slug == $sheet->slug) class="selected"  @endif>
                             <a href="/lechim/{{$sheet->slug}}" title="{{$sheet->title}}">
-                                {{$sheet->title}}
+                                {{$sheet->header}}
                                 <span class="template-arrow-menu"></span>
                             </a>
                         </li>
