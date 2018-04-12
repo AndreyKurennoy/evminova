@@ -221,7 +221,7 @@ class SheetsService
 
     public function getHeaderProfilaktor()
     {
-        $items = Sheet::where(['category_name' => 'profilaktor', 'status' => 1])->orderBy('updated_at', 'desc')->get()->take(6);
+        $items = Sheet::where(['category_name' => 'profilaktor', 'status' => 1])->get()->take(6);
         return $items;
     }
 
