@@ -8,12 +8,14 @@
 
 @section('content')
 <div class="row">
+    <h1 class="box-header margin-bottom-30 margin-top-20">@if($text_1 = $options->where('option_name', 'title')->pluck('value')->first()) {!! $text_1 !!}@endif</h1>
     <div class="no-pad icon-boxes-1" >
         <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
             <div class="icon-box-3 wow fadeInUp" data-wow-delay="0.2s" data-wow-offset="150">
                 <div class="icon-boxwrap2"><i class="fa fa-map icon-box-back2"></i></div>
                 <div class="icon-box2-title">Адрес</div>
-                <p><span>г. Одесса, 65007,</span><br><span>ул. Богдана Хмельницкого, 24</span></p>
+                @if($text_1 = $options->where('option_name', 'address')->pluck('value')->first()) {!! $text_1 !!}@endif
+                {{--<p><span>г. Одесса, 65007,</span><br><span>ул. Богдана Хмельницкого, 24</span></p>--}}
                 </div>
         </div>
         <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
@@ -21,9 +23,10 @@
                 <div class="icon-boxwrap2"><i class="fa fa-phone icon-box-back2"></i></div>
                 <div class="icon-box2-title">Телефоны</div>
                 <ul>
-                    <li>Телефон: <span class="ibox-right-span call_phone_1  ya_1" >+7 (495) 432-53-90</span></li>
-                    <li class="call_phone_hide"><span class="ibox-right-span call_phone_1  ya_1" >+7 (495) 432-53-90</span></li>
-                    <li class="call_phone_hide"><span class="ibox-right-span call_phone_1  ya_1" >+7 (495) 432-53-90</span></li>
+                    {{--<li><span class="ibox-right-span call_phone_1  ya_1" >+7 (495) 432-53-90</span></li>--}}
+                    @foreach($phones_arr as $phone)
+                    <li class="call_phone_hide"><span class="ibox-right-span call_phone_1  ya_1" >{{$phone}}</span></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -31,7 +34,7 @@
             <div class="icon-box-3 notViewed wow fadeInUp" data-wow-delay="0.6s" data-wow-offset="150">
                 <div class="icon-boxwrap2"><i class="fa fa-street-view icon-box-back2"></i></div>
                 <div class="icon-box2-title">Проезд</div>
-                <p>Виртуальный тур по центру</p>
+                <p>  @if($text_1 = $options->where('option_name', 'way')->pluck('value')->first()) {!! $text_1 !!}@endif</p>
             </div>
         </div>
         <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
@@ -39,9 +42,15 @@
                 <div class="icon-boxwrap2"><i class="fa fa-clock-o icon-box-back2"></i></div>
                 <div class="icon-box2-title">Режим работы</div>
                 <ul>
-                    <li>Пн.-Пт. <span class="ibox-right-span">9.00  - 21.00</span></li>
-                    <li>Сб. <span class="ibox-right-span">9.00  - 20.00</span></li>
-                    <li>Вс. <span class="ibox-right-span">9.00 - 20.00</span></li>
+                    <li>Пн.-Пт. <span class="ibox-right-span">
+                            @if($text_1 = $options->where('option_name', 'work-week')->pluck('value')->first()) {!! $text_1 !!}@endif</span>
+                    </li>
+                    <li>Сб. <span class="ibox-right-span">
+                            @if($text_1 = $options->where('option_name', 'work-sat')->pluck('value')->first()) {!! $text_1 !!}@endif</span>
+                    </li>
+                    <li>Вс. <span class="ibox-right-span">
+                            @if($text_1 = $options->where('option_name', 'work-sun')->pluck('value')->first()) {!! $text_1 !!}@endif</span>
+                    </li>
                 </ul>
             </div>
         </div>

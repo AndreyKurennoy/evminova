@@ -77,7 +77,11 @@ class AboutController extends Controller
     }
 
     public function contacts(){
-        return view('contacts');
+        $options = $this->mainOptionsService->getPageOptions('contacts');
+        $phones = $options->where('option_name', 'phones')->pluck('value')->first();
+        $phones_arr = explode(', ', $phones);
+
+        return view('contacts', compact('options', 'phones_arr'));
     }
 
 }
