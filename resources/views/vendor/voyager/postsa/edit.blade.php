@@ -136,6 +136,10 @@
                                 <input type="text" class="form-control" id="slug" name="slug" placeholder="slug"  data-slug-origin="title" data-slug-forceupdate="true" value="{{$sheets->slug}}">
                             </div>
                             <div class="form-group">
+                                <label for="name">Сортировка</label>
+                                <input type="text" class="form-control" id="sort" name="sort" placeholder="Сортировка"  data-slug-origin="title" data-slug-forceupdate="true" value="{{$sheets->sort}}">
+                            </div>
+                            <div class="form-group">
                                 <label for="name">Статус публикации</label>
                                 <select class="form-control" name="status">
                                     <option value="1" @if($sheets->status == 1) selected @endif>Опубликовано</option>

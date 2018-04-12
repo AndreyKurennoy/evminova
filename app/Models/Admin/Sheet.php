@@ -22,7 +22,8 @@ class Sheet extends Model
         'meta_keywords',
         'status',
         'slug',
-        'header'
+        'header',
+        'sort'
 //        'doctor_id'
     ];
 

@@ -1,5 +1,15 @@
 @extends('layouts.index')
-
+@section('head')
+    <link rel="stylesheet" href="{{asset('/css/catalog.css')}}" />
+    <link rel="stylesheet" href="{{asset('/css/rating.css')}}" />
+    <link rel="stylesheet" href="{{asset('/css/reviews.css')}}" />
+@stop
+@section('scripts')
+    {{--@if(isset($currentSheet) && !empty($currentSheet))--}}
+    <script> var url = "{{route('saverating')}}"; var token = "{{ csrf_token() }}"; var slug = "{{request()->path()}}"; </script>
+    <script type="text/javascript" src="{{ asset('/js/rating.js')}}"></script>
+    {{--@endif--}}
+@stop
 @section('slider')
     @include('layouts.slider')
 @endsection
@@ -176,6 +186,7 @@
         <div class="catalog-article description align-justify">
             {!!$options->where('option_name', 'text_2')->pluck('value')->first()!!}
         </div>
+        @include('layouts.reviewStars')
     </div>
 
     <div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-1" style="position: relative;">

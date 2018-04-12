@@ -15,7 +15,7 @@ class SheetsService
     }
 
     public function getAllPublishedCatalog(){
-        return Sheet::where(['category' => 2, 'status' => 1])->get();
+        return Sheet::where(['category' => 2, 'status' => 1])->orderBy('updated_at', 'desc')->get();
     }
 
     public function getAllPublishedNews(){
@@ -23,7 +23,7 @@ class SheetsService
     }
 
     public function getAllPublishedLechim(){
-        return Sheet::where(['category' => 3, 'status' => 1])->get();
+        return Sheet::where(['category' => 3, 'status' => 1])->orderBy('updated_at', 'desc')->get();
     }
 
     public function getCatalogByKeywordPublished($keyword, $category){
@@ -158,7 +158,7 @@ class SheetsService
     }
 
     public function getNewsInnerMenu(){
-        $news = Sheet::where(['category' => 1, 'status' => 1])->orderBy('updated_at', 'desc')->get()->take(6);
+        $news = Sheet::where(['category' => 1, 'status' => 1])->orderBy('updated_at', 'desc')->orderBy('updated_at', 'desc')->get()->take(6);
 
         $counter = 0;
         foreach ($news as $article){
@@ -233,7 +233,7 @@ class SheetsService
         if ($sheet !== null) {
             $reviews = $sheet->reviews->all();
             $counter = 0;
-            if (count($reviews) !== 0) {
+            if (count($reviews) != 0) {
                 foreach ($reviews as $article) {
 
                     $date = $article->updated_at;
@@ -241,6 +241,8 @@ class SheetsService
 
                     $counter++;
                 }
+            }else{
+                $reviews = NULL;
             }
         }
         return $reviews;

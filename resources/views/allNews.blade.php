@@ -1,5 +1,9 @@
 @extends('layouts.index')
-
+@section('head')
+    <link rel="stylesheet" href="{{asset('/css/catalog.css')}}" />
+    <link rel="stylesheet" href="{{asset('/css/rating.css')}}" />
+    <link rel="stylesheet" href="{{asset('/css/reviews.css')}}" />
+@stop
 @section('content')
     <div class="row">
         <h1 class="box-header margin-bottom-30">Полезные статьи и новости Центра Евминова</h1>
@@ -53,6 +57,13 @@
                 {{--</div>--}}
             </div>
             <?php echo $news->render(); ?>
+            @include('layouts.reviewStars')
         </div>
     </div>
+@stop
+@section('scripts')
+    {{--@if(isset($currentSheet) && !empty($currentSheet))--}}
+    <script> var url = "{{route('saverating')}}"; var token = "{{ csrf_token() }}"; var slug = "{{request()->path()}}"; </script>
+    <script type="text/javascript" src="{{ asset('/js/rating.js')}}"></script>
+    {{--@endif--}}
 @stop
