@@ -5,20 +5,37 @@ namespace App\Http\Controllers;
 use App\Models\Admin\Prices;
 use App\Models\Admin\PricesTypes;
 use Illuminate\Http\Request;
+use App\Services\Admin\MainOptionsService;
 
 class AdminPricesController extends Controller
 {
+
+    public $mainOptionsService;
+
+    public function __construct(
+        MainOptionsService $mainOptionsService
+    )
+    {
+        $this->mainOptionsService = $mainOptionsService;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $price_types = PricesTypes::all();
-        $prices_all = PricesTypes::withTrashed()->get();
-        $prices = Prices::all();
-        return view("vendor.voyager.prices.browse", compact('price_types', 'prices', 'prices_all'));
+//        $price_types = PricesTypes::all();
+//        $prices_all = PricesTypes::withTrashed()->get();
+//        $prices = Prices::all();
+//        return view("vendor.voyager.prices.browse", compact('price_types', 'prices', 'prices_all'));
+
+        $url_pathes = explode('/',$request->path());
+        $url_path = end($url_pathes);
+        $options = $this->mainOptionsService->getPageOptions(end($url_pathes));
+        return view('vendor.voyager.prices.index', compact('options', 'url_path'));
     }
 
     /**
@@ -39,11 +56,15 @@ class AdminPricesController extends Controller
      */
     public function store(Request $request)
     {
-        $type = new Prices();
-        $type->fill($request->request->all());
-        $type->save();
-        $output = array('success' => 'true');
-        return response()->json($output);
+//        $type = new Prices();
+//        $type->fill($request->request->all());
+//        $type->save();
+//        $output = array('success' => 'true');
+//        return response()->json($output);
+
+        $url_pathes = explode('/',$request->path());
+        $options = $this->mainOptionsService->update($request->request->all(), end($url_pathes));
+        return redirect(route("voyager.prices.index"));
     }
 
     /**

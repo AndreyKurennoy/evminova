@@ -3,6 +3,7 @@
 @section('inner-content')
 
     <div class="row">
+        <h1 class="box-header margin-bottom-30">Специалисты Центра Евминова</h1>
         <div class="doctors-container">
             @foreach($doctors as $doctor)
             <div class="doctor">

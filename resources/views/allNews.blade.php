@@ -19,7 +19,7 @@
                     </div>
                     <div class="article-block">
                         <div class="article-title">
-                            <a style="text-decoration: none;" href="/news/{{$new->slug}}"><h4>{{$new->title}}</h4></a>
+                            <a style="text-decoration: none;" href="/news/{{$new->slug}}"><h4>{{$new->header}}</h4></a>
                         </div>
                         <div class="article-date">
                             <span>{{$new->date}}</span>

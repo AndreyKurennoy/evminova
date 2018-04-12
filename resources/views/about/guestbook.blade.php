@@ -6,7 +6,7 @@
 @section('inner-content')
 
         <div class="row margin-top-20">
-            <h2 class="margin-top-20" style="text-align: left;color: #1892df;">Отзывы пациентов:</h2>
+            <h1 class="box-header margin-top-20" style="color: #1892df;">Отзывы пациентов</h1>
 
             <div class="reviews">
                 @foreach($reviews as $review)

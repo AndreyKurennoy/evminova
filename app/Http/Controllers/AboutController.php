@@ -10,19 +10,23 @@ use App\Services\Admin\ReviewService;
 use App\Models\Admin\Sheet;
 use App\Services\Admin\DoctorService;
 use Illuminate\Http\Request;
+use App\Services\Admin\MainOptionsService;
 
 class AboutController extends Controller
 {
     public $doctorService;
     public $reviewService;
+    public $mainOptionsService;
 
     public function __construct(
         DoctorService $doctorService,
-        ReviewService $reviewService
+        ReviewService $reviewService,
+        MainOptionsService $mainOptionsService
     )
     {
         $this->doctorService = $doctorService;
         $this->reviewService = $reviewService;
+        $this->mainOptionsService = $mainOptionsService;
     }
     public function index(){
 
@@ -56,9 +60,10 @@ class AboutController extends Controller
     }
 
     public function prices(){
-        $prices = Prices::all();
-        $price_types = PricesTypes::all();
-        return view('prices', compact('price_types', 'prices'));
+//        $prices = Prices::all();
+//        $price_types = PricesTypes::all();
+        $options = $this->mainOptionsService->getPageOptions('prices');
+        return view('prices', compact('options'));
     }
 
     public function certificates(){
