@@ -184,6 +184,7 @@
                         <div class="form-group">
                             <label for="name">Первый</label>
                             <select class="form-control" name="doctor[]">
+                                <option value="none">Не выбрано</option>
                                 @foreach($doctors as $doctor)
                                     <option value="{{$doctor->id}}" @if(old('doctor.0') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                 @endforeach
@@ -192,6 +193,7 @@
                         <div class="form-group">
                             <label for="name">Второй</label>
                             <select class="form-control" name="doctor[]">
+                                <option value="none">Не выбрано</option>
                                 @foreach($doctors as $doctor)
                                     <option value="{{$doctor->id}}" @if(old('doctor.1') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                 @endforeach
@@ -200,6 +202,7 @@
                         <div class="form-group">
                             <label for="name">Третий</label>
                             <select class="form-control" name="doctor[]">
+                                <option value="none">Не выбрано</option>
                                 @foreach($doctors as $doctor)
                                     <option value="{{$doctor->id}}" @if(old('doctor.2') == $doctor->id) selected @endif>{{$doctor->firstName .' ' . $doctor->lastName}}</option>
                                 @endforeach
