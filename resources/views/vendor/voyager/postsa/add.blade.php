@@ -117,7 +117,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">Сортировка</label>
-                                <input type="text" class="form-control" id="sort" name="sort" placeholder="Сортировка"  data-slug-origin="title" data-slug-forceupdate="true" value="{{$sheets->sort}}">
+                                <input type="text" class="form-control" id="sort" name="sort" placeholder="Сортировка"  data-slug-origin="title" data-slug-forceupdate="true" value="{{Request::old('sort')}}">
                             </div>
                             <div class="form-group">
                                 <label for="name">Статус публикации</label>
